@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>管理 | 山下翼 電子名刺</title>
+<link rel="icon" href="/assets/brand/favicon-64.png">
+<link rel="stylesheet" href="/admin/admin.css">
+<script type="module" src="/admin/admin.js"></script>
+</head>
+<body>
+<main>
+  <h1>電子名刺 管理</h1>
+  <form id="login" class="card">
+    <label>管理トークン<input type="password" name="token" autocomplete="current-password" required></label>
+    <button type="submit">開く</button>
+    <p class="err" id="login-err"></p>
+  </form>
+  <div id="app" hidden>
+    <section class="card">
+      <h2>今日のイベント名</h2>
+      <p class="hint">「連絡先に保存」のメモ欄と、羽根の記録に入ります。空にすると日付だけ。</p>
+      <form id="event">
+        <label>日本語<input name="event_ja" maxlength="60" placeholder="例：関西設計管理研究会"></label>
+        <label>English<input name="event_en" maxlength="80" placeholder="e.g. Kansai Design Management Study Group"></label>
+        <button type="submit">保存</button>
+        <span class="ok" id="event-ok"></span>
+      </form>
+    </section>
+    <section class="card">
+      <h2>承認待ちの羽根 <span id="pending-n"></span></h2>
+      <ul id="pending" class="list"></ul>
+    </section>
+    <section class="card">
+      <h2>数字</h2>
+      <div id="stats"></div>
+    </section>
+    <section class="card">
+      <h2>承認済みの羽根</h2>
+      <ul id="approved" class="list"></ul>
+    </section>
+    <button id="logout" class="ghost" type="button">ログアウト</button>
+  </div>
+</main>
+</body>
+</html>

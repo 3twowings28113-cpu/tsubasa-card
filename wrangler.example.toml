@@ -1,0 +1,13 @@
+# CLIで公開するときだけ使う設定。使うときは wrangler.toml にコピーして database_id を埋める。
+# （Cloudflare の Git 連携で公開する場合はこのファイルは不要。設定はダッシュボードで行う）
+name = "tsubasa-yamashita"
+pages_build_output_dir = "public"
+compatibility_date = "2026-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "tsubasa-card"
+database_id = "00000000-0000-0000-0000-000000000000" # ← wrangler d1 create の結果に置き換える
+
+[ai]
+binding = "AI"

@@ -1,0 +1,15 @@
+{
+  "name": "tsubasa-card",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "knowledge": "node scripts/build-knowledge.mjs",
+    "db:init:local": "wrangler d1 execute tsubasa-card --local --file=schema.sql",
+    "db:init:remote": "wrangler d1 execute tsubasa-card --remote --file=schema.sql",
+    "dev": "npm run knowledge && wrangler pages dev",
+    "deploy": "npm run knowledge && wrangler pages deploy public --branch main"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}
