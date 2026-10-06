@@ -1,4 +1,7 @@
-# 公開手順（Windows・コマンドプロンプト）
+# 公開手順（Windows・コマンドプロンプト版）
+
+> スマホだけで公開するなら `docs/DEPLOY.md` のほうが簡単。こちらはPCのコマンドで公開する場合。
+> 最初に `copy wrangler.example.toml wrangler.toml` を実行してから進める。
 
 サイトはもう動く状態。ここに書いた手順で公開URLが出る。所要時間は10分くらい。
 
