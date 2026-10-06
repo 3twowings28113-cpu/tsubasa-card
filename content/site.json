@@ -1,0 +1,856 @@
+{
+  "_note": "サイトの文章はすべてここから読み込む。TODO_ で始まる値は本人が埋める（空文字ならそのボタンは非表示）。",
+  "site": {
+    "url": "https://3twowings28113-cpu.github.io/tsubasa-card/",
+    "ogImage": "assets/brand/og.png"
+  },
+  "contacts": [
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/tsubasakansaiuniv/",
+      "icon": "assets/icons/linkedin.svg",
+      "color": "#0A66C2",
+      "primary": true
+    },
+    {
+      "id": "line",
+      "label": "LINE",
+      "url": "https://line.me/R/ti/p/66K41DNeu_",
+      "icon": "assets/icons/line.svg",
+      "color": "#06C755"
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "url": "https://www.instagram.com/tsubasa.mountainwings/",
+      "icon": "assets/icons/instagram.svg",
+      "color": "#FF0069"
+    },
+    {
+      "id": "x",
+      "label": "X",
+      "url": "https://x.com/tyuuninged",
+      "icon": "assets/icons/x.svg",
+      "color": "#0F1419"
+    },
+    {
+      "id": "facebook",
+      "label": "Facebook",
+      "url": "https://www.facebook.com/profile.php?id=100092515989524",
+      "icon": "assets/icons/facebook.svg",
+      "color": "#0866FF"
+    },
+    {
+      "id": "eight",
+      "label": "Eight",
+      "url": "https://8card.net/virtual_cards/glQIX4yhkhq6nDggDDdHyw",
+      "icon": "assets/icons/eight.svg",
+      "color": "#0054FF"
+    },
+    {
+      "id": "prairie",
+      "label": "Prairie Card",
+      "labelJa": "プレーリー",
+      "url": "https://my.prairie.cards/u/Tsubasayamashit",
+      "icon": "assets/icons/prairie.svg",
+      "color": "#2E7D5B"
+    }
+  ],
+  "vcard": {
+    "familyName": "山下",
+    "givenName": "翼",
+    "familyNameKana": "やました",
+    "givenNameKana": "つばさ",
+    "familyNameEn": "Yamashita",
+    "givenNameEn": "Tsubasa",
+    "org": "関西大学",
+    "orgUnit": "ビジネスデータサイエンス学部",
+    "title": "学生（1期生）",
+    "email": "3twowings28113@gmail.com",
+    "tel": "080-3735-8484",
+    "photo": "assets/photos/hero-wings.webp"
+  },
+  "ja": {
+    "meta": {
+      "title": "山下 翼 | Tsubasa Yamashita",
+      "description": "AI × データサイエンス × BizDev × 開発、全部やる学生。関西大学ビジネスデータサイエンス学部1期生、山下翼の電子名刺・公式サイト。"
+    },
+    "ui": {
+      "skip": "タップでスキップ",
+      "langToggle": "EN",
+      "saveContact": "連絡先に保存",
+      "saveContactSub": "電話帳に「今日会った日」も一緒に残ります",
+      "saveCardImage": "名刺画像を保存",
+      "tiltOn": "傾けると羽根が動きます（タップで有効化）",
+      "tapCount": "あなたはこの名刺をひらいた {n} 人目のゲストです",
+      "tapCountShort": "{n} 人目のゲスト",
+      "whoAreYou": "あなたは？",
+      "close": "閉じる",
+      "next": "次へ",
+      "prev": "前へ",
+      "builtWith": "Built with Claude × Genspark GenCode",
+      "reducedMotion": "動きを控えめにしています"
+    },
+    "hero": {
+      "eyebrow": "Nice to meet you!",
+      "name": "山下 翼",
+      "nameKana": "やました つばさ",
+      "affiliation": "関西大学 ビジネスデータサイエンス学部 1期生（29卒）",
+      "statement": "AI × データサイエンス ×\nBizDev × 開発、\n全部やる学生です",
+      "photoAlt": "羽の壁の前でLinkedInのクッションを持つ山下翼"
+    },
+    "audiences": {
+      "title": "あなたに合わせて、ご紹介します",
+      "options": [
+        {
+          "id": "engineer",
+          "label": "エンジニア",
+          "message": "AIハッカソンの主催も受賞も、運営アプリの自作もしています。技術の話、ぜひしましょう。",
+          "order": [
+            "kansai-hackathon",
+            "hackathon-awards",
+            "microsoft",
+            "kyoso-system",
+            "localbase"
+          ]
+        },
+        {
+          "id": "hr",
+          "label": "人事・採用",
+          "message": "学生コミュニティの真ん中にいます。学生との接点づくり、一緒に考えさせてください。",
+          "order": [
+            "lsc-mvp",
+            "kyoso-expo",
+            "kyoso-labo",
+            "exawizards",
+            "kansai-hackathon"
+          ]
+        },
+        {
+          "id": "exec",
+          "label": "経営者",
+          "message": "生成AIの導入・社内研修の伴走をしています。現場の課題から一緒に考えます。",
+          "order": [
+            "localbase",
+            "exawizards",
+            "microsoft",
+            "ivs",
+            "kyoso-expo"
+          ]
+        },
+        {
+          "id": "student",
+          "label": "学生",
+          "message": "やったことないことに、一緒に手を挙げよう。イベントもハッカソンも、いつでも誘ってください。",
+          "order": [
+            "kansai-hackathon",
+            "kyoso-labo",
+            "ivs",
+            "lsc-mvp",
+            "kyoso-expo"
+          ]
+        }
+      ]
+    },
+    "highlights": [
+      {
+        "id": "kansai-hackathon",
+        "title": "関西AIハッカソンを主催",
+        "sub": "AI未経験者が主役。企画・司会・運営アプリ開発まで",
+        "photo": "assets/photos/story-kansai-hackathon.webp"
+      },
+      {
+        "id": "hackathon-awards",
+        "title": "AIハッカソン 準優勝・IST賞",
+        "sub": "ネットが切れても動く避難所向けAI「避難所カルテ」",
+        "photo": "assets/photos/story-origin2-ist.webp"
+      },
+      {
+        "id": "microsoft",
+        "title": "Microsoftの拠点でAI共同開発",
+        "sub": "AI Co-Innovation Lab KOBE、シスメックスの課題に半年間",
+        "photo": "assets/photos/story-microsoft.webp"
+      },
+      {
+        "id": "kyoso-system",
+        "title": "800名イベントの受付システムを自作",
+        "sub": "QRチェックインとデジタル名刺（共創EXPO）",
+        "photo": "assets/photos/story-kyoso-staff.webp"
+      },
+      {
+        "id": "kyoso-expo",
+        "title": "約800名の「共創EXPO」を運営",
+        "sub": "関西最大級の学生イベント",
+        "photo": "assets/photos/story-kyoso-crowd.webp"
+      },
+      {
+        "id": "localbase",
+        "title": "LocalBase AI を開発中",
+        "sub": "社内の情報を外に出さない業務用AI。夢プレゼンで優勝",
+        "photo": null
+      },
+      {
+        "id": "exawizards",
+        "title": "エクサウィザーズでインターン",
+        "sub": "AI企業の新規事業部で、事業企画を半年間",
+        "photo": null
+      },
+      {
+        "id": "ivs",
+        "title": "IVSの学生エリア「SPIKES」を企画・運営",
+        "sub": "日本最大級のスタートアップの祭典で、プランナーとしてゼロから",
+        "photo": "assets/photos/story-ivs.webp"
+      },
+      {
+        "id": "kyoso-labo",
+        "title": "共創Labo 起業部リーダー",
+        "sub": "関西の学生団体160超と企業45社以上をつなぐネットワーク",
+        "photo": "assets/photos/story-kyoso-crowd.webp"
+      },
+      {
+        "id": "lsc-mvp",
+        "title": "LinkedIn Student Club 関西 MVP「集客賞」",
+        "sub": "学生のキャリアコミュニティで、仲間の投票により受賞",
+        "photo": "assets/photos/story-lscw.webp"
+      }
+    ],
+    "philosophy": {
+      "eyebrow": "Serendipity",
+      "title": "人生は、予定外の出会いで\n面白くなる。",
+      "body": "生き方の軸は「計画的偶発性」。偶然を待つのではなく、偶然が起きやすい行動を自分からとり続けています。",
+      "chips": [
+        "やったことないことに手を挙げる",
+        "自分から「会いませんか」",
+        "出会いを発信する"
+      ]
+    },
+    "story": {
+      "eyebrow": "My Story",
+      "title": "これまでの歩み",
+      "chapters": [
+        {
+          "title": "まず、飛び込んだ。",
+          "span": "2025.4 – 2025.12",
+          "entries": [
+            {
+              "date": "2025.4",
+              "title": "関西大学 ビジネスデータサイエンス学部へ",
+              "sub": "できたばかりの新しい学部の、最初の学生として",
+              "badge": "1期生"
+            },
+            {
+              "date": "2025.8",
+              "title": "大阪・関西万博の現場へ",
+              "sub": "パビリオンで短期インターン／日本館プロジェクトで中学生に授業",
+              "photo": "assets/photos/story-expo2025.webp"
+            },
+            {
+              "date": "2025.9",
+              "title": "Microsoftの拠点で、企業とAIを共同開発",
+              "sub": "神戸のAI Co-Innovation Labで、シスメックスの課題に半年間",
+              "badge": "修了",
+              "photo": "assets/photos/story-microsoft.webp"
+            },
+            {
+              "date": "2025.10",
+              "title": "万博の最終日に、決めたこと",
+              "sub": "「人の心が動く場を、つくる側になりたい」",
+              "hot": true
+            },
+            {
+              "date": "2025.10",
+              "title": "LinkedIn Student Club 関西に加入",
+              "sub": "学生のキャリアコミュニティ。仲間の投票でMVP「集客賞」に",
+              "badge": "MVP",
+              "photo": "assets/photos/story-lscw.webp"
+            },
+            {
+              "date": "2025.12",
+              "title": "共創Labo 起業部のリーダーに",
+              "sub": "関西の学生団体160超と、企業45社以上をつなぐネットワーク"
+            }
+          ]
+        },
+        {
+          "title": "外に出て、挑んだ。",
+          "span": "2026.1 – 2026.7",
+          "entries": [
+            {
+              "date": "2026.1",
+              "title": "AI企業エクサウィザーズでインターン",
+              "sub": "新規事業部で、事業企画に半年間取り組む"
+            },
+            {
+              "date": "2026.1",
+              "title": "doda主催の全国ビジネスコンテスト",
+              "sub": "空き家を五感のエンタメ施設に変える「REPLAY」で決勝へ",
+              "badge": "ファイナリスト",
+              "photo": "assets/photos/story-doda.webp"
+            },
+            {
+              "date": "2026.1",
+              "title": "広島で水産実習、名古屋でボランティア",
+              "sub": "瀬戸内海のカキ養殖の現場へ／TechGALAの運営を手伝う"
+            },
+            {
+              "date": "2026.3",
+              "title": "はじめてのAIハッカソン「Origin」",
+              "sub": "関西の大学生 約80名が参加。学校の資料から答えるAIノートを開発",
+              "badge": "準優勝"
+            },
+            {
+              "date": "2026.4",
+              "title": "東京のイベントで、LinkedIn日本代表に宣言",
+              "sub": "「関西のLinkedInを、僕が一番盛り上げます」",
+              "hot": true,
+              "photo": "assets/photos/story-linkedin-office.webp"
+            },
+            {
+              "date": "2026.7",
+              "title": "IVSの学生エリア「SPIKES」を企画・運営",
+              "sub": "日本最大級のスタートアップの祭典で、プランナーとしてゼロから",
+              "photo": "assets/photos/story-ivs.webp"
+            }
+          ]
+        },
+        {
+          "title": "場を、つくる側へ。",
+          "span": "2026.7 – 2026.10",
+          "entries": [
+            {
+              "date": "2026.7",
+              "title": "東京の学生キャリアイベントを運営",
+              "sub": "LinkedIn Student Clubの夏のキャリアウィーク（日比谷）"
+            },
+            {
+              "date": "2026.9",
+              "title": "約800名の学生イベント「共創EXPO」を運営",
+              "sub": "受付のQRチェックインとデジタル名刺のシステムを自作",
+              "photo": "assets/photos/story-kyoso-staff.webp"
+            },
+            {
+              "date": "2026.9",
+              "title": "「関西AIハッカソン」を立ち上げ",
+              "sub": "AI未経験者が主役のハッカソンを、企画・司会・運営アプリ開発まで",
+              "badge": "主催",
+              "hot": true,
+              "photo": "assets/photos/story-kansai-hackathon.webp"
+            },
+            {
+              "date": "2026.9",
+              "title": "2回目のAIハッカソン「Origin Vol.2」",
+              "sub": "ネットが切れても動く避難所向けAI「避難所カルテ」で企業賞",
+              "badge": "IST賞",
+              "photo": "assets/photos/story-origin2-ist.webp"
+            },
+            {
+              "date": "2026.9",
+              "title": "大阪テラコヤの夢プレゼン",
+              "sub": "社内の情報を外に出さない業務用AI「LocalBase AI」を発表",
+              "badge": "優勝"
+            },
+            {
+              "date": "2026.10",
+              "title": "関西設計管理研究会で登壇",
+              "sub": "ダイキン工業の会場で、学生のキャリアについて講演"
+            }
+          ]
+        }
+      ]
+    },
+    "now": {
+      "eyebrow": "Now",
+      "title": "いま、本気で取り組んでいること",
+      "items": [
+        {
+          "tag": "起業準備中",
+          "title": "StuVation",
+          "body": "学生の頑張りが、正当に評価される仕組みをつくる"
+        },
+        {
+          "tag": "開発中",
+          "title": "LocalBase AI",
+          "body": "社内の情報を外に出さずに使える、業務用AI"
+        },
+        {
+          "tag": "AI導入支援",
+          "title": "中小企業の現場へ",
+          "body": "学生起業家の仲間と、提案から開発まで"
+        },
+        {
+          "tag": "準備中",
+          "title": "学生目線の取材メディア",
+          "body": "面白い大人と熱い学生を、取材して紹介する"
+        }
+      ]
+    },
+    "slides": {
+      "eyebrow": "Slides",
+      "title": "自己紹介スライド",
+      "items": [
+        {
+          "src": "assets/slides/slide-01.webp",
+          "alt": "表紙：山下翼、AI×データサイエンス×BizDev×開発、全部やる学生"
+        },
+        {
+          "src": "assets/slides/slide-02.webp",
+          "alt": "こんな人です：大学、コミュニティ、趣味など"
+        },
+        {
+          "src": "assets/slides/slide-03.webp",
+          "alt": "人生は予定外の出会いで面白くなる：計画的偶発性"
+        },
+        {
+          "src": "assets/slides/slide-04.webp",
+          "alt": "これまでの歩み1：2025年、まず飛び込んだ"
+        },
+        {
+          "src": "assets/slides/slide-05.webp",
+          "alt": "これまでの歩み2：2026年前半、外に出て挑んだ"
+        },
+        {
+          "src": "assets/slides/slide-06.webp",
+          "alt": "これまでの歩み3：2026年後半、場をつくる側へ"
+        },
+        {
+          "src": "assets/slides/slide-07.webp",
+          "alt": "いま本気で取り組んでいること"
+        },
+        {
+          "src": "assets/slides/slide-08.webp",
+          "alt": "こんなお話、待っています"
+        }
+      ]
+    },
+    "feathers": {
+      "eyebrow": "Wing of Encounters",
+      "title": "出会いの羽根",
+      "body": "出会った人の数だけ、この翼は大きくなります。今日の出会いを、羽根1枚に残していってください。",
+      "nickname": "ニックネーム（20文字まで）",
+      "message": "ひとこと（60文字まで）",
+      "submit": "羽根を置いていく",
+      "thanks": "{n} 枚目の羽根を受け取りました！確認後にこの翼に加わります。",
+      "empty": "まだ羽根はありません。最初の1枚をどうぞ。",
+      "count": "{n} 枚の羽根",
+      "error": "うまく送れませんでした。時間をおいてもう一度お願いします。"
+    },
+    "ai": {
+      "eyebrow": "Ask me",
+      "title": "山下翼AIに聞いてみる",
+      "body": "これまでの活動をもとに、AIが山下翼について答えます。",
+      "placeholder": "例：どんな活動をしてきたの？",
+      "suggestions": [
+        "どんな活動をしてきたの？",
+        "LocalBase AIって何？",
+        "一緒にどんなことができる？",
+        "大事にしている考え方は？"
+      ],
+      "disclaimer": "AIの回答には間違いが含まれることがあります。気になることは本人に直接どうぞ。",
+      "limit": "今日の質問受付は終わりました。続きはLinkedInでどうぞ！",
+      "error": "うまく答えられませんでした。もう一度お試しください。"
+    },
+    "connect": {
+      "eyebrow": "Let's connect!",
+      "title": "こんなお話、待っています",
+      "items": [
+        "生成AIの導入・社内研修の伴走",
+        "学生採用・学生コミュニティとの接点づくり",
+        "ハッカソン・学生イベントの企画と運営",
+        "そして、まだ名前のない面白い話も"
+      ],
+      "cta": "LinkedInでつながる"
+    }
+  },
+  "en": {
+    "meta": {
+      "title": "Tsubasa Yamashita | 山下 翼",
+      "description": "A student who does it all: AI, data science, BizDev and development. Digital business card and official site of Tsubasa Yamashita, Kansai University."
+    },
+    "ui": {
+      "skip": "Tap to skip",
+      "langToggle": "日本語",
+      "saveContact": "Save contact",
+      "saveContactSub": "The day we met is saved with it",
+      "saveCardImage": "Save card image",
+      "tiltOn": "Tilt your phone to move the feathers (tap to enable)",
+      "tapCount": "You are guest No. {n} to open this card",
+      "tapCountShort": "Guest No. {n}",
+      "whoAreYou": "You are...",
+      "close": "Close",
+      "next": "Next",
+      "prev": "Previous",
+      "builtWith": "Built with Claude × Genspark GenCode",
+      "reducedMotion": "Reduced motion is on"
+    },
+    "hero": {
+      "eyebrow": "Nice to meet you!",
+      "name": "Tsubasa Yamashita",
+      "nameKana": "山下 翼",
+      "affiliation": "Kansai University, Faculty of Business Data Science — first cohort (class of 2029)",
+      "statement": "AI × Data Science ×\nBizDev × Development —\nI do it all.",
+      "photoAlt": "Tsubasa Yamashita holding a LinkedIn cushion in front of a wall of wings"
+    },
+    "audiences": {
+      "title": "Let me introduce myself — for you",
+      "options": [
+        {
+          "id": "engineer",
+          "label": "Engineer",
+          "message": "I host and win AI hackathons, and I build my own event apps. Let's talk tech.",
+          "order": [
+            "kansai-hackathon",
+            "hackathon-awards",
+            "microsoft",
+            "kyoso-system",
+            "localbase"
+          ]
+        },
+        {
+          "id": "hr",
+          "label": "HR / Recruiting",
+          "message": "I'm at the center of student communities in Kansai. Let's design how you meet students.",
+          "order": [
+            "lsc-mvp",
+            "kyoso-expo",
+            "kyoso-labo",
+            "exawizards",
+            "kansai-hackathon"
+          ]
+        },
+        {
+          "id": "exec",
+          "label": "Executive",
+          "message": "I help companies adopt generative AI and run in-house training — starting from real problems.",
+          "order": [
+            "localbase",
+            "exawizards",
+            "microsoft",
+            "ivs",
+            "kyoso-expo"
+          ]
+        },
+        {
+          "id": "student",
+          "label": "Student",
+          "message": "Let's raise our hands for things we've never tried. Invite me to anything!",
+          "order": [
+            "kansai-hackathon",
+            "kyoso-labo",
+            "ivs",
+            "lsc-mvp",
+            "kyoso-expo"
+          ]
+        }
+      ]
+    },
+    "highlights": [
+      {
+        "id": "kansai-hackathon",
+        "title": "Founded the Kansai AI Hackathon",
+        "sub": "For AI beginners — planning, MC and the event app, all by me",
+        "photo": "assets/photos/story-kansai-hackathon.webp"
+      },
+      {
+        "id": "hackathon-awards",
+        "title": "AI hackathons: 2nd place & IST Award",
+        "sub": "\"Shelter Karte\": an AI for evacuation shelters that works offline",
+        "photo": "assets/photos/story-origin2-ist.webp"
+      },
+      {
+        "id": "microsoft",
+        "title": "Co-developed AI at a Microsoft lab",
+        "sub": "AI Co-Innovation Lab KOBE — six months on a challenge from Sysmex",
+        "photo": "assets/photos/story-microsoft.webp"
+      },
+      {
+        "id": "kyoso-system",
+        "title": "Built the check-in system for an 800-person event",
+        "sub": "QR check-in and digital business cards (Kyoso EXPO)",
+        "photo": "assets/photos/story-kyoso-staff.webp"
+      },
+      {
+        "id": "kyoso-expo",
+        "title": "Ran \"Kyoso EXPO\" for ~800 students",
+        "sub": "One of the largest student events in Kansai",
+        "photo": "assets/photos/story-kyoso-crowd.webp"
+      },
+      {
+        "id": "localbase",
+        "title": "Building LocalBase AI",
+        "sub": "A business AI that keeps company data inside. Won a dream-pitch contest",
+        "photo": null
+      },
+      {
+        "id": "exawizards",
+        "title": "Intern at ExaWizards",
+        "sub": "Six months of business planning in an AI company's new-business unit",
+        "photo": null
+      },
+      {
+        "id": "ivs",
+        "title": "Planned \"SPIKES\" at IVS",
+        "sub": "The student area of one of Japan's biggest startup festivals — from zero",
+        "photo": "assets/photos/story-ivs.webp"
+      },
+      {
+        "id": "kyoso-labo",
+        "title": "Leader of the startup team at Kyoso Labo",
+        "sub": "A network of 160+ student groups and 45+ companies in Kansai",
+        "photo": "assets/photos/story-kyoso-crowd.webp"
+      },
+      {
+        "id": "lsc-mvp",
+        "title": "LinkedIn Student Club Kansai MVP",
+        "sub": "Voted by peers for bringing people together",
+        "photo": "assets/photos/story-lscw.webp"
+      }
+    ],
+    "philosophy": {
+      "eyebrow": "Serendipity",
+      "title": "Life gets interesting\nthrough unplanned encounters.",
+      "body": "My compass is \"planned happenstance\": instead of waiting for luck, I keep doing things that make lucky encounters happen.",
+      "chips": [
+        "Raise my hand for the untried",
+        "Say \"Shall we meet?\" first",
+        "Share every encounter"
+      ]
+    },
+    "story": {
+      "eyebrow": "My Story",
+      "title": "How I got here",
+      "chapters": [
+        {
+          "title": "First, I jumped in.",
+          "span": "2025.4 – 2025.12",
+          "entries": [
+            {
+              "date": "2025.4",
+              "title": "Entered the Faculty of Business Data Science",
+              "sub": "One of the very first students of a brand-new faculty",
+              "badge": "1st cohort"
+            },
+            {
+              "date": "2025.8",
+              "title": "On site at Expo 2025 Osaka, Kansai",
+              "sub": "Short internship at a pavilion / taught junior-high students for the Japan Pavilion",
+              "photo": "assets/photos/story-expo2025.webp"
+            },
+            {
+              "date": "2025.9",
+              "title": "Co-developed AI with a company at Microsoft's lab",
+              "sub": "Six months at AI Co-Innovation Lab KOBE on a challenge from Sysmex",
+              "badge": "Completed",
+              "photo": "assets/photos/story-microsoft.webp"
+            },
+            {
+              "date": "2025.10",
+              "title": "What I decided on the Expo's final day",
+              "sub": "\"I want to be the one who creates places that move people.\"",
+              "hot": true
+            },
+            {
+              "date": "2025.10",
+              "title": "Joined LinkedIn Student Club Kansai",
+              "sub": "A student career community — voted MVP for bringing people together",
+              "badge": "MVP",
+              "photo": "assets/photos/story-lscw.webp"
+            },
+            {
+              "date": "2025.12",
+              "title": "Became leader of the startup team at Kyoso Labo",
+              "sub": "A network of 160+ student groups and 45+ companies"
+            }
+          ]
+        },
+        {
+          "title": "Then, I went out and took on challenges.",
+          "span": "2026.1 – 2026.7",
+          "entries": [
+            {
+              "date": "2026.1",
+              "title": "Intern at the AI company ExaWizards",
+              "sub": "Six months of business planning in the new-business unit"
+            },
+            {
+              "date": "2026.1",
+              "title": "National business contest by doda",
+              "sub": "Made the finals with \"REPLAY\", turning vacant houses into sensory entertainment",
+              "badge": "Finalist",
+              "photo": "assets/photos/story-doda.webp"
+            },
+            {
+              "date": "2026.1",
+              "title": "Fisheries field course in Hiroshima, volunteering in Nagoya",
+              "sub": "Oyster farming in the Seto Inland Sea / helped run TechGALA"
+            },
+            {
+              "date": "2026.3",
+              "title": "My first AI hackathon, \"Origin\"",
+              "sub": "~80 Kansai students. Built an AI notebook that answers from school documents",
+              "badge": "2nd place"
+            },
+            {
+              "date": "2026.4",
+              "title": "Made a promise to LinkedIn Japan's country manager",
+              "sub": "\"I'll be the one who gets Kansai most excited about LinkedIn.\"",
+              "hot": true,
+              "photo": "assets/photos/story-linkedin-office.webp"
+            },
+            {
+              "date": "2026.7",
+              "title": "Planned and ran \"SPIKES\" at IVS",
+              "sub": "The student area of one of Japan's biggest startup festivals — as a planner from zero",
+              "photo": "assets/photos/story-ivs.webp"
+            }
+          ]
+        },
+        {
+          "title": "Now, I create the places.",
+          "span": "2026.7 – 2026.10",
+          "entries": [
+            {
+              "date": "2026.7",
+              "title": "Ran a student career event in Tokyo",
+              "sub": "LinkedIn Student Club's summer career week (Hibiya)"
+            },
+            {
+              "date": "2026.9",
+              "title": "Ran \"Kyoso EXPO\" for ~800 students",
+              "sub": "Built the QR check-in and digital business card system myself",
+              "photo": "assets/photos/story-kyoso-staff.webp"
+            },
+            {
+              "date": "2026.9",
+              "title": "Founded the \"Kansai AI Hackathon\"",
+              "sub": "A hackathon starring AI beginners — planning, MC and the event app",
+              "badge": "Host",
+              "hot": true,
+              "photo": "assets/photos/story-kansai-hackathon.webp"
+            },
+            {
+              "date": "2026.9",
+              "title": "Second AI hackathon, \"Origin Vol.2\"",
+              "sub": "Corporate award for \"Shelter Karte\", an offline AI for evacuation shelters",
+              "badge": "IST Award",
+              "photo": "assets/photos/story-origin2-ist.webp"
+            },
+            {
+              "date": "2026.9",
+              "title": "Osaka Terakoya dream pitch",
+              "sub": "Pitched LocalBase AI, a business AI that keeps company data inside",
+              "badge": "Winner"
+            },
+            {
+              "date": "2026.10",
+              "title": "Spoke at the Kansai Design Management Study Group",
+              "sub": "A talk on student careers, hosted at Daikin Industries"
+            }
+          ]
+        }
+      ]
+    },
+    "now": {
+      "eyebrow": "Now",
+      "title": "What I'm all in on right now",
+      "items": [
+        {
+          "tag": "Startup in progress",
+          "title": "StuVation",
+          "body": "Making sure students' hard work gets the recognition it deserves"
+        },
+        {
+          "tag": "In development",
+          "title": "LocalBase AI",
+          "body": "A business AI you can use without your data leaving the company"
+        },
+        {
+          "tag": "AI adoption",
+          "title": "Into small businesses",
+          "body": "With fellow student founders — from proposal to development"
+        },
+        {
+          "tag": "Coming soon",
+          "title": "Student-eye interview media",
+          "body": "Interviewing fascinating adults and passionate students"
+        }
+      ]
+    },
+    "slides": {
+      "eyebrow": "Slides",
+      "title": "Self-introduction slides (Japanese)",
+      "items": [
+        {
+          "src": "assets/slides/slide-01.webp",
+          "alt": "Cover: Tsubasa Yamashita"
+        },
+        {
+          "src": "assets/slides/slide-02.webp",
+          "alt": "About me"
+        },
+        {
+          "src": "assets/slides/slide-03.webp",
+          "alt": "Serendipity: planned happenstance"
+        },
+        {
+          "src": "assets/slides/slide-04.webp",
+          "alt": "My story 1: 2025"
+        },
+        {
+          "src": "assets/slides/slide-05.webp",
+          "alt": "My story 2: early 2026"
+        },
+        {
+          "src": "assets/slides/slide-06.webp",
+          "alt": "My story 3: late 2026"
+        },
+        {
+          "src": "assets/slides/slide-07.webp",
+          "alt": "What I'm working on now"
+        },
+        {
+          "src": "assets/slides/slide-08.webp",
+          "alt": "Let's connect"
+        }
+      ]
+    },
+    "feathers": {
+      "eyebrow": "Wing of Encounters",
+      "title": "Leave a feather",
+      "body": "This wing grows with every person I meet. Leave one feather to remember today.",
+      "nickname": "Nickname (up to 20 chars)",
+      "message": "A short message (up to 60 chars)",
+      "submit": "Leave a feather",
+      "thanks": "Feather No. {n} received! It will join the wing after a quick check.",
+      "empty": "No feathers yet. Be the first!",
+      "count": "{n} feathers",
+      "error": "Couldn't send it. Please try again in a moment."
+    },
+    "ai": {
+      "eyebrow": "Ask me",
+      "title": "Ask Tsubasa AI",
+      "body": "An AI that answers questions about Tsubasa, based on his activities.",
+      "placeholder": "e.g. What have you been working on?",
+      "suggestions": [
+        "What have you been working on?",
+        "What is LocalBase AI?",
+        "What could we do together?",
+        "What do you value most?"
+      ],
+      "disclaimer": "AI answers may contain mistakes. Feel free to ask Tsubasa directly.",
+      "limit": "That's all the questions for today. Let's continue on LinkedIn!",
+      "error": "Sorry, something went wrong. Please try again."
+    },
+    "connect": {
+      "eyebrow": "Let's connect!",
+      "title": "I'd love to talk about",
+      "items": [
+        "Adopting generative AI and in-house training",
+        "Connecting with students and student communities",
+        "Planning and running hackathons and student events",
+        "And interesting things that don't have a name yet"
+      ],
+      "cta": "Connect on LinkedIn"
+    }
+  }
+}

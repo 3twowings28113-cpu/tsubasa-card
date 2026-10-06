@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>山下 翼 | Tsubasa Yamashita</title>
+<meta name="description" content="AI × データサイエンス × BizDev × 開発、全部やる学生。関西大学ビジネスデータサイエンス学部1期生、山下翼の電子名刺・公式サイト。">
+<meta name="theme-color" content="#F6FAFF">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="山下 翼 | Tsubasa Yamashita">
+<meta property="og:description" content="AI × データサイエンス × BizDev × 開発、全部やる学生。関西大学ビジネスデータサイエンス学部1期生。">
+<meta property="og:image" content="https://3twowings28113-cpu.github.io/tsubasa-card/assets/brand/og.png" id="og-image">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/brand/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@700;900&family=Noto+Sans+JP:wght@400;500;700&family=Caveat:wght@700&display=swap">
+<link rel="preload" as="image" href="assets/photos/hero-wings.webp">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/boot.js"></script>
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/Flip.min.js" defer></script>
+<script type="module" src="js/main.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#contact">連絡先へ移動</a>
+
+<header class="topbar">
+  <a class="topbar__mark" href="#top" aria-label="ページの先頭へ"><img src="assets/brand/wing-mark.svg" alt="" width="36" height="36"></a>
+  <button class="topbar__lang" type="button" data-lang-toggle aria-label="Switch language">EN</button>
+</header>
+
+<canvas class="sky-feathers" aria-hidden="true"></canvas>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-name">
+    <p class="guest-pill" data-guest hidden></p>
+    <div class="namecard" data-namecard>
+      <div class="namecard__shine" aria-hidden="true"></div>
+      <div class="namecard__text">
+        <p class="namecard__hello" data-t="hero.eyebrow">Nice to meet you!</p>
+        <h1 class="namecard__name" id="hero-name" data-t="hero.name">山下 翼</h1>
+        <p class="namecard__kana" data-t="hero.nameKana">やました つばさ</p>
+        <p class="namecard__aff" data-t="hero.affiliation">関西大学 ビジネスデータサイエンス学部 1期生（29卒）</p>
+      </div>
+      <img class="namecard__photo" src="assets/photos/hero-wings.webp" alt="羽の壁の前でLinkedInのクッションを持つ山下翼" data-t-alt="hero.photoAlt" width="996" height="996">
+      <img class="namecard__mark" src="assets/brand/wing-mark.svg" alt="" width="40" height="40">
+    </div>
+    <p class="hero__statement" data-t="hero.statement">AI × データサイエンス ×
+BizDev × 開発、
+全部やる学生です</p>
+    <button class="tilt-chip" type="button" data-tilt-chip hidden></button>
+  </section>
+
+  <section class="contact" id="contact" aria-label="連絡先">
+    <div data-contacts>
+      <noscript>
+        <p><a href="https://www.linkedin.com/in/tsubasakansaiuniv/">LinkedIn</a></p>
+        <p><a href="/api/vcard?lang=ja">連絡先に保存</a></p>
+      </noscript>
+    </div>
+  </section>
+
+  <section class="audience" aria-labelledby="audience-title">
+    <h2 class="h2" id="audience-title" data-t="audiences.title"></h2>
+    <div class="audience__chips" role="radiogroup" data-audience-chips></div>
+    <p class="audience__message" data-audience-message aria-live="polite"></p>
+    <div class="highlights" data-highlights></div>
+  </section>
+
+  <section class="serendipity" aria-labelledby="ser-title">
+    <svg class="serendipity__stars" aria-hidden="true" viewBox="0 0 560 368"><g stroke="#9CC3EA" stroke-width="2"><line x1="50" y1="260" x2="150" y2="185"/><line x1="150" y1="185" x2="260" y2="220"/><line x1="260" y1="220" x2="360" y2="105"/><line x1="360" y1="105" x2="490" y2="150"/><line x1="490" y1="150" x2="525" y2="55"/><line x1="150" y1="185" x2="200" y2="80"/><line x1="200" y1="80" x2="360" y2="105"/><line x1="260" y1="220" x2="330" y2="315"/><line x1="330" y1="315" x2="455" y2="280"/><line x1="455" y1="280" x2="490" y2="150"/></g><g fill="#9CC3EA"><circle cx="50" cy="260" r="6"/><circle cx="150" cy="185" r="8"/><circle cx="260" cy="220" r="6"/><circle cx="200" cy="80" r="5"/><circle cx="330" cy="315" r="7"/><circle cx="455" cy="280" r="5"/><circle cx="490" cy="150" r="7"/></g><g fill="#FF8A3D"><circle cx="360" cy="105" r="10"/><circle cx="525" cy="55" r="12"/></g></svg>
+    <p class="hand" data-t="philosophy.eyebrow">Serendipity</p>
+    <h2 class="serendipity__title" id="ser-title" data-t="philosophy.title"></h2>
+    <p class="serendipity__body" data-t="philosophy.body"></p>
+    <ul class="serendipity__chips" data-philosophy-chips></ul>
+  </section>
+
+  <section class="story" aria-labelledby="story-title">
+    <h2 class="h2" id="story-title" data-t="story.title"></h2>
+    <div data-story></div>
+  </section>
+
+  <section class="now" aria-labelledby="now-title">
+    <h2 class="h2" id="now-title" data-t="now.title"></h2>
+    <ul class="now__list" data-now></ul>
+  </section>
+
+  <section class="wingwall" id="feathers" aria-labelledby="wingwall-title">
+    <h2 class="h2" id="wingwall-title" data-t="feathers.title"></h2>
+    <p class="lead" data-t="feathers.body"></p>
+    <div class="wingwall__stage" data-wingwall>
+      <p class="wingwall__count" data-wingwall-count></p>
+    </div>
+    <div class="wingwall__pop" data-wingwall-pop role="status" hidden></div>
+    <form class="feather-form" data-feather-form>
+      <label class="field"><span data-t="feathers.nickname"></span><input name="nickname" maxlength="20" required autocomplete="nickname"></label>
+      <label class="field"><span data-t="feathers.message"></span><input name="message" maxlength="60"></label>
+      <label class="hp" aria-hidden="true">website<input name="website" tabindex="-1" autocomplete="off"></label>
+      <button class="btn btn--blue" type="submit" data-t="feathers.submit"></button>
+      <p class="feather-form__status" data-feather-status aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section class="ask" id="ask" aria-labelledby="ask-title">
+    <h2 class="h2" id="ask-title" data-t="ai.title"></h2>
+    <p class="lead" data-t="ai.body"></p>
+    <div class="ask__log" data-ask-log aria-live="polite"></div>
+    <div class="ask__suggest" data-ask-suggest></div>
+    <form class="ask__form" data-ask-form>
+      <label class="sr-only" for="ask-q" data-t="ai.title"></label>
+      <input id="ask-q" name="q" maxlength="200" autocomplete="off" required>
+      <button class="btn btn--blue" type="submit" aria-label="送信">↑</button>
+    </form>
+    <p class="note" data-t="ai.disclaimer"></p>
+  </section>
+
+  <section class="slides" aria-labelledby="slides-title">
+    <h2 class="h2" id="slides-title" data-t="slides.title"></h2>
+    <div class="slides__track" data-slides tabindex="0"></div>
+    <div class="slides__nav">
+      <button class="iconbtn" type="button" data-slides-prev aria-label="前へ">‹</button>
+      <span class="slides__count" data-slides-count>1 / 8</span>
+      <button class="iconbtn" type="button" data-slides-next aria-label="次へ">›</button>
+    </div>
+  </section>
+
+  <section class="connect" aria-labelledby="connect-title">
+    <p class="hand" data-t="connect.eyebrow">Let's connect!</p>
+    <h2 class="h2" id="connect-title" data-t="connect.title"></h2>
+    <ul class="connect__list" data-connect></ul>
+    <div class="connect__actions" data-connect-actions></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <img src="assets/brand/wing-mark.svg" alt="" width="40" height="40">
+  <p data-t="ui.builtWith">Built with Claude × Genspark GenCode</p>
+  <p>© 2026 Tsubasa Yamashita</p>
+  <button class="linkbtn" type="button" data-lang-toggle>EN</button>
+</footer>
+
+<div class="dock" data-dock aria-hidden="true"></div>
+<div class="lightbox" data-lightbox hidden>
+  <button class="lightbox__close iconbtn" type="button" data-lightbox-close aria-label="閉じる">×</button>
+  <button class="lightbox__prev iconbtn" type="button" data-lightbox-prev aria-label="前へ">‹</button>
+  <img class="lightbox__img" data-lightbox-img alt="">
+  <button class="lightbox__next iconbtn" type="button" data-lightbox-next aria-label="次へ">›</button>
+</div>
+<script type="application/ld+json" id="ld-person">{"@context":"https://schema.org","@type":"Person","name":"山下 翼","alternateName":"Tsubasa Yamashita","affiliation":{"@type":"CollegeOrUniversity","name":"関西大学"},"sameAs":["https://www.linkedin.com/in/tsubasakansaiuniv/"]}</script>
+</body>
+</html>

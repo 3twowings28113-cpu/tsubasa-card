@@ -1,0 +1,12 @@
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,'Hiragino Sans','Yu Gothic',sans-serif;background:#F6FAFF;color:#0E1B33}
+main{max-width:640px;margin:0 auto;padding:20px 16px 60px}h1{font-size:22px;margin:8px 0 16px}h2{font-size:17px;margin:0 0 10px}
+.card{background:#fff;border:1px solid #D9E6F7;border-radius:16px;padding:16px;margin-bottom:14px}
+label{display:grid;gap:4px;font-size:13px;font-weight:700;margin-bottom:10px}
+input{font:inherit;font-size:16px;padding:10px 12px;border:1px solid #D9E6F7;border-radius:10px}
+button{font:inherit;font-weight:700;border:0;border-radius:10px;padding:10px 16px;background:#0A66C2;color:#fff;cursor:pointer}
+button.ghost{background:none;color:#0A66C2;border:1px solid #D9E6F7}button.ng{background:#fff;color:#B42318;border:1px solid #F3C4BF}
+.list{list-style:none;padding:0;margin:0;display:grid;gap:10px}.list li{border:1px solid #D9E6F7;border-radius:12px;padding:10px 12px}
+.list .meta{font-size:12px;color:#5B6B82}.list .row{display:flex;gap:8px;margin-top:8px}
+.hint{font-size:12px;color:#5B6B82;margin:-4px 0 10px}.err{color:#B42318;font-size:13px}.ok{color:#0A66C2;font-size:13px;margin-left:8px}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px 4px;border-bottom:1px solid #EEF5FF;text-align:left}
+.big{font-size:28px;font-weight:800;color:#0A66C2}
