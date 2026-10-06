@@ -1,7 +1,7 @@
 {
   "_note": "サイトの文章はすべてここから読み込む。TODO_ で始まる値は本人が埋める（空文字ならそのボタンは非表示）。",
   "site": {
-    "url": "TODO_SITE_URL",
+    "url": "https://3twowings28113-cpu.github.io/tsubasa-card/",
     "ogImage": "assets/brand/og.png"
   },
   "contacts": [

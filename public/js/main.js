@@ -29,7 +29,13 @@ async function features() {
   const r = await api('/api/settings');
   const live = r.ok && r.data && typeof r.data === 'object' && 'event_ja' in r.data;
   window.__apiOk = live;
-  if (!live) return;
+  if (!live) {
+    // static hosting: server-only sections stay hidden
+    document.querySelector('#feathers')?.setAttribute('hidden', '');
+    document.querySelector('#ask')?.setAttribute('hidden', '');
+    document.querySelectorAll('[data-save]').forEach((a) => { a.href = `contact/tsubasa-yamashita-${getLang()}.vcf`; });
+    return;
+  }
   const f = r.data.features || {};
   if (f.db === false) document.querySelector('#feathers')?.setAttribute('hidden', '');
   if (f.ai === false || f.db === false) document.querySelector('#ask')?.setAttribute('hidden', '');
@@ -53,9 +59,8 @@ async function boot() {
   await whenContacts();
   resolveContacts();
   initDock();
-  features();
   initWingWall();
-  guestNumber();
+  features().then(() => { if (window.__apiOk) guestNumber(); });
   introDone.then(() => initMotion());
 }
 

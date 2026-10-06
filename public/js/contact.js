@@ -43,8 +43,9 @@ export function clientVcard() {
 function saveButton(extraClass = '') {
   const a = el('a', { class: `btn btn--line ${extraClass}`, href: vcardHref(), 'data-save': '' });
   a.append(el('span', { 'aria-hidden': 'true', text: '＋' }), el('span', { text: t('ui.saveContact') }));
-  a.addEventListener('click', (e) => {
-    if (window.__apiOk === false) { e.preventDefault(); clientVcard(); }
+  // Hosts without the API (GitHub Pages, previews) get the static vCard file instead.
+  a.addEventListener('click', () => {
+    if (window.__apiOk === false) a.href = `contact/tsubasa-yamashita-${getLang()}.vcf`;
   });
   return a;
 }
