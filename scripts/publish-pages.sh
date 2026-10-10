@@ -3,10 +3,11 @@
 # 編集画面は両方のブランチに直接保存するので、これはコードを変えたときだけ使う。
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
-git fetch -q origin gh-pages
+git fetch -q origin +gh-pages:refs/remotes/origin/gh-pages
 tmp=$(mktemp -d)
 git worktree add -q "$tmp" origin/gh-pages
-rsync -a --delete --exclude .git public/ "$tmp"/
+git -C "$tmp" rm -rq --ignore-unmatch . 
+cp -a public/. "$tmp"/
 cd "$tmp"
 git add -A
 if git diff --cached --quiet; then echo "gh-pages: 変更なし"; else
