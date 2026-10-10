@@ -62,16 +62,25 @@ function renderPhilosophy() {
 /* ---------- story ---------- */
 function renderStory() {
   const host = document.querySelector('[data-story]');
+  const lang = getLang();
+  const ja = getContent().ja.story.chapters;
   const chapters = L().story.chapters.map((ch, ci) => {
-    const entries = ch.entries.map((e) => el('div', { class: `entry${e.hot ? ' is-hot' : ''}` },
-      el('p', { class: 'entry__date', text: e.date }),
-      el('span', { class: 'entry__dot', 'aria-hidden': 'true' }),
-      el('div', { class: 'entry__body' },
-        el('h3', { class: 'entry__title' }, e.title, e.badge ? el('span', { class: 'entry__badge', text: e.badge }) : null),
-        el('p', { class: 'entry__sub', text: e.sub }),
-        e.photo ? el('img', { class: 'entry__photo', src: e.photo, alt: '', loading: 'lazy', decoding: 'async' }) : null)));
+    const entries = ch.entries.map((e0, ei) => {
+      // English entries fall back to the Japanese text when left blank in the editor
+      const base = ja[ci]?.entries?.[ei] || {};
+      const e = lang === 'ja' ? e0 : { ...base, ...Object.fromEntries(Object.entries(e0).filter(([, v]) => v !== '' && v != null)) };
+      const link = e.link || base.link;
+      return el('div', { class: `entry${e.hot ? ' is-hot' : ''}` },
+        el('p', { class: 'entry__date', text: e.date }),
+        el('span', { class: 'entry__dot', 'aria-hidden': 'true' }),
+        el('div', { class: 'entry__body' },
+          el('h3', { class: 'entry__title' }, e.title, e.badge ? el('span', { class: 'entry__badge', text: e.badge }) : null),
+          el('p', { class: 'entry__sub', text: e.sub }),
+          (e.photo || base.photo) ? el('img', { class: 'entry__photo', src: e.photo || base.photo, alt: '', loading: 'lazy', decoding: 'async' }) : null,
+          link ? el('a', { class: 'entry__link', href: link, target: '_blank', rel: 'noopener', text: t('ui.linkedinPost') }) : null));
+    });
     return el('div', { class: 'chapter', 'data-chapter': ci },
-      el('div', { class: 'chapter__head' }, el('h3', { class: 'chapter__title', text: ch.title }), el('span', { class: 'chapter__span', text: ch.span })),
+      el('div', { class: 'chapter__head' }, el('h3', { class: 'chapter__title', text: ch.title || ja[ci]?.title }), el('span', { class: 'chapter__span', text: ch.span || ja[ci]?.span })),
       el('div', { class: 'timeline' }, el('div', { class: 'timeline__rail', 'aria-hidden': 'true' }, el('div', { class: 'timeline__fill' })), ...entries));
   });
   host.replaceChildren(...chapters);
@@ -104,6 +113,28 @@ function wireStory() {
       }));
     });
   });
+}
+
+/* ---------- affiliations ---------- */
+function renderOrgs() {
+  const host = document.querySelector('[data-orgs]');
+  if (!host) return;
+  const lang = getLang();
+  const items = (getContent().affiliations?.items || []);
+  host.replaceChildren(...items.map((o) => {
+    const t = o[lang] || o.ja || {};
+    const mark = o.logo
+      ? el('img', { class: 'org__logo', src: o.logo, alt: '', loading: 'lazy', width: 48, height: 48 })
+      : el('span', { class: 'org__logo org__logo--mono', 'aria-hidden': 'true', text: o.mono || (t.name || '?').slice(0, 2) });
+    const body = el('span', { class: 'org__body' },
+      el('span', { class: 'org__name', text: t.name || '' }),
+      el('span', { class: 'org__role', text: [t.role, o.since ? (lang === 'en' ? `since ${o.since}` : `${o.since}〜`) : ''].filter(Boolean).join(lang === 'en' ? ' · ' : '　') }));
+    const usable = typeof o.url === 'string' && /^https?:\/\//.test(o.url);
+    const inner = usable
+      ? el('a', { class: 'org', href: o.url, target: '_blank', rel: 'noopener' }, mark, body, el('span', { class: 'org__go', 'aria-hidden': 'true', text: '↗' }))
+      : el('div', { class: 'org' }, mark, body);
+    return el('li', {}, inner);
+  }));
 }
 
 /* ---------- now ---------- */
@@ -197,6 +228,6 @@ function closeLightbox() {
 export function initSections() {
   audience = readAudience();
   initSlides();
-  const renderAll = () => { renderAudience(); renderPhilosophy(); renderStory(); renderNow(); renderSlides(); };
+  const renderAll = () => { renderOrgs(); renderAudience(); renderPhilosophy(); renderStory(); renderNow(); renderSlides(); };
   onLang(renderAll);
 }
