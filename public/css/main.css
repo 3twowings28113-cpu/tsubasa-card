@@ -159,6 +159,27 @@ html[lang="en"] .namecard__name { font-size: 34px; letter-spacing: .01em; }
 .dock.is-on { transform: none; }
 .dock .btn { flex: 1; min-height: 48px; font-size: 15px; padding: 0 12px; }
 
+/* ---------- affiliations ---------- */
+.orgs { padding-top: 24px !important; padding-bottom: 40px !important; }
+.orgs__list { margin-top: 14px; display: grid; gap: 8px; }
+.org {
+  display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: center; gap: 12px;
+  padding: 10px 14px 10px 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+  color: var(--ink); text-decoration: none;
+}
+a.org:active { transform: scale(.99); }
+a.org:hover { border-color: var(--rail); }
+.org__logo { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; background: #fff; box-shadow: 0 0 0 1px var(--line); }
+.org__logo--mono {
+  display: grid; place-items: center; font-family: var(--f-head); font-weight: 900; font-size: 13px; line-height: 1;
+  color: #fff; background: linear-gradient(135deg, var(--blue), #4FA3FF); box-shadow: none; text-align: center; padding: 2px;
+}
+.org__body { display: grid; gap: 1px; min-width: 0; }
+.org__name { font-weight: 700; font-size: 15px; line-height: 1.45; word-break: auto-phrase; }
+.org__role { font-size: 12.5px; color: var(--muted); line-height: 1.5; word-break: auto-phrase; }
+.org__go { color: var(--blue); font-size: 16px; }
+.entry__link { display: inline-block; margin-top: 6px; font-size: 13px; font-weight: 700; color: var(--blue); }
+
 /* ---------- audience ---------- */
 .audience__chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; align-items: center; }
 .audience__chips .who { font-size: 13px; color: var(--muted); margin-right: 2px; }
@@ -336,6 +357,7 @@ html[lang="en"] .namecard__name { font-size: 34px; letter-spacing: .01em; }
   .save .btn { width: auto; flex: none; }
   .save small { text-align: left; }
   .hl { flex-basis: 300px; }
+  .orgs__list { grid-template-columns: 1fr 1fr; gap: 12px; max-width: 920px; }
   .hl__img, .hl__img--none { height: 170px; }
   .serendipity__title { font-size: 56px; }
   .serendipity__stars { width: 520px; right: 0; top: 60px; }

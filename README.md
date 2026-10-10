@@ -4,6 +4,7 @@ NFC名刺をかざすと、翼が羽ばたいて開くサイト。Cloudflare Pag
 
 - 公開手順：`docs/DEPLOY.md`（スマホだけでできる。まずここ）
 - PCのコマンドで公開する場合：`docs/SETUP_WINDOWS.md`
+- 編集画面の使い方：`docs/EDITOR.md`（公開URLの `/edit/`）
 - 仕様：`SPEC.md`
 - GenCodeへの指示文：`docs/PROMPTS.md`
 - Windowsでの準備と公開：`docs/SETUP_WINDOWS.md`
