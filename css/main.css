@@ -194,6 +194,24 @@ a.org:hover { border-color: var(--rail); }
   box-shadow: 0 4px 14px rgba(14, 27, 51, .18);
 }
 
+/* ---------- venture (StuVation) ---------- */
+.venture { padding-top: 32px !important; }
+.venture__card {
+  margin-top: 16px; border-radius: 24px; padding: 22px 18px 18px; background: var(--surface);
+  border: 1px solid var(--line); box-shadow: var(--shadow-lg);
+}
+.venture__name { font-family: var(--f-head); font-weight: 900; font-size: 30px; line-height: 1.1; letter-spacing: -.01em; color: var(--blue); }
+.venture__tagline { margin-top: 6px; font-family: var(--f-head); font-weight: 700; font-size: 18px; line-height: 1.5; word-break: auto-phrase; }
+.venture__body { margin-top: 10px; color: var(--ink-2); font-size: 15px; word-break: auto-phrase; text-wrap: pretty; }
+.venture__facts { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+.venture__facts li { font-size: 12.5px; font-weight: 700; color: var(--blue); background: var(--sky-2); border-radius: 999px; padding: 4px 12px; }
+.venture__deck { margin-top: 18px; }
+.venture__deck-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 8px; font-size: 13px; font-weight: 700; color: var(--muted); }
+.venture__open { color: var(--blue); text-decoration: none; white-space: nowrap; }
+.venture__frame { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: var(--sky-2); border: 1px solid var(--line); }
+.venture__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (min-width: 900px) { .venture__card { padding: 32px; } .venture__frame { max-width: 860px; } }
+
 /* ---------- original card requests ---------- */
 .card-request__box {
   position: relative; overflow: hidden; border-radius: 24px; padding: 28px 22px 24px; background: var(--surface);
