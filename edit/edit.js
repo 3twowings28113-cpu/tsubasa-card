@@ -425,7 +425,7 @@ async function buildVcards() {
     if (usable(v.email)) L.push(`EMAIL;TYPE=INTERNET:${v.email}`);
     if (usable(v.tel)) L.push(`TEL;TYPE=CELL:${v.tel}`);
     if (usable(data.site?.url)) L.push(`URL:${data.site.url}`);
-    for (const c of data.contacts) if (usable(c.url)) L.push(`X-SOCIALPROFILE;TYPE=${c.id}:${c.url}`);
+    for (const c of data.contacts) if (usable(c.url) && /^https?:/i.test(c.url)) L.push(`X-SOCIALPROFILE;TYPE=${c.id}:${c.url}`);
     L.push(`PHOTO;ENCODING=b;TYPE=JPEG:${photo}`, 'END:VCARD');
     res[lang] = L.map(fold).join('\r\n') + '\r\n';
   }

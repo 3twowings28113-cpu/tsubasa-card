@@ -49,12 +49,12 @@
       "color": "#0054FF"
     },
     {
-      "id": "prairie",
-      "label": "Prairie Card",
-      "labelJa": "プレーリー",
-      "url": "https://my.prairie.cards/u/Tsubasayamashit",
-      "icon": "assets/icons/prairie.svg",
-      "color": "#2E7D5B"
+      "id": "email",
+      "label": "Email",
+      "labelJa": "メール",
+      "url": "mailto:3twowings28113@gmail.com",
+      "icon": "assets/icons/mail.svg",
+      "color": "#0A66C2"
     }
   ],
   "vcard": {
@@ -80,7 +80,7 @@
       "skip": "タップでスキップ",
       "langToggle": "EN",
       "saveContact": "連絡先に保存",
-      "saveContactSub": "電話帳に「今日会った日」も一緒に残ります",
+      "saveContactSub": "スマホの電話帳や名刺管理アプリに、そのまま登録できる形式（vCard）です",
       "saveCardImage": "名刺画像を保存",
       "tiltOn": "傾けると羽根が動きます（タップで有効化）",
       "tapCount": "あなたはこの名刺をひらいた {n} 人目のゲストです",
@@ -91,7 +91,8 @@
       "prev": "前へ",
       "builtWith": "Built with Claude × Genspark GenCode",
       "reducedMotion": "動きを控えめにしています",
-      "linkedinPost": "LinkedInの投稿を見る"
+      "linkedinPost": "LinkedInの投稿を見る",
+      "openPost": "投稿を開く"
     },
     "hero": {
       "eyebrow": "Nice to meet you!",
@@ -251,25 +252,29 @@
               "title": "Microsoftの拠点で、企業とAIを共同開発",
               "sub": "神戸のAI Co-Innovation Labで、シスメックスの課題に半年間",
               "badge": "修了",
-              "photo": "assets/photos/story-microsoft.webp"
+              "photo": "assets/photos/story-microsoft.webp",
+              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7425452840321507328"
             },
             {
               "date": "2025.10",
               "title": "万博の最終日に、決めたこと",
               "sub": "「人の心が動く場を、つくる側になりたい」",
-              "hot": true
+              "hot": true,
+              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7504310825449324544"
             },
             {
               "date": "2025.10",
               "title": "LinkedIn Student Club 関西に加入",
               "sub": "学生のキャリアコミュニティ。仲間の投票でMVP「集客賞」に",
               "badge": "MVP",
-              "photo": "assets/photos/story-lscw.webp"
+              "photo": "assets/photos/story-lscw.webp",
+              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7374715157618491392"
             },
             {
               "date": "2025.12",
               "title": "共創Labo 起業部のリーダーに",
-              "sub": "関西の学生団体160超と、企業45社以上をつなぐネットワーク"
+              "sub": "関西の学生団体160超と、企業45社以上をつなぐネットワーク",
+              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7495945793963728896"
             }
           ]
         },
@@ -280,19 +285,22 @@
             {
               "date": "2026.1",
               "title": "AI企業エクサウィザーズでインターン",
-              "sub": "新規事業部で、事業企画に半年間取り組む"
+              "sub": "新規事業部で、事業企画に半年間取り組む",
+              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7414870067806658560"
             },
             {
               "date": "2026.1",
               "title": "doda主催の全国ビジネスコンテスト",
               "sub": "空き家を五感のエンタメ施設に変える「REPLAY」で決勝へ",
               "badge": "ファイナリスト",
-              "photo": "assets/photos/story-doda.webp"
+              "photo": "assets/photos/story-doda.webp",
+              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7418606957630255104"
             },
             {
               "date": "2026.1",
               "title": "広島で水産実習、名古屋でボランティア",
-              "sub": "瀬戸内海のカキ養殖の現場へ／TechGALAの運営を手伝う"
+              "sub": "瀬戸内海のカキ養殖の現場へ／TechGALAの運営を手伝う",
+              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7420435357130809344"
             },
             {
               "date": "2026.3",
@@ -305,13 +313,15 @@
               "title": "東京のイベントで、LinkedIn日本代表に宣言",
               "sub": "「関西のLinkedInを、僕が一番盛り上げます」",
               "hot": true,
-              "photo": "assets/photos/story-linkedin-office.webp"
+              "photo": "assets/photos/story-linkedin-office.webp",
+              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7465547855634636800"
             },
             {
               "date": "2026.7",
               "title": "IVSの学生エリア「SPIKES」を企画・運営",
               "sub": "日本最大級のスタートアップの祭典で、プランナーとしてゼロから",
-              "photo": "assets/photos/story-ivs.webp"
+              "photo": "assets/photos/story-ivs.webp",
+              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7480388310255960065"
             }
           ]
         },
@@ -322,13 +332,15 @@
             {
               "date": "2026.7",
               "title": "東京の学生キャリアイベントを運営",
-              "sub": "LinkedIn Student Clubの夏のキャリアウィーク（日比谷）"
+              "sub": "LinkedIn Student Clubの夏のキャリアウィーク（日比谷）",
+              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7486852122790031361"
             },
             {
               "date": "2026.9",
               "title": "約800名の学生イベント「共創EXPO」を運営",
               "sub": "受付のQRチェックインとデジタル名刺のシステムを自作",
-              "photo": "assets/photos/story-kyoso-staff.webp"
+              "photo": "assets/photos/story-kyoso-staff.webp",
+              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7501317742336200705"
             },
             {
               "date": "2026.9",
@@ -336,20 +348,23 @@
               "sub": "AI未経験者が主役のハッカソンを、企画・司会・運営アプリ開発まで",
               "badge": "主催",
               "hot": true,
-              "photo": "assets/photos/story-kansai-hackathon.webp"
+              "photo": "assets/photos/story-kansai-hackathon.webp",
+              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7510264623133220864"
             },
             {
               "date": "2026.9",
               "title": "2回目のAIハッカソン「Origin Vol.2」",
               "sub": "ネットが切れても動く避難所向けAI「避難所カルテ」で企業賞",
               "badge": "IST賞",
-              "photo": "assets/photos/story-origin2-ist.webp"
+              "photo": "assets/photos/story-origin2-ist.webp",
+              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7511114582653030400"
             },
             {
               "date": "2026.9",
               "title": "大阪テラコヤの夢プレゼン",
               "sub": "社内の情報を外に出さない業務用AI「LocalBase AI」を発表",
-              "badge": "優勝"
+              "badge": "優勝",
+              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7511114582653030400"
             },
             {
               "date": "2026.10",
@@ -465,6 +480,20 @@
     "affiliations": {
       "title": "所属しているところ",
       "open": "開く"
+    },
+    "cardRequest": {
+      "eyebrow": "Made to order",
+      "title": "あなただけの電子名刺、つくります",
+      "body": "NFCカードをかざすだけで開く、オリジナルの電子名刺兼サイト。デザインや動き、連絡先の保存、自分で更新できる編集画面まで、話しながら一緒に形にします。",
+      "points": [
+        "NFCカード・QRコードで開く",
+        "タップで連絡先に保存",
+        "スマホから自分で更新できる編集画面",
+        "日本語・英語の切り替え"
+      ],
+      "cta": "作成を相談する",
+      "note": "学生・個人・団体、どなたでもお気軽にどうぞ",
+      "url": "mailto:3twowings28113@gmail.com?subject=%E9%9B%BB%E5%AD%90%E5%90%8D%E5%88%BA%E3%81%AE%E4%BD%9C%E6%88%90%E4%BE%9D%E9%A0%BC"
     }
   },
   "en": {
@@ -476,7 +505,7 @@
       "skip": "Tap to skip",
       "langToggle": "日本語",
       "saveContact": "Save contact",
-      "saveContactSub": "The day we met is saved with it",
+      "saveContactSub": "Saved as a vCard, so it goes straight into your contacts or card-management app",
       "saveCardImage": "Save card image",
       "tiltOn": "Tilt your phone to move the feathers (tap to enable)",
       "tapCount": "You are guest No. {n} to open this card",
@@ -487,7 +516,8 @@
       "prev": "Previous",
       "builtWith": "Built with Claude × Genspark GenCode",
       "reducedMotion": "Reduced motion is on",
-      "linkedinPost": "Read the LinkedIn post"
+      "linkedinPost": "Read the LinkedIn post",
+      "openPost": "Open post"
     },
     "hero": {
       "eyebrow": "Nice to meet you!",
@@ -861,6 +891,20 @@
     "affiliations": {
       "title": "Where I belong",
       "open": "Open"
+    },
+    "cardRequest": {
+      "eyebrow": "Made to order",
+      "title": "Want a card like this one?",
+      "body": "An original digital card and website that opens with a tap of an NFC card. From design and motion to contact saving and a page you can edit yourself, we shape it together.",
+      "points": [
+        "Opens from an NFC card or QR code",
+        "One tap to save contact details",
+        "Edit it yourself from your phone",
+        "Japanese / English switch"
+      ],
+      "cta": "Ask about a card",
+      "note": "Students, individuals and groups are all welcome",
+      "url": "mailto:3twowings28113@gmail.com?subject=Digital%20business%20card%20request"
     }
   },
   "affiliations": {
@@ -868,7 +912,7 @@
       {
         "id": "bds",
         "url": "https://www.kansai-u.ac.jp/bds/",
-        "logo": null,
+        "logo": "assets/orgs/bds.webp",
         "mono": "BDS",
         "since": "2025.4",
         "ja": {
@@ -912,8 +956,8 @@
       },
       {
         "id": "miraicraft",
-        "url": "",
-        "logo": null,
+        "url": "https://www.instagram.com/miraicraft_kandai/",
+        "logo": "assets/orgs/miraicraft.webp",
         "mono": "みらい",
         "since": "2026.4",
         "ja": {
@@ -923,21 +967,6 @@
         "en": {
           "name": "Mirai Craft",
           "role": "Founder (official student group of the BDS faculty)"
-        }
-      },
-      {
-        "id": "ra",
-        "url": "https://www.kansai-u.ac.jp/Kokusai/Dormitory/facility/dormitory05.php",
-        "logo": null,
-        "mono": "RA",
-        "since": "2025.9",
-        "ja": {
-          "name": "関西大学 国際学生寮 グローバルハウス",
-          "role": "レジデント・アシスタント（留学生の生活サポート）"
-        },
-        "en": {
-          "name": "Kansai University Global House (international dorm)",
-          "role": "Resident Assistant"
         }
       }
     ]

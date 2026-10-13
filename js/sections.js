@@ -76,8 +76,8 @@ function renderStory() {
         el('div', { class: 'entry__body' },
           el('h3', { class: 'entry__title' }, e.title, e.badge ? el('span', { class: 'entry__badge', text: e.badge }) : null),
           el('p', { class: 'entry__sub', text: e.sub }),
-          (e.photo || base.photo) ? el('img', { class: 'entry__photo', src: e.photo || base.photo, alt: '', loading: 'lazy', decoding: 'async' }) : null,
-          link ? el('a', { class: 'entry__link', href: link, target: '_blank', rel: 'noopener', text: t('ui.linkedinPost') }) : null));
+          storyPhoto(e.photo || base.photo, link, e.title),
+          link ? el('a', { class: 'entry__link', href: link, target: '_blank', rel: 'noopener' }, el('span', { class: 'entry__in', 'aria-hidden': 'true', text: 'in' }), t('ui.linkedinPost')) : null));
     });
     return el('div', { class: 'chapter', 'data-chapter': ci },
       el('div', { class: 'chapter__head' }, el('h3', { class: 'chapter__title', text: ch.title || ja[ci]?.title }), el('span', { class: 'chapter__span', text: ch.span || ja[ci]?.span })),
@@ -85,6 +85,28 @@ function renderStory() {
   });
   host.replaceChildren(...chapters);
   wireStory();
+}
+
+// Photos of entries that came from a LinkedIn post open that post when tapped.
+function storyPhoto(src, link, title) {
+  if (!src) return null;
+  const img = el('img', { class: 'entry__photo', src, alt: '', loading: 'lazy', decoding: 'async' });
+  if (!link) return img;
+  return el('a', { class: 'entry__shot', href: link, target: '_blank', rel: 'noopener', 'aria-label': `${title} — ${t('ui.linkedinPost')}` },
+    img, el('span', { class: 'entry__shot-tag', 'aria-hidden': 'true' }, el('span', { class: 'entry__in', text: 'in' }), t('ui.openPost')));
+}
+
+/* ---------- original card requests ---------- */
+function renderCardRequest() {
+  const host = document.querySelector('[data-card-request]');
+  const r = L().cardRequest;
+  if (!host) return;
+  host.hidden = !r;
+  if (!r) return;
+  host.querySelector('[data-cr-points]').replaceChildren(...(r.points || []).map((p) => el('li', { text: p })));
+  const cta = host.querySelector('[data-cr-cta]');
+  cta.href = r.url || '#';
+  cta.textContent = r.cta || '';
 }
 
 let storyTriggers = [];
@@ -228,6 +250,6 @@ function closeLightbox() {
 export function initSections() {
   audience = readAudience();
   initSlides();
-  const renderAll = () => { renderOrgs(); renderAudience(); renderPhilosophy(); renderStory(); renderNow(); renderSlides(); };
+  const renderAll = () => { renderOrgs(); renderAudience(); renderPhilosophy(); renderStory(); renderNow(); renderSlides(); renderCardRequest(); };
   onLang(renderAll);
 }
