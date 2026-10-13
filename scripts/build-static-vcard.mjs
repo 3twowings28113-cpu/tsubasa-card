@@ -23,7 +23,7 @@ for (const lang of ['ja', 'en']) {
   if (usable(v.email)) L.push(`EMAIL;TYPE=INTERNET:${v.email}`);
   if (usable(v.tel)) L.push(`TEL;TYPE=CELL:${v.tel}`);
   if (url) L.push(`URL:${url}`);
-  for (const c of site.contacts) if (usable(c.url)) L.push(`X-SOCIALPROFILE;TYPE=${c.id}:${c.url}`);
+  for (const c of site.contacts) if (usable(c.url) && /^https?:/i.test(c.url)) L.push(`X-SOCIALPROFILE;TYPE=${c.id}:${c.url}`);
   L.push(`PHOTO;ENCODING=b;TYPE=JPEG:${photo}`, 'END:VCARD');
   fs.writeFileSync(new URL(`contact/tsubasa-yamashita-${lang}.vcf`, root), L.map(fold).join('\r\n') + '\r\n');
 }

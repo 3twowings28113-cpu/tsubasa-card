@@ -48,7 +48,7 @@ export async function onRequestGet({ request, env }) {
   if (usable(v.email)) L.push(`EMAIL;TYPE=INTERNET:${v.email}`);
   if (usable(v.tel)) L.push(`TEL;TYPE=CELL:${v.tel}`);
   L.push(`URL:${url}`);
-  for (const c of site.contacts || []) if (usable(c.url)) L.push(`X-SOCIALPROFILE;TYPE=${c.id}:${c.url}`);
+  for (const c of site.contacts || []) if (usable(c.url) && /^https?:/i.test(c.url)) L.push(`X-SOCIALPROFILE;TYPE=${c.id}:${c.url}`);
   const note = lang === 'en'
     ? (event ? `We met at ${event} on ${jstDay()}. Tsubasa's card: ${url}` : `We met on ${jstDay()}. Tsubasa's card: ${url}`)
     : (event ? `${jstSlash()} ${event}で出会いました。山下翼の電子名刺：${url}` : `${jstSlash()} に出会いました。山下翼の電子名刺：${url}`);

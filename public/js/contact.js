@@ -32,7 +32,7 @@ export function clientVcard() {
   if (isUsable(v.email)) lines.push(`EMAIL;TYPE=INTERNET:${v.email}`);
   if (isUsable(v.tel)) lines.push(`TEL;TYPE=CELL:${v.tel}`);
   lines.push(`URL:${url}`);
-  for (const s of c.contacts) if (isUsable(s.url)) lines.push(`X-SOCIALPROFILE;TYPE=${s.id}:${s.url}`);
+  for (const s of c.contacts) if (isUsable(s.url) && /^https?:/i.test(s.url)) lines.push(`X-SOCIALPROFILE;TYPE=${s.id}:${s.url}`);
   lines.push(en ? `NOTE:We met on ${ymd}. Tsubasa's card: ${url}` : `NOTE;CHARSET=UTF-8:${ymd} に出会いました。山下翼の電子名刺：${url}`);
   lines.push('END:VCARD');
   const blob = new Blob([lines.join('\r\n') + '\r\n'], { type: 'text/vcard;charset=utf-8' });
@@ -67,7 +67,8 @@ export async function renderContacts() {
   const tiles = el('div', { class: 'tiles' });
   for (const c of others) {
     const label = getLang() === 'ja' && c.labelJa ? c.labelJa : c.label;
-    const a = el('a', { class: 'tile', href: c.url, target: '_blank', rel: 'noopener', 'data-contact': c.id });
+    const web = /^https?:/i.test(c.url);
+    const a = el('a', web ? { class: 'tile', href: c.url, target: '_blank', rel: 'noopener', 'data-contact': c.id } : { class: 'tile', href: c.url, 'data-contact': c.id });
     const ic = await icon(c.icon);
     ic.style.color = c.color;
     a.append(ic, el('span', { text: label }));
