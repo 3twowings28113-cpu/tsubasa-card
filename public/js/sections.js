@@ -96,6 +96,23 @@ function storyPhoto(src, link, title) {
     img, el('span', { class: 'entry__shot-tag', 'aria-hidden': 'true' }, el('span', { class: 'entry__in', text: 'in' }), t('ui.openPost')));
 }
 
+/* ---------- venture (StuVation) ---------- */
+function renderVenture() {
+  const host = document.querySelector('[data-venture]');
+  const v = getContent().venture;
+  const txt = L().venture;
+  if (!host) return;
+  host.hidden = !(v && txt);
+  if (host.hidden) return;
+  host.querySelector('[data-venture-facts]').replaceChildren(...(txt.facts || []).map((f) => el('li', { text: f })));
+  const frame = host.querySelector('[data-venture-frame]');
+  const deck = host.querySelector('.venture__deck');
+  deck.hidden = !v.deckEmbed;
+  if (v.deckEmbed && frame.getAttribute('src') !== v.deckEmbed) frame.setAttribute('src', v.deckEmbed);
+  const open = host.querySelector('[data-venture-open]');
+  open.href = v.deckUrl || v.deckEmbed || '#';
+}
+
 /* ---------- original card requests ---------- */
 function renderCardRequest() {
   const host = document.querySelector('[data-card-request]');
@@ -250,6 +267,6 @@ function closeLightbox() {
 export function initSections() {
   audience = readAudience();
   initSlides();
-  const renderAll = () => { renderOrgs(); renderAudience(); renderPhilosophy(); renderStory(); renderNow(); renderSlides(); renderCardRequest(); };
+  const renderAll = () => { renderOrgs(); renderAudience(); renderPhilosophy(); renderStory(); renderNow(); renderSlides(); renderCardRequest(); renderVenture(); };
   onLang(renderAll);
 }

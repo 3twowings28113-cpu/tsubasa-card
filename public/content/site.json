@@ -494,6 +494,20 @@
       "cta": "作成を相談する",
       "note": "学生・個人・団体、どなたでもお気軽にどうぞ",
       "url": "mailto:3twowings28113@gmail.com?subject=%E9%9B%BB%E5%AD%90%E5%90%8D%E5%88%BA%E3%81%AE%E4%BD%9C%E6%88%90%E4%BE%9D%E9%A0%BC"
+    },
+    "venture": {
+      "eyebrow": "Now building",
+      "title": "いま進めている事業",
+      "name": "StuVation",
+      "tagline": "学生の挑戦に、ものさしを。",
+      "body": "学生団体やイベント、名刺交換での出会いが、本人が一行も書かなくても記録として積み上がる仕組みです。自分で動いてきた学生が、ちゃんと評価される採用市場をつくります。",
+      "facts": [
+        "共創EXPO（約800人）の現場で稼働",
+        "学生・学生団体・企業が同じ電子名刺の上に",
+        "学生の利用は無料"
+      ],
+      "deckTitle": "事業紹介スライド",
+      "open": "全画面で見る"
     }
   },
   "en": {
@@ -905,6 +919,20 @@
       "cta": "Ask about a card",
       "note": "Students, individuals and groups are all welcome",
       "url": "mailto:3twowings28113@gmail.com?subject=Digital%20business%20card%20request"
+    },
+    "venture": {
+      "eyebrow": "Now building",
+      "title": "What I'm building",
+      "name": "StuVation",
+      "tagline": "A measuring stick for student challenges.",
+      "body": "Student groups, events and the people you meet through card exchanges build up into a record, without students writing a single line. The goal is a hiring market where students who take initiative are properly recognized.",
+      "facts": [
+        "Running at Kyoso EXPO (about 800 people)",
+        "Students, student groups and companies on one digital card system",
+        "Free for students"
+      ],
+      "deckTitle": "Pitch deck (Japanese)",
+      "open": "Open full screen"
     }
   },
   "affiliations": {
@@ -970,5 +998,9 @@
         }
       }
     ]
+  },
+  "venture": {
+    "deckEmbed": "https://drive.google.com/file/d/1Do7WWYOZn6pXxikIYtmXoHTfrsC2tI98/preview",
+    "deckUrl": "https://docs.google.com/presentation/d/1Do7WWYOZn6pXxikIYtmXoHTfrsC2tI98/edit?usp=sharing"
   }
 }
