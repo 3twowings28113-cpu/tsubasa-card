@@ -1,12 +1,13 @@
 import { loadContent, initialLang, setLang, getLang, t, onLang } from './i18n.js';
-import { api, visitorId, via } from './api.js?v=20251025e';
-import { whenContacts, initDock } from './contact.js?v=20251025e';
-import { initSections } from './sections.js?v=20251025e';
-import { initMotion } from './motion.js?v=20251025e';
-import { initWingWall } from './wingwall.js?v=20251025e';
-import { initAsk } from './ask.js?v=20251025e';
-import { runIntro } from './intro.js?v=20251025e';
-import { initFun } from './fun.js?v=20251025e';
+import { api, visitorId, via } from './api.js?v=20251025f';
+import { whenContacts, initDock } from './contact.js?v=20251025f';
+import { initSections } from './sections.js?v=20251025f';
+import { initMotion } from './motion.js?v=20251025f';
+import { initWingWall } from './wingwall.js?v=20251025f';
+import { initAsk } from './ask.js?v=20251025f';
+import { runIntro } from './intro.js?v=20251025f';
+import { initFun } from './fun.js?v=20251025f';
+import { gateIfNeeded } from './gate.js?v=20251025f';
 
 async function guestNumber() {
   const r = await api('/api/visit', { method: 'POST', body: { visitorId: visitorId(), via: via(), lang: getLang() } });
@@ -56,6 +57,7 @@ async function boot() {
   initFun();
   setLang(initialLang(), { persist: false });
   document.querySelectorAll('[data-lang-toggle]').forEach((b) => b.addEventListener('click', () => setLang(getLang() === 'ja' ? 'en' : 'ja')));
+  await gateIfNeeded();
   const introDone = Promise.resolve(runIntro({ contactsReady })).catch(() => {});
   // contacts are rendered by the onLang listener in contact.js; wait for the first render
   await whenContacts();

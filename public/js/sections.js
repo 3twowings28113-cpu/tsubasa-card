@@ -105,12 +105,8 @@ function renderVenture() {
   host.hidden = !(v && txt);
   if (host.hidden) return;
   host.querySelector('[data-venture-facts]').replaceChildren(...(txt.facts || []).map((f) => el('li', { text: f })));
-  const frame = host.querySelector('[data-venture-frame]');
-  const deck = host.querySelector('.venture__deck');
-  deck.hidden = !v.deckEmbed;
-  if (v.deckEmbed && frame.getAttribute('src') !== v.deckEmbed) frame.setAttribute('src', v.deckEmbed);
-  const open = host.querySelector('[data-venture-open]');
-  open.href = v.deckUrl || v.deckEmbed || '#';
+  const site = host.querySelector('[data-venture-site]');
+  if (site && v.siteUrl) site.href = v.siteUrl;
 }
 
 /* ---------- original card requests ---------- */
@@ -182,91 +178,18 @@ function renderNow() {
     el('span', { class: 'now__tag', text: n.tag }), el('h3', { class: 'now__title', text: n.title }), el('p', { class: 'now__body', text: n.body }))));
 }
 
-/* ---------- slides ---------- */
-let slideIndex = 0;
-function renderSlides() {
-  const items = L().slides.items;
-  const track = document.querySelector('[data-slides]');
-  track.replaceChildren(...items.map((s, i) => el('button', { class: 'slide', type: 'button', 'data-i': i, 'aria-label': s.alt, onclick: () => openLightbox(i) },
-    el('img', { src: s.src, alt: s.alt, loading: i === 0 ? 'eager' : 'lazy', decoding: 'async', width: 1600, height: 900 }))));
-  updateCount();
-}
-function updateCount() {
-  const n = L().slides.items.length;
-  document.querySelector('[data-slides-count]').textContent = `${slideIndex + 1} / ${n}`;
-}
-function goSlide(i) {
-  const track = document.querySelector('[data-slides]');
-  const n = L().slides.items.length;
-  slideIndex = (i + n) % n;
-  const target = track.children[slideIndex];
-  track.scrollTo({ left: target.offsetLeft - (track.clientWidth - target.clientWidth) / 2, behavior: reducedMotion() ? 'auto' : 'smooth' });
-  updateCount();
-}
-function initSlides() {
-  const track = document.querySelector('[data-slides]');
-  document.querySelector('[data-slides-prev]').addEventListener('click', () => goSlide(slideIndex - 1));
-  document.querySelector('[data-slides-next]').addEventListener('click', () => goSlide(slideIndex + 1));
-  let raf = 0;
-  track.addEventListener('scroll', () => {
-    cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(() => {
-      const center = track.scrollLeft + track.clientWidth / 2;
-      let best = 0, bestD = Infinity;
-      [...track.children].forEach((c, i) => {
-        const d = Math.abs(c.offsetLeft + c.clientWidth / 2 - center);
-        if (d < bestD) { bestD = d; best = i; }
-      });
-      slideIndex = best; updateCount();
-    });
-  }, { passive: true });
-  track.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') goSlide(slideIndex + 1);
-    if (e.key === 'ArrowLeft') goSlide(slideIndex - 1);
-  });
-  // lightbox
-  const box = document.querySelector('[data-lightbox]');
-  document.querySelector('[data-lightbox-close]').addEventListener('click', closeLightbox);
-  document.querySelector('[data-lightbox-prev]').addEventListener('click', () => showLightbox(lbIndex - 1));
-  document.querySelector('[data-lightbox-next]').addEventListener('click', () => showLightbox(lbIndex + 1));
-  box.addEventListener('click', (e) => { if (e.target === box) closeLightbox(); });
-  document.addEventListener('keydown', (e) => {
-    if (box.hidden) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowRight') showLightbox(lbIndex + 1);
-    if (e.key === 'ArrowLeft') showLightbox(lbIndex - 1);
-  });
-  let sx = 0;
-  box.addEventListener('touchstart', (e) => { sx = e.touches[0].clientX; }, { passive: true });
-  box.addEventListener('touchend', (e) => {
-    const dx = e.changedTouches[0].clientX - sx;
-    if (Math.abs(dx) > 40) showLightbox(lbIndex + (dx < 0 ? 1 : -1));
-  });
-}
-let lbIndex = 0, lastFocus = null;
-function showLightbox(i) {
-  const items = L().slides.items;
-  lbIndex = (i + items.length) % items.length;
-  const img = document.querySelector('[data-lightbox-img]');
-  img.src = items[lbIndex].src; img.alt = items[lbIndex].alt;
-}
-function openLightbox(i) {
-  lastFocus = document.activeElement;
-  showLightbox(i);
-  const box = document.querySelector('[data-lightbox]');
-  box.hidden = false;
-  document.body.style.overflow = 'hidden';
-  document.querySelector('[data-lightbox-close]').focus();
-}
-function closeLightbox() {
-  document.querySelector('[data-lightbox]').hidden = true;
-  document.body.style.overflow = '';
-  lastFocus?.focus();
-}
-
 export function initSections() {
   audience = readAudience();
-  initSlides();
-  const renderAll = () => { renderOrgs(); renderAudience(); renderPhilosophy(); renderStory(); renderNow(); renderSlides(); renderCardRequest(); renderVenture(); };
+  const renderAll = () => { renderOrgs(); renderAudience(); renderPhilosophy(); renderStory(); renderNow(); renderCardRequest(); renderVenture(); };
   onLang(renderAll);
 }
+
+/* ---------- gate hooks (used by gate.js) ---------- */
+export function savedAudience() { return readAudience(); }
+export function chooseAudience(id) {
+  audience = id;
+  try { localStorage.setItem('tc_for', id); } catch (e) { /* ignore */ }
+  document.querySelectorAll('[data-audience-chips] .chip').forEach((c) => c.setAttribute('aria-checked', String(c.dataset.for === id)));
+  renderHighlights(true);
+}
+export function currentAudience() { return audience; }
