@@ -53,8 +53,14 @@ function initFlip() {
 function initQr() {
   const modal = document.querySelector('[data-qr-modal]');
   if (!modal) return;
-  const open = () => { modal.hidden = false; document.body.style.overflow = 'hidden'; };
-  const close = () => { modal.hidden = true; document.body.style.overflow = ''; };
+  const img = modal.querySelector('.qr-modal__img');
+  const open = () => {
+    modal.hidden = false;
+    modal.style.display = 'flex';
+    if (img && !img.complete) { const s = img.src; img.src = ''; img.src = s; }
+    document.body.style.overflow = 'hidden';
+  };
+  const close = () => { modal.hidden = true; modal.style.display = ''; document.body.style.overflow = ''; };
   document.querySelector('[data-qr-btn]')?.addEventListener('click', open);
   modal.querySelector('[data-qr-close]')?.addEventListener('click', close);
   modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
