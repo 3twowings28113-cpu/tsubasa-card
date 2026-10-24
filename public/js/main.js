@@ -1,12 +1,12 @@
 import { loadContent, initialLang, setLang, getLang, t, onLang } from './i18n.js';
-import { api, visitorId, via } from './api.js';
-import { whenContacts, initDock } from './contact.js';
-import { initSections } from './sections.js';
-import { initMotion } from './motion.js';
-import { initWingWall } from './wingwall.js';
-import { initAsk } from './ask.js';
-import { runIntro } from './intro.js';
-import { initFun } from './fun.js';
+import { api, visitorId, via } from './api.js?v=20251025d';
+import { whenContacts, initDock } from './contact.js?v=20251025d';
+import { initSections } from './sections.js?v=20251025d';
+import { initMotion } from './motion.js?v=20251025d';
+import { initWingWall } from './wingwall.js?v=20251025d';
+import { initAsk } from './ask.js?v=20251025d';
+import { runIntro } from './intro.js?v=20251025d';
+import { initFun } from './fun.js?v=20251025d';
 
 async function guestNumber() {
   const r = await api('/api/visit', { method: 'POST', body: { visitorId: visitorId(), via: via(), lang: getLang() } });
