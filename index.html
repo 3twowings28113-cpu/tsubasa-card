@@ -38,16 +38,33 @@
 <main id="top">
   <section class="hero" aria-labelledby="hero-name">
     <p class="guest-pill" data-guest hidden></p>
-    <div class="namecard" data-namecard>
-      <div class="namecard__shine" aria-hidden="true"></div>
-      <div class="namecard__text">
-        <p class="namecard__hello" data-t="hero.eyebrow">Nice to meet you!</p>
-        <h1 class="namecard__name" id="hero-name" data-t="hero.name">山下 翼</h1>
-        <p class="namecard__kana" data-t="hero.nameKana">やました つばさ</p>
-        <p class="namecard__aff" data-t="hero.affiliation">関西大学 ビジネスデータサイエンス学部 1期生（29卒）</p>
+    <div class="namecard" data-namecard title="">
+      <div class="namecard__inner">
+        <div class="namecard__face namecard__front">
+          <div class="namecard__shine" aria-hidden="true"></div>
+          <div class="namecard__text">
+            <p class="namecard__hello" data-t="hero.eyebrow">Nice to meet you!</p>
+            <h1 class="namecard__name" id="hero-name" data-t="hero.name">山下 翼</h1>
+            <p class="namecard__kana" data-t="hero.nameKana">やました つばさ</p>
+            <p class="namecard__aff" data-t="hero.affiliation">関西大学 ビジネスデータサイエンス学部 1期生（29卒）</p>
+          </div>
+          <img class="namecard__photo" src="assets/photos/hero-wings.webp" alt="羽の壁の前でLinkedInのクッションを持つ山下翼" data-t-alt="hero.photoAlt" width="996" height="996">
+          <img class="namecard__mark" src="assets/brand/wing-mark.svg" alt="" width="40" height="40">
+        </div>
+        <div class="namecard__face namecard__back" aria-hidden="true">
+          <img class="namecard__wingart" src="assets/brand/wing-art.webp" alt="" width="1024" height="640">
+          <img class="namecard__qr" src="assets/brand/qr-site.png" alt="QR code" width="480" height="480">
+          <p class="namecard__backname" data-t="hero.name">山下 翼</p>
+          <p class="namecard__backurl">3twowings28113-cpu.github.io/tsubasa-card</p>
+          <p class="namecard__backhint" data-t="ui.flipBack">タップで表面に戻る</p>
+        </div>
       </div>
-      <img class="namecard__photo" src="assets/photos/hero-wings.webp" alt="羽の壁の前でLinkedInのクッションを持つ山下翼" data-t-alt="hero.photoAlt" width="996" height="996">
-      <img class="namecard__mark" src="assets/brand/wing-mark.svg" alt="" width="40" height="40">
+    </div>
+    <p class="card-hint" data-t="ui.cardHint">名刺をタップすると裏返って、QRコードが出ます</p>
+    <div class="card-actions">
+      <button class="chipbtn" type="button" data-flip-btn>🪶 <span data-t="ui.flip">裏返す</span></button>
+      <button class="chipbtn" type="button" data-qr-btn>🔳 <span data-t="ui.qrBig">QRを大きく見せる</span></button>
+      <button class="chipbtn" type="button" data-share-btn>🔗 <span data-t="ui.share">シェアする</span></button>
     </div>
     <p class="hero__statement" data-t="hero.statement">AI × データ × 開発 × BizDev
 学生をつなぐ場づくりまで、
@@ -176,6 +193,29 @@
   <p>© 2026 Tsubasa Yamashita</p>
   <button class="linkbtn" type="button" data-lang-toggle>EN</button>
 </footer>
+
+<div class="qr-modal" data-qr-modal hidden role="dialog" aria-modal="true" aria-label="QR code">
+  <button class="qr-modal__close iconbtn" type="button" data-qr-close aria-label="閉じる">×</button>
+  <img class="qr-modal__img" src="assets/brand/qr-site.png" alt="QR code" width="480" height="480">
+  <p class="qr-modal__name" data-t="hero.name">山下 翼</p>
+  <p class="qr-modal__url">3twowings28113-cpu.github.io/tsubasa-card</p>
+  <p class="qr-modal__hint" data-t="ui.cardHint">名刺をタップすると裏返って、QRコードが出ます</p>
+</div>
+
+<aside class="popup" data-popup hidden aria-label="Made to order">
+  <button class="popup__close" type="button" data-popup-close aria-label="閉じる">×</button>
+  <img class="popup__wing" src="assets/brand/wing-art.webp" alt="" width="1024" height="640">
+  <div class="popup__body">
+    <p class="hand popup__eyebrow" data-t="popup.eyebrow">Made to order</p>
+    <p class="popup__title" data-t="popup.title">あなたも、こんな電子名刺つくれます</p>
+    <p class="popup__text" data-t="popup.body"></p>
+    <div class="popup__actions">
+      <a class="btn btn--blue popup__cta" data-popup-cta href="https://ordermade-meishi.3twowings28113.workers.dev/" target="_blank" rel="noopener"><span data-t="popup.cta">公式サイトを見る</span> ↗</a>
+      <button class="linkbtn popup__dismiss" type="button" data-popup-dismiss><span data-t="popup.dismiss">あとで</span></button>
+    </div>
+  </div>
+</aside>
+<p class="toast" data-toast role="status" hidden></p>
 
 <div class="dock" data-dock aria-hidden="true"></div>
 <div class="lightbox" data-lightbox hidden>
