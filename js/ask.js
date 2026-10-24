@@ -1,6 +1,6 @@
 // "Ask Tsubasa AI": answers from the public knowledge file on the server.
 import { t, L, getLang, el, onLang, reducedMotion } from './i18n.js';
-import { api } from './api.js?v=20251025d';
+import { api } from './api.js?v=20251025e';
 
 const history = [];
 let busy = false;
