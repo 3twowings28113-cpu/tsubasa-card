@@ -55,6 +55,7 @@ function initQr() {
   if (!modal) return;
   const img = modal.querySelector('.qr-modal__img');
   const open = () => {
+    document.body.style.removeProperty('transform'); // a transformed body breaks fixed positioning
     modal.hidden = false;
     modal.style.display = 'flex';
     if (img && !img.complete) { const s = img.src; img.src = ''; img.src = s; }
