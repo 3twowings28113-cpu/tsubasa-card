@@ -18,12 +18,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@700;900&family=Noto+Sans+JP:wght@400;500;700&family=Caveat:wght@700&display=swap">
 <link rel="preload" as="image" href="assets/photos/hero-wings.webp">
-<link rel="stylesheet" href="css/main.css?v=20251025e">
+<link rel="stylesheet" href="css/main.css?v=20251025f">
 <script src="js/boot.js"></script>
 <script src="vendor/gsap.min.js" defer></script>
 <script src="vendor/ScrollTrigger.min.js" defer></script>
 <script src="vendor/Flip.min.js" defer></script>
-<script type="module" src="js/main.js?v=20251025e"></script>
+<script type="module" src="js/main.js?v=20251025f"></script>
 </head>
 <body>
 <a class="skip-link" href="#contact">連絡先へ移動</a>
@@ -65,7 +65,9 @@
       <button class="chipbtn" type="button" data-flip-btn>🪶 <span data-t="ui.flip">裏返す</span></button>
       <button class="chipbtn" type="button" data-qr-btn>🔳 <span data-t="ui.qrBig">QRを大きく見せる</span></button>
       <button class="chipbtn" type="button" data-share-btn>🔗 <span data-t="ui.share">シェアする</span></button>
+      <button class="chipbtn chipbtn--accent" type="button" data-exchange-btn>🤝 <span data-t="ui.exchange">名刺交換モード</span></button>
     </div>
+    <p class="hero__status"><span class="hero__status-dot" aria-hidden="true"></span><span data-t="hero.status"></span></p>
     <p class="hero__statement" data-t="hero.statement">AI × データ × 開発 × BizDev
 学生をつなぐ場づくりまで、
 全部やる学生です</p>
@@ -94,13 +96,11 @@
       <p class="venture__tagline" data-t="venture.tagline"></p>
       <p class="venture__body" data-t="venture.body"></p>
       <ul class="venture__facts" data-venture-facts></ul>
-      <div class="venture__deck">
-        <div class="venture__deck-head">
-          <span data-t="venture.deckTitle"></span>
-          <a class="venture__open" data-venture-open target="_blank" rel="noopener"><span data-t="venture.open"></span> ↗</a>
-        </div>
-        <div class="venture__frame"><iframe data-venture-frame title="StuVation" loading="lazy" allow="fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-      </div>
+      <a class="venture__site" data-venture-site href="https://stuvation.kyoso-labo.workers.dev" target="_blank" rel="noopener">
+        <span class="venture__site-mark" aria-hidden="true">StuVation</span>
+        <span class="venture__site-note" data-t="venture.siteNote"></span>
+        <span class="venture__site-cta"><span data-t="venture.siteCta"></span> <span aria-hidden="true">↗</span></span>
+      </a>
     </div>
   </section>
 
@@ -127,6 +127,19 @@
   <section class="now" aria-labelledby="now-title">
     <h2 class="h2" id="now-title" data-t="now.title"></h2>
     <ul class="now__list" data-now></ul>
+  </section>
+
+  <section class="fortune" aria-labelledby="fortune-title" data-fortune>
+    <p class="hand" data-t="fortune.title">今日の翼占い</p>
+    <button class="fortune__feather" type="button" data-fortune-btn aria-label="今日の翼占い">
+      <img src="assets/brand/feather.svg" alt="" width="72" height="40">
+      <span data-t="fortune.tap">羽根をタップ</span>
+    </button>
+    <div class="fortune__result" data-fortune-result hidden>
+      <p class="fortune__rank" data-fortune-rank></p>
+      <p class="fortune__text" data-fortune-text></p>
+      <p class="fortune__lucky" data-fortune-lucky></p>
+    </div>
   </section>
 
   <section class="wingwall" id="feathers" aria-labelledby="wingwall-title">
@@ -156,16 +169,6 @@
       <button class="btn btn--blue" type="submit" aria-label="送信">↑</button>
     </form>
     <p class="note" data-t="ai.disclaimer"></p>
-  </section>
-
-  <section class="slides" aria-labelledby="slides-title">
-    <h2 class="h2" id="slides-title" data-t="slides.title"></h2>
-    <div class="slides__track" data-slides tabindex="0"></div>
-    <div class="slides__nav">
-      <button class="iconbtn" type="button" data-slides-prev aria-label="前へ">‹</button>
-      <span class="slides__count" data-slides-count>1 / 8</span>
-      <button class="iconbtn" type="button" data-slides-next aria-label="次へ">›</button>
-    </div>
   </section>
 
   <section class="connect" aria-labelledby="connect-title">
@@ -218,12 +221,29 @@
 <p class="toast" data-toast role="status" hidden></p>
 
 <div class="dock" data-dock aria-hidden="true"></div>
-<div class="lightbox" data-lightbox hidden>
-  <button class="lightbox__close iconbtn" type="button" data-lightbox-close aria-label="閉じる">×</button>
-  <button class="lightbox__prev iconbtn" type="button" data-lightbox-prev aria-label="前へ">‹</button>
-  <img class="lightbox__img" data-lightbox-img alt="">
-  <button class="lightbox__next iconbtn" type="button" data-lightbox-next aria-label="次へ">›</button>
-</div>
 <script type="application/ld+json" id="ld-person">{"@context":"https://schema.org","@type":"Person","name":"山下 翼","alternateName":"Tsubasa Yamashita","affiliation":{"@type":"CollegeOrUniversity","name":"関西大学"},"sameAs":["https://www.linkedin.com/in/tsubasakansaiuniv/"]}</script>
+
+<div class="gate" data-gate hidden role="dialog" aria-modal="true" aria-labelledby="gate-q">
+  <div class="gate__sky" aria-hidden="true"></div>
+  <img class="gate__wing" src="assets/brand/wing-art.webp" alt="" aria-hidden="true">
+  <div class="gate__inner">
+    <img class="gate__mark" src="assets/brand/wing-mark.svg" alt="" width="52" height="52">
+    <p class="gate__title" data-t="gate.title">はじめまして、山下 翼です</p>
+    <p class="gate__q" id="gate-q" data-t="gate.question">あなたは、どちらですか？</p>
+    <div class="gate__options" data-gate-options></div>
+    <p class="gate__note" data-t="gate.note"></p>
+    <button class="linkbtn gate__skip" type="button" data-gate-skip><span data-t="gate.skip">あとで決める</span></button>
+  </div>
+</div>
+
+<div class="exchange" data-exchange hidden role="dialog" aria-modal="true" aria-label="Exchange mode">
+  <button class="exchange__close iconbtn" type="button" data-exchange-close aria-label="閉じる">×</button>
+  <p class="exchange__hello" data-t="hero.eyebrow">Nice to meet you!</p>
+  <p class="exchange__name" data-t="hero.name">山下 翼</p>
+  <p class="exchange__kana" data-t="hero.nameKana">やました つばさ</p>
+  <img class="exchange__qr" src="assets/brand/qr-site.png" alt="QR code" width="480" height="480">
+  <p class="exchange__hint" data-t="ui.exchangeHint"></p>
+  <p class="exchange__url">3twowings28113-cpu.github.io/tsubasa-card</p>
+</div>
 </body>
 </html>

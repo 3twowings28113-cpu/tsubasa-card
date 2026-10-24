@@ -98,7 +98,9 @@
       "qrBig": "QRを大きく見せる",
       "share": "シェアする",
       "copied": "リンクをコピーしました！",
-      "cardHint": "名刺をタップすると裏返って、QRコードが出ます"
+      "cardHint": "名刺をタップすると裏返って、QRコードが出ます",
+      "exchange": "名刺交換モード",
+      "exchangeHint": "相手に読み取ってもらってください"
     },
     "hero": {
       "eyebrow": "Nice to meet you!",
@@ -106,11 +108,25 @@
       "nameKana": "やました つばさ",
       "affiliation": "関西大学 ビジネスデータサイエンス学部 1期生（29卒）",
       "statement": "AI × データ × 開発 × BizDev\n学生をつなぐ場づくりまで、\n全部やる学生です",
-      "photoAlt": "羽の壁の前でLinkedInのクッションを持つ山下翼"
+      "photoAlt": "羽の壁の前でLinkedInのクッションを持つ山下翼",
+      "status": "11月22日、G-1 STARTUP GRAND PRIX 東京予選に登壇します"
     },
     "audiences": {
       "title": "あなたに合わせて、ご紹介します",
       "options": [
+        {
+          "id": "student",
+          "label": "学生",
+          "message": "やったことないことに、一緒に手を挙げよう。イベントもハッカソンも、いつでも誘ってください。",
+          "order": [
+            "kansai-hackathon",
+            "kyoso-labo",
+            "ivs",
+            "lsc-mvp",
+            "kyoso-expo"
+          ],
+          "desc": "イベント・ハッカソン・コミュニティのはなし"
+        },
         {
           "id": "engineer",
           "label": "エンジニア",
@@ -119,9 +135,9 @@
             "kansai-hackathon",
             "hackathon-awards",
             "microsoft",
-            "kyoso-system",
-            "localbase"
-          ]
+            "kyoso-system"
+          ],
+          "desc": "つくったもの・技術のはなし"
         },
         {
           "id": "hr",
@@ -133,31 +149,21 @@
             "kyoso-labo",
             "exawizards",
             "kansai-hackathon"
-          ]
+          ],
+          "desc": "学生との接点づくりのはなし"
         },
         {
           "id": "exec",
-          "label": "経営者",
-          "message": "生成AIの導入・社内研修の伴走をしています。現場の課題から一緒に考えます。",
+          "label": "社会人・経営者",
+          "message": "学生の挑戦が記録され、評価される仕組み「StuVation」を進めています。学生との接点づくりや共創の話、ぜひしましょう。",
           "order": [
-            "localbase",
-            "exawizards",
+            "kyoso-expo",
             "microsoft",
             "ivs",
-            "kyoso-expo"
-          ]
-        },
-        {
-          "id": "student",
-          "label": "学生",
-          "message": "やったことないことに、一緒に手を挙げよう。イベントもハッカソンも、いつでも誘ってください。",
-          "order": [
-            "kansai-hackathon",
-            "kyoso-labo",
-            "ivs",
-            "lsc-mvp",
-            "kyoso-expo"
-          ]
+            "exawizards",
+            "kyoso-labo"
+          ],
+          "desc": "事業と共創のはなし"
         }
       ]
     },
@@ -191,12 +197,6 @@
         "title": "約800名の「共創EXPO」を運営",
         "sub": "関西最大級の学生イベント",
         "photo": "assets/photos/story-kyoso-crowd.webp"
-      },
-      {
-        "id": "localbase",
-        "title": "LocalBase AI を開発中",
-        "sub": "社内の情報を外に出さない業務用AI。夢プレゼンで優勝",
-        "photo": null
       },
       {
         "id": "exawizards",
@@ -368,7 +368,7 @@
             {
               "date": "2026.9",
               "title": "大阪テラコヤの夢プレゼン",
-              "sub": "社内の情報を外に出さない業務用AI「LocalBase AI」を発表",
+              "sub": "業務用AIのアイデアを発表して優勝",
               "badge": "優勝",
               "link": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7511114582653030400"
             },
@@ -391,57 +391,14 @@
           "body": "学生の頑張りが、正当に評価される仕組みをつくる"
         },
         {
-          "tag": "開発中",
-          "title": "LocalBase AI",
-          "body": "社内の情報を外に出さずに使える、業務用AI"
-        },
-        {
-          "tag": "AI導入支援",
-          "title": "中小企業の現場へ",
-          "body": "学生起業家の仲間と、提案から開発まで"
+          "tag": "制作受付中",
+          "title": "オーダーメイド電子名刺",
+          "body": "NFCをかざすと開く電子名刺を制作しています。この名刺もそのひとつです"
         },
         {
           "tag": "準備中",
           "title": "学生目線の取材メディア",
           "body": "面白い大人と熱い学生を、取材して紹介する"
-        }
-      ]
-    },
-    "slides": {
-      "eyebrow": "Slides",
-      "title": "自己紹介スライド",
-      "items": [
-        {
-          "src": "assets/slides/slide-01.webp",
-          "alt": "表紙：山下翼、AI×データサイエンス×BizDev×開発、全部やる学生"
-        },
-        {
-          "src": "assets/slides/slide-02.webp",
-          "alt": "こんな人です：大学、コミュニティ、趣味など"
-        },
-        {
-          "src": "assets/slides/slide-03.webp",
-          "alt": "人生は予定外の出会いで面白くなる：計画的偶発性"
-        },
-        {
-          "src": "assets/slides/slide-04.webp",
-          "alt": "これまでの歩み1：2025年、まず飛び込んだ"
-        },
-        {
-          "src": "assets/slides/slide-05.webp",
-          "alt": "これまでの歩み2：2026年前半、外に出て挑んだ"
-        },
-        {
-          "src": "assets/slides/slide-06.webp",
-          "alt": "これまでの歩み3：2026年後半、場をつくる側へ"
-        },
-        {
-          "src": "assets/slides/slide-07.webp",
-          "alt": "いま本気で取り組んでいること"
-        },
-        {
-          "src": "assets/slides/slide-08.webp",
-          "alt": "こんなお話、待っています"
         }
       ]
     },
@@ -464,7 +421,7 @@
       "placeholder": "例：どんな活動をしてきたの？",
       "suggestions": [
         "どんな活動をしてきたの？",
-        "LocalBase AIって何？",
+        "StuVationって何？",
         "一緒にどんなことができる？",
         "大事にしている考え方は？"
       ],
@@ -512,8 +469,8 @@
         "学生・学生団体・企業が同じ電子名刺の上に",
         "学生の利用は無料"
       ],
-      "deckTitle": "事業紹介スライド",
-      "open": "全画面で見る"
+      "siteCta": "StuVationのサイトを見る",
+      "siteNote": "学生の活動実績を記録し、第三者が検証できるプラットフォーム"
     },
     "popup": {
       "eyebrow": "Made to order",
@@ -522,6 +479,58 @@
       "cta": "公式サイトを見る",
       "dismiss": "あとで",
       "url": "https://ordermade-meishi.3twowings28113.workers.dev/"
+    },
+    "gate": {
+      "title": "はじめまして、山下 翼です",
+      "question": "あなたは、どちらですか？",
+      "note": "選ぶと、あなたに合った順番でご紹介します",
+      "skip": "あとで決める"
+    },
+    "fortune": {
+      "title": "今日の翼占い",
+      "tap": "羽根をタップ",
+      "items": [
+        {
+          "rank": "大吉",
+          "text": "新しい出会いが翼を広げる日。気になる人には、こちらから声をかけて。",
+          "lucky": "青いシャツ"
+        },
+        {
+          "rank": "大吉",
+          "text": "思い切って手を挙げた先に、思わぬ景色が待っています。",
+          "lucky": "いつもと違う帰り道"
+        },
+        {
+          "rank": "中吉",
+          "text": "小さな約束を丁寧に守る日。それが次の大きな話につながります。",
+          "lucky": "手書きのメモ"
+        },
+        {
+          "rank": "中吉",
+          "text": "誰かの「やってみたい」を手伝うと、運が巡ってきます。",
+          "lucky": "温かい飲みもの"
+        },
+        {
+          "rank": "吉",
+          "text": "発信するなら今日。短くても、自分の言葉で。",
+          "lucky": "朝の散歩"
+        },
+        {
+          "rank": "吉",
+          "text": "予定外の寄り道に、今日いちばんの発見がありそうです。",
+          "lucky": "寄り道のカフェ"
+        },
+        {
+          "rank": "小吉",
+          "text": "焦らなくて大丈夫。羽根は一枚ずつ集まります。",
+          "lucky": "深呼吸3回"
+        },
+        {
+          "rank": "小吉",
+          "text": "昔のメモを見返すと、次の一手が見えてきます。",
+          "lucky": "古いノート"
+        }
+      ]
     }
   },
   "en": {
@@ -551,7 +560,9 @@
       "qrBig": "Show QR big",
       "share": "Share",
       "copied": "Link copied!",
-      "cardHint": "Tap the card to flip it over and see the QR code"
+      "cardHint": "Tap the card to flip it over and see the QR code",
+      "exchange": "Exchange mode",
+      "exchangeHint": "Let them scan this code"
     },
     "hero": {
       "eyebrow": "Nice to meet you!",
@@ -559,11 +570,25 @@
       "nameKana": "山下 翼",
       "affiliation": "Kansai University, Faculty of Business Data Science — first cohort (class of 2029)",
       "statement": "AI × Data × Dev × BizDev,\nplus bringing students together —\nI do it all.",
-      "photoAlt": "Tsubasa Yamashita holding a LinkedIn cushion in front of a wall of wings"
+      "photoAlt": "Tsubasa Yamashita holding a LinkedIn cushion in front of a wall of wings",
+      "status": "Pitching at the G-1 Startup Grand Prix Tokyo qualifier on Nov 22"
     },
     "audiences": {
       "title": "Let me introduce myself — for you",
       "options": [
+        {
+          "id": "student",
+          "label": "Student",
+          "message": "Let's raise our hands for things we've never tried. Invite me to anything!",
+          "order": [
+            "kansai-hackathon",
+            "kyoso-labo",
+            "ivs",
+            "lsc-mvp",
+            "kyoso-expo"
+          ],
+          "desc": "Events, hackathons and communities"
+        },
         {
           "id": "engineer",
           "label": "Engineer",
@@ -572,9 +597,9 @@
             "kansai-hackathon",
             "hackathon-awards",
             "microsoft",
-            "kyoso-system",
-            "localbase"
-          ]
+            "kyoso-system"
+          ],
+          "desc": "Things I build and the tech behind them"
         },
         {
           "id": "hr",
@@ -586,31 +611,21 @@
             "kyoso-labo",
             "exawizards",
             "kansai-hackathon"
-          ]
+          ],
+          "desc": "Designing how you meet students"
         },
         {
           "id": "exec",
-          "label": "Executive",
-          "message": "I help companies adopt generative AI and run in-house training — starting from real problems.",
+          "label": "Working professional",
+          "message": "I'm building StuVation, a platform that records and verifies what students actually do. Let's talk about meeting students and building together.",
           "order": [
-            "localbase",
-            "exawizards",
+            "kyoso-expo",
             "microsoft",
             "ivs",
-            "kyoso-expo"
-          ]
-        },
-        {
-          "id": "student",
-          "label": "Student",
-          "message": "Let's raise our hands for things we've never tried. Invite me to anything!",
-          "order": [
-            "kansai-hackathon",
-            "kyoso-labo",
-            "ivs",
-            "lsc-mvp",
-            "kyoso-expo"
-          ]
+            "exawizards",
+            "kyoso-labo"
+          ],
+          "desc": "The venture, and building together"
         }
       ]
     },
@@ -644,12 +659,6 @@
         "title": "Ran \"Kyoso EXPO\" for ~800 students",
         "sub": "One of the largest student events in Kansai",
         "photo": "assets/photos/story-kyoso-crowd.webp"
-      },
-      {
-        "id": "localbase",
-        "title": "Building LocalBase AI",
-        "sub": "A business AI that keeps company data inside. Won a dream-pitch contest",
-        "photo": null
       },
       {
         "id": "exawizards",
@@ -808,7 +817,7 @@
             {
               "date": "2026.9",
               "title": "Osaka Terakoya dream pitch",
-              "sub": "Pitched LocalBase AI, a business AI that keeps company data inside",
+              "sub": "Pitched a business-AI idea — and won",
               "badge": "Winner"
             },
             {
@@ -830,57 +839,14 @@
           "body": "Making sure students' hard work gets the recognition it deserves"
         },
         {
-          "tag": "In development",
-          "title": "LocalBase AI",
-          "body": "A business AI you can use without your data leaving the company"
-        },
-        {
-          "tag": "AI adoption",
-          "title": "Into small businesses",
-          "body": "With fellow student founders — from proposal to development"
+          "tag": "Taking orders",
+          "title": "Made-to-order digital cards",
+          "body": "NFC cards that open a personal site like this one — designed and built by me"
         },
         {
           "tag": "Coming soon",
           "title": "Student-eye interview media",
           "body": "Interviewing fascinating adults and passionate students"
-        }
-      ]
-    },
-    "slides": {
-      "eyebrow": "Slides",
-      "title": "Self-introduction slides (Japanese)",
-      "items": [
-        {
-          "src": "assets/slides/slide-01.webp",
-          "alt": "Cover: Tsubasa Yamashita"
-        },
-        {
-          "src": "assets/slides/slide-02.webp",
-          "alt": "About me"
-        },
-        {
-          "src": "assets/slides/slide-03.webp",
-          "alt": "Serendipity: planned happenstance"
-        },
-        {
-          "src": "assets/slides/slide-04.webp",
-          "alt": "My story 1: 2025"
-        },
-        {
-          "src": "assets/slides/slide-05.webp",
-          "alt": "My story 2: early 2026"
-        },
-        {
-          "src": "assets/slides/slide-06.webp",
-          "alt": "My story 3: late 2026"
-        },
-        {
-          "src": "assets/slides/slide-07.webp",
-          "alt": "What I'm working on now"
-        },
-        {
-          "src": "assets/slides/slide-08.webp",
-          "alt": "Let's connect"
         }
       ]
     },
@@ -903,7 +869,7 @@
       "placeholder": "e.g. What have you been working on?",
       "suggestions": [
         "What have you been working on?",
-        "What is LocalBase AI?",
+        "What is StuVation?",
         "What could we do together?",
         "What do you value most?"
       ],
@@ -951,8 +917,8 @@
         "Students, student groups and companies on one digital card system",
         "Free for students"
       ],
-      "deckTitle": "Pitch deck (Japanese)",
-      "open": "Open full screen"
+      "siteCta": "Visit the StuVation site",
+      "siteNote": "A platform that records student activities, verifiable by third parties"
     },
     "popup": {
       "eyebrow": "Made to order",
@@ -961,6 +927,58 @@
       "cta": "Visit the official site",
       "dismiss": "Later",
       "url": "https://ordermade-meishi.3twowings28113.workers.dev/"
+    },
+    "gate": {
+      "title": "Hi, I'm Tsubasa Yamashita",
+      "question": "Which best describes you?",
+      "note": "Pick one — I'll order the page for you",
+      "skip": "Decide later"
+    },
+    "fortune": {
+      "title": "Today's wing fortune",
+      "tap": "Tap the feather",
+      "items": [
+        {
+          "rank": "Great luck",
+          "text": "A new encounter spreads its wings today. Say hello first.",
+          "lucky": "A blue shirt"
+        },
+        {
+          "rank": "Great luck",
+          "text": "Raise your hand — an unexpected view is waiting.",
+          "lucky": "A different way home"
+        },
+        {
+          "rank": "Good luck",
+          "text": "Keep a small promise carefully; it leads to a bigger story.",
+          "lucky": "A handwritten note"
+        },
+        {
+          "rank": "Good luck",
+          "text": "Help someone's \"I want to try\" and luck circles back.",
+          "lucky": "A warm drink"
+        },
+        {
+          "rank": "Lucky",
+          "text": "Post something today — short is fine, in your own words.",
+          "lucky": "A morning walk"
+        },
+        {
+          "rank": "Lucky",
+          "text": "An unplanned detour holds today's best discovery.",
+          "lucky": "A side-street café"
+        },
+        {
+          "rank": "Small luck",
+          "text": "No rush. Feathers gather one by one.",
+          "lucky": "Three deep breaths"
+        },
+        {
+          "rank": "Small luck",
+          "text": "Reread an old note and the next move appears.",
+          "lucky": "An old notebook"
+        }
+      ]
     }
   },
   "affiliations": {
@@ -1028,7 +1046,6 @@
     ]
   },
   "venture": {
-    "deckEmbed": "https://drive.google.com/file/d/1Do7WWYOZn6pXxikIYtmXoHTfrsC2tI98/preview",
-    "deckUrl": "https://docs.google.com/presentation/d/1Do7WWYOZn6pXxikIYtmXoHTfrsC2tI98/edit?usp=sharing"
+    "siteUrl": "https://stuvation.kyoso-labo.workers.dev"
   }
 }
