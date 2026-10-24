@@ -111,7 +111,7 @@ main, .footer { position: relative; z-index: 1; }
   box-shadow: var(--shadow-lg); padding: 14px;
   transform: rotateY(180deg); backface-visibility: hidden; -webkit-backface-visibility: hidden;
 }
-.namecard__wingart { position: absolute; right: -30px; top: -24px; width: 210px; opacity: .28; mix-blend-mode: multiply; pointer-events: none; }
+.namecard__wingart { position: absolute; right: 4px; top: 4px; width: 180px; opacity: .22; mix-blend-mode: multiply; pointer-events: none; }
 .namecard__qr { position: relative; width: min(34vw, 132px); height: auto; border-radius: 10px; }
 .namecard__backname { position: relative; font-family: var(--f-head); font-weight: 900; font-size: 20px; margin-top: 6px; }
 .namecard__backurl { position: relative; font-size: 11px; color: var(--muted); letter-spacing: .02em; }
@@ -410,9 +410,10 @@ a.org:hover { border-color: var(--rail); }
 .intro__card .namecard__inner { transition: none; }
 
 /* ---------- QR modal ---------- */
-.qr-modal { position: fixed; inset: 0; z-index: 280; background: rgba(246, 250, 255, .97); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 24px; }
-.qr-modal__close { position: absolute; top: calc(14px + env(safe-area-inset-top, 0px)); right: 14px; }
-.qr-modal__img { width: min(78vw, 380px); height: auto; border-radius: 18px; box-shadow: var(--shadow-lg); }
+.qr-modal { position: fixed; inset: 0; z-index: 280; background: rgba(246, 250, 255, .98); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 24px; }
+.qr-modal[hidden] { display: none !important; }
+.qr-modal__close { position: absolute; top: calc(14px + env(safe-area-inset-top, 0px)); right: 14px; z-index: 2; }
+.qr-modal__img { width: min(78vw, 380px); height: auto; aspect-ratio: 1; background: #fff; border: 6px solid #fff; border-radius: 18px; box-shadow: var(--shadow-lg); }
 .qr-modal__name { font-family: var(--f-head); font-weight: 900; font-size: 26px; margin-top: 14px; }
 .qr-modal__url { font-size: 13px; color: var(--muted); }
 .qr-modal__hint { font-size: 12px; color: var(--blue); font-weight: 700; }
