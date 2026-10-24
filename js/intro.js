@@ -125,13 +125,17 @@ export async function runIntro({ contactsReady }) {
   /* overlay */
   const fx = el('canvas', { class: 'intro__fx' });
   const glow = el('div', { class: 'intro__glow' });
+  // Wing art: root (shoulder) sits at the image's bottom-left (~6% / ~90%).
+  // The left wing is the same box mirrored via an inner scaleX(-1), so its
+  // root lands at 94% — position and transform-origin account for that.
+  const WING = Math.min(vw * 1.55, 1050);
   const mkWing = (side) => {
-    const w = el('div', { class: `intro__artwing intro__artwing--${side}` },
-      el('img', { src: 'assets/brand/wing-art.webp', alt: '' }));
-    const size = Math.min(vw * 1.55, 1050);
-    w.style.width = `${size}px`;
-    w.style.left = `${cx}px`;
-    w.style.top = `${cy}px`;
+    const inner = el('div', { class: 'intro__artwing-in' }, el('img', { src: 'assets/brand/wing-art.webp', alt: '' }));
+    if (side === 'l') inner.style.transform = 'scaleX(-1)';
+    const w = el('div', { class: `intro__artwing intro__artwing--${side}` }, inner);
+    w.style.width = `${WING}px`;
+    w.style.left = `${cx - (side === 'r' ? 0.06 : 0.94) * WING}px`;
+    w.style.top = `${cy - 0.9 * WING}px`;
     return w;
   };
   const wr = mkWing('r'), wl = mkWing('l');
@@ -145,12 +149,12 @@ export async function runIntro({ contactsReady }) {
 
   const fxSys = featherImg ? particleSystem(fx, featherImg) : null;
 
-  // Right wing: art root is bottom-left -> pivot there. Left wing is mirrored.
-  gsap.set(wr, { xPercent: -4, yPercent: -88, transformOrigin: '6% 90%', rotation: 30, scale: 0.94, opacity: 0 });
-  gsap.set(wl, { xPercent: -96, yPercent: -88, transformOrigin: '94% 90%', rotation: -30, scaleX: -0.94, scaleY: 0.94, opacity: 0 });
+  gsap.set(wr, { transformOrigin: '6% 90%', rotation: 30, scale: 0.94, opacity: 0 });
+  gsap.set(wl, { transformOrigin: '94% 90%', rotation: -30, scale: 0.94, opacity: 0 });
   gsap.set(glow, { scale: 0.4, opacity: 0 });
   if (card) gsap.set(card, { yPercent: -50, transformPerspective: 1100, rotationY: -82, rotation: -7, scale: 0.55, opacity: 0 });
-  gsap.set(['.namecard__name', '.namecard__hello', '.namecard__kana', '.namecard__aff', '.hero__statement'], { opacity: 0 });
+  // hide only the real hero's text (main), never the intro card clone's
+  gsap.set(['main .namecard__name', 'main .namecard__hello', 'main .namecard__kana', 'main .namecard__aff', 'main .hero__statement'], { opacity: 0 });
 
   const S = full ? 1 : 0.55; // timeline speed factor
   const tl = gsap.timeline({ defaults: { overwrite: 'auto' } });
@@ -163,7 +167,7 @@ export async function runIntro({ contactsReady }) {
   // 2) THE TILT: both wings sweep up and outward, opening like a gate
   const tiltAt = 0.55 * S;
   tl.to(wr, { rotation: -17, scale: 1.04, duration: 0.85 * S, ease: 'power3.inOut' }, tiltAt)
-    .to(wl, { rotation: 17, scaleX: -1.04, scaleY: 1.04, duration: 0.85 * S, ease: 'power3.inOut' }, tiltAt)
+    .to(wl, { rotation: 17, scale: 1.04, duration: 0.85 * S, ease: 'power3.inOut' }, tiltAt)
     .to(glow, { scale: 1, opacity: 1, duration: 0.7 * S, ease: 'power2.out' }, tiltAt + 0.15 * S)
     .add(() => fxSys?.burst(full ? 22 : 10, { cx, cy, w: vw * 0.7, h: 120 }), tiltAt + 0.55 * S);
 
@@ -180,7 +184,9 @@ export async function runIntro({ contactsReady }) {
     .to(wl, { rotation: 26, duration: 0.22, ease: 'power2.in' }, flyAt)
     .add(() => {
       fxSys?.burst(full ? 36 : 14, { cx, cy: cy + 10, w: vw * 0.9, h: 160 });
-      gsap.fromTo(document.body, { y: 0 }, { y: 4, duration: 0.08, yoyo: true, repeat: 1, clearProps: 'transform' });
+      // shake the overlay, never <body>: a leftover transform on body would
+      // become the containing block for every position:fixed element (QR modal, popup, dock)
+      gsap.fromTo(overlay, { y: 0 }, { y: 4, duration: 0.08, yoyo: true, repeat: 1, clearProps: 'transform' });
     }, flyAt + 0.22)
     .to(wr, { x: vw * 0.22, y: -vh * 0.62, rotation: -34, opacity: 0, duration: 0.6, ease: 'power2.in' }, flyAt + 0.24)
     .to(wl, { x: -vw * 0.22, y: -vh * 0.62, rotation: 34, opacity: 0, duration: 0.6, ease: 'power2.in' }, flyAt + 0.24)
@@ -243,6 +249,7 @@ export async function runIntro({ contactsReady }) {
     fxSys?.stop();
     overlay.remove();
     document.body.style.overflow = '';
+    document.body.style.removeProperty('transform');
     removeSkip();
   }
 
