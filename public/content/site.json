@@ -92,7 +92,13 @@
       "builtWith": "Built with Claude × Genspark GenCode",
       "reducedMotion": "動きを控えめにしています",
       "linkedinPost": "LinkedInの投稿を見る",
-      "openPost": "投稿を開く"
+      "openPost": "投稿を開く",
+      "flip": "裏返す",
+      "flipBack": "タップで表面に戻る",
+      "qrBig": "QRを大きく見せる",
+      "share": "シェアする",
+      "copied": "リンクをコピーしました！",
+      "cardHint": "名刺をタップすると裏返って、QRコードが出ます"
     },
     "hero": {
       "eyebrow": "Nice to meet you!",
@@ -508,6 +514,14 @@
       ],
       "deckTitle": "事業紹介スライド",
       "open": "全画面で見る"
+    },
+    "popup": {
+      "eyebrow": "Made to order",
+      "title": "あなたも、こんな電子名刺つくれます",
+      "body": "NFCをかざすと翼が開く、この名刺みたいな電子名刺をオーダーメイドで作っています。まずは公式サイトで実例と料金をどうぞ。",
+      "cta": "公式サイトを見る",
+      "dismiss": "あとで",
+      "url": "https://ordermade-meishi.3twowings28113.workers.dev/"
     }
   },
   "en": {
@@ -531,7 +545,13 @@
       "builtWith": "Built with Claude × Genspark GenCode",
       "reducedMotion": "Reduced motion is on",
       "linkedinPost": "Read the LinkedIn post",
-      "openPost": "Open post"
+      "openPost": "Open post",
+      "flip": "Flip the card",
+      "flipBack": "Tap to flip back",
+      "qrBig": "Show QR big",
+      "share": "Share",
+      "copied": "Link copied!",
+      "cardHint": "Tap the card to flip it over and see the QR code"
     },
     "hero": {
       "eyebrow": "Nice to meet you!",
@@ -933,6 +953,14 @@
       ],
       "deckTitle": "Pitch deck (Japanese)",
       "open": "Open full screen"
+    },
+    "popup": {
+      "eyebrow": "Made to order",
+      "title": "You can have a card like this, too",
+      "body": "I make made-to-order digital business cards like this one — tap an NFC card and the wings open. See examples and prices on the official site.",
+      "cta": "Visit the official site",
+      "dismiss": "Later",
+      "url": "https://ordermade-meishi.3twowings28113.workers.dev/"
     }
   },
   "affiliations": {

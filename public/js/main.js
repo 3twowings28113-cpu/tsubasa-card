@@ -6,6 +6,7 @@ import { initMotion } from './motion.js';
 import { initWingWall } from './wingwall.js';
 import { initAsk } from './ask.js';
 import { runIntro } from './intro.js';
+import { initFun } from './fun.js';
 
 async function guestNumber() {
   const r = await api('/api/visit', { method: 'POST', body: { visitorId: visitorId(), via: via(), lang: getLang() } });
@@ -52,6 +53,7 @@ async function boot() {
   }
   initSections();
   initAsk();
+  initFun();
   setLang(initialLang(), { persist: false });
   document.querySelectorAll('[data-lang-toggle]').forEach((b) => b.addEventListener('click', () => setLang(getLang() === 'ja' ? 'en' : 'ja')));
   const introDone = Promise.resolve(runIntro({ contactsReady })).catch(() => {});
