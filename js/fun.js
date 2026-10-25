@@ -106,6 +106,15 @@ function initPopup() {
   popup.querySelector('[data-popup-close]')?.addEventListener('click', () => dismiss(7));
   popup.addEventListener('click', (e) => { if (e.target === popup) dismiss(7); });
   popup.querySelector('[data-popup-cta]')?.addEventListener('click', () => dismiss(30));
+  // route the CTA by the visitor's chosen audience: students land on the student page
+  const cta = popup.querySelector('[data-popup-cta]');
+  const routeCta = () => {
+    if (!cta) return;
+    const aud = localStorage.getItem('tc_for');
+    cta.href = 'https://ordermade-meishi.3twowings28113.workers.dev/try?aud=' + (aud === 'student' ? 'student' : 'general');
+  };
+  routeCta();
+  window.addEventListener('tc:audience', routeCta);
   const story = document.querySelector('.story');
   if (story && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); show(); } }, { threshold: 0.08 });
