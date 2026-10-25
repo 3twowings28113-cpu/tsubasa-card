@@ -18,12 +18,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@700;900&family=Noto+Sans+JP:wght@400;500;700&family=Caveat:wght@700&family=Shippori+Mincho+B1:wght@600;700;800&display=swap">
 <link rel="preload" as="image" href="assets/photos/hero-wings.webp">
-<link rel="stylesheet" href="css/main.css?v=20251026d">
+<link rel="stylesheet" href="css/main.css?v=20251026e">
 <script src="js/boot.js"></script>
 <script src="vendor/gsap.min.js" defer></script>
 <script src="vendor/ScrollTrigger.min.js" defer></script>
 <script src="vendor/Flip.min.js" defer></script>
-<script type="module" src="js/main.js?v=20251026d"></script>
+<script type="module" src="js/main.js?v=20251026e"></script>
 </head>
 <body>
 <a class="skip-link" href="#contact">連絡先へ移動</a>
@@ -73,7 +73,6 @@
     <p class="hero__statement" data-t="hero.statement">AI × データ × 開発 × BizDev
 学生をつなぐ場づくりまで、
 全部やる学生です</p>
-    <button class="tilt-chip" type="button" data-tilt-chip hidden></button>
   </section>
 
   <section class="contact" id="contact" aria-label="連絡先">
@@ -88,22 +87,6 @@
   <section class="orgs" aria-labelledby="orgs-title">
     <h2 class="h2" id="orgs-title" data-t="affiliations.title">所属しているところ</h2>
     <ul class="orgs__list" data-orgs></ul>
-  </section>
-
-  <section class="venture" aria-labelledby="venture-title" data-venture>
-    <p class="hand" data-t="venture.eyebrow">Now building</p>
-    <h2 class="h2" id="venture-title" data-t="venture.title"></h2>
-    <div class="venture__card">
-      <p class="venture__name" data-t="venture.name">StuVation</p>
-      <p class="venture__tagline" data-t="venture.tagline"></p>
-      <p class="venture__body" data-t="venture.body"></p>
-      <ul class="venture__facts" data-venture-facts></ul>
-      <a class="venture__site" data-venture-site href="https://stuvation.kyoso-labo.workers.dev" target="_blank" rel="noopener">
-        <span class="venture__site-mark" aria-hidden="true">StuVation</span>
-        <span class="venture__site-note" data-t="venture.siteNote"></span>
-        <span class="venture__site-cta"><span data-t="venture.siteCta"></span> <span aria-hidden="true">↗</span></span>
-      </a>
-    </div>
   </section>
 
   <section class="audience" aria-labelledby="audience-title">
@@ -209,16 +192,14 @@
   <p class="qr-modal__hint" data-t="ui.cardHint">名刺をタップすると裏返って、QRコードが出ます</p>
 </div>
 
-<aside class="popup" data-popup hidden aria-label="Made to order">
-  <button class="popup__close" type="button" data-popup-close aria-label="閉じる">×</button>
-  <img class="popup__wing" src="assets/brand/wing-art.webp" alt="" width="1024" height="640">
-  <div class="popup__body">
-    <p class="hand popup__eyebrow" data-t="popup.eyebrow">Made to order</p>
-    <p class="popup__title" data-t="popup.title">あなたも、こんな電子名刺つくれます</p>
-    <p class="popup__text" data-t="popup.body"></p>
-    <div class="popup__actions">
-      <a class="btn btn--blue popup__cta" data-popup-cta href="https://ordermade-meishi.3twowings28113.workers.dev/" target="_blank" rel="noopener"><span data-t="popup.cta">公式サイトを見る</span> ↗</a>
-      <button class="linkbtn popup__dismiss" type="button" data-popup-dismiss><span data-t="popup.dismiss">あとで</span></button>
+<aside class="popup" data-popup hidden aria-label="オーダーメイド電子名刺のご案内">
+  <div class="popup__card">
+    <button class="popup__close" type="button" data-popup-close aria-label="閉じる">×</button>
+    <img class="popup__img" src="assets/brand/wing-art.webp" alt="" width="640" height="360">
+    <div class="popup__body">
+      <p class="popup__title" data-t="popup.title">あなたも、こんな電子名刺つくれます</p>
+      <p class="popup__text" data-t="popup.text">翼が迎えにくる名刺、属性で変わる見せ方。オーダーメイドで、あなたの名刺も作れます。</p>
+      <a class="btn btn--primary" href="https://ordermade-meishi.3twowings28113.workers.dev/" target="_blank" rel="noopener" data-popup-cta><span data-t="popup.cta">自分の名刺を作ってみる</span></a>
     </div>
   </div>
 </aside>

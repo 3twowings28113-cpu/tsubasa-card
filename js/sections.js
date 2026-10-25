@@ -105,19 +105,6 @@ function storyPhoto(src, link, title) {
     img, el('span', { class: 'entry__shot-tag', 'aria-hidden': 'true' }, el('span', { class: 'entry__in', text: 'in' }), t('ui.openPost')));
 }
 
-/* ---------- venture (StuVation) ---------- */
-function renderVenture() {
-  const host = document.querySelector('[data-venture]');
-  const v = getContent().venture;
-  const txt = L().venture;
-  if (!host) return;
-  host.hidden = !(v && txt);
-  if (host.hidden) return;
-  host.querySelector('[data-venture-facts]').replaceChildren(...(txt.facts || []).map((f) => el('li', { text: f })));
-  const site = host.querySelector('[data-venture-site]');
-  if (site && v.siteUrl) site.href = v.siteUrl;
-}
-
 /* ---------- original card requests ---------- */
 function renderCardRequest() {
   const host = document.querySelector('[data-card-request]');
@@ -187,7 +174,7 @@ function renderWorks() {
   const host = document.querySelector('[data-works]');
   if (!host) return;
   host.replaceChildren(...(L().works?.items || []).map((w) => el('article', { class: 'work' },
-    el('span', { class: 'work__mono', 'aria-hidden': 'true', text: w.mono || (w.name || '?').slice(0, 1) }),
+    el('img', { class: 'work__icon', src: w.icon || '', alt: '', loading: 'lazy' }),
     el('div', { class: 'work__body' },
       el('h3', { class: 'work__name', text: w.name }),
       el('p', { class: 'work__desc', text: w.desc }),
@@ -196,7 +183,7 @@ function renderWorks() {
 
 export function initSections() {
   audience = readAudience();
-  const renderAll = () => { renderOrgs(); renderAudience(); renderPhilosophy(); renderStory(); renderWorks(); renderCardRequest(); renderVenture(); };
+  const renderAll = () => { renderOrgs(); renderAudience(); renderPhilosophy(); renderStory(); renderWorks(); renderCardRequest();  };
   onLang(renderAll);
 }
 
