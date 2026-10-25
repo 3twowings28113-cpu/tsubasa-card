@@ -16,14 +16,14 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@700;900&family=Noto+Sans+JP:wght@400;500;700&family=Caveat:wght@700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@700;900&family=Noto+Sans+JP:wght@400;500;700&family=Caveat:wght@700&family=Shippori+Mincho+B1:wght@600;700;800&display=swap">
 <link rel="preload" as="image" href="assets/photos/hero-wings.webp">
-<link rel="stylesheet" href="css/main.css?v=20251026a">
+<link rel="stylesheet" href="css/main.css?v=20251026b">
 <script src="js/boot.js"></script>
 <script src="vendor/gsap.min.js" defer></script>
 <script src="vendor/ScrollTrigger.min.js" defer></script>
 <script src="vendor/Flip.min.js" defer></script>
-<script type="module" src="js/main.js?v=20251026a"></script>
+<script type="module" src="js/main.js?v=20251026b"></script>
 </head>
 <body>
 <a class="skip-link" href="#contact">連絡先へ移動</a>
@@ -62,12 +62,14 @@
     </div>
     <p class="card-hint" data-t="ui.cardHint">名刺をタップすると裏返って、QRコードが出ます</p>
     <div class="card-actions">
-      <button class="chipbtn" type="button" data-flip-btn>🪶 <span data-t="ui.flip">裏返す</span></button>
-      <button class="chipbtn" type="button" data-qr-btn>🔳 <span data-t="ui.qrBig">QRを大きく見せる</span></button>
-      <button class="chipbtn" type="button" data-share-btn>🔗 <span data-t="ui.share">シェアする</span></button>
-      <button class="chipbtn chipbtn--accent" type="button" data-exchange-btn>🤝 <span data-t="ui.exchange">名刺交換モード</span></button>
+      <button class="chipbtn" type="button" data-flip-btn><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 3v4h-4"/></svg> <span data-t="ui.flip">裏返す</span></button>
+      <button class="chipbtn" type="button" data-qr-btn><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="4" height="4" rx="1"/><rect x="17" y="17" width="4" height="4" rx="1"/></svg> <span data-t="ui.qrBig">QRを大きく見せる</span></button>
+      <button class="chipbtn" type="button" data-share-btn><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="12" r="2.6"/><circle cx="17" cy="5.5" r="2.6"/><circle cx="17" cy="18.5" r="2.6"/><path d="M8.3 10.8 14.8 6.7M8.3 13.2l6.5 4.1"/></svg> <span data-t="ui.share">シェアする</span></button>
+      <button class="chipbtn chipbtn--accent" type="button" data-exchange-btn><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h13M13 4l4 4-4 4M20 16H7M11 12l-4 4 4 4"/></svg> <span data-t="ui.exchange">名刺交換モード</span></button>
     </div>
     <p class="hero__status"><span class="hero__status-dot" aria-hidden="true"></span><span data-t="hero.status"></span></p>
+    <p class="hero__foryou" data-foryou hidden></p>
+    <button class="hero__forbtn" type="button" data-gate-open></button>
     <p class="hero__statement" data-t="hero.statement">AI × データ × 開発 × BizDev
 学生をつなぐ場づくりまで、
 全部やる学生です</p>
@@ -108,6 +110,7 @@
     <h2 class="h2" id="audience-title" data-t="audiences.title"></h2>
     <div class="audience__chips" role="radiogroup" data-audience-chips></div>
     <p class="audience__message" data-audience-message aria-live="polite"></p>
+    <ul class="audience__points" data-audience-points></ul>
     <div class="highlights" data-highlights></div>
   </section>
 

@@ -2,7 +2,7 @@
 // hero card. The choice reorders the page and retunes the highlights; it is
 // remembered, and the chips further down can change it any time.
 import { L, el } from './i18n.js';
-import { savedAudience, chooseAudience } from './sections.js?v=20251026a';
+import { savedAudience, chooseAudience } from './sections.js?v=20251026b';
 
 /* Move sections around so the most relevant story comes first. */
 export function applyLayout(id) {
@@ -28,8 +28,34 @@ export function prepareAudience() {
   return saved;
 }
 
+function syncForYou(id) {
+  const line = document.querySelector('[data-foryou]');
+  const btn = document.querySelector('[data-gate-open]');
+  const data = L();
+  const opt = data.audiences.options.find((o) => o.id === id);
+  if (line) {
+    line.hidden = !opt;
+    line.textContent = opt ? opt.message : '';
+  }
+  if (btn) btn.textContent = opt
+    ? (data.gate.currentLabel || '').replace('{label}', opt.label)
+    : (data.gate.openLabel || '');
+}
+
+export function initGateUi() {
+  window.addEventListener('tc:audience', (e) => syncForYou(e.detail));
+  const saved = savedAudience();
+  if (saved) syncForYou(saved);
+  else syncForYou(null);
+  document.querySelector('[data-gate-open]')?.addEventListener('click', () => { showGateSheet().catch(() => {}); });
+}
+
 export function gateIfNeeded() {
   if (savedAudience()) return Promise.resolve();
+  return showGateSheet();
+}
+
+function showGateSheet() {
   const gate = document.querySelector('[data-gate]');
   if (!gate) return Promise.resolve();
   return new Promise((resolve) => {
