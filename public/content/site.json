@@ -100,7 +100,8 @@
       "copied": "リンクをコピーしました！",
       "cardHint": "名刺をタップすると裏返って、QRコードが出ます",
       "exchange": "名刺交換モード",
-      "exchangeHint": "相手に読み取ってもらってください"
+      "exchangeHint": "相手に読み取ってもらってください",
+      "pick": "あなたへのおすすめ"
     },
     "hero": {
       "eyebrow": "Nice to meet you!",
@@ -125,7 +126,12 @@
             "lsc-mvp",
             "kyoso-expo"
           ],
-          "desc": "イベント・ハッカソン・コミュニティのはなし"
+          "desc": "イベント・ハッカソン・コミュニティのはなし",
+          "points": [
+            "関西AIハッカソンを主催しています（参加・スタッフ歓迎）",
+            "共創Laboの学生イベント情報、いち早く届けます",
+            "「一緒に何かやりたい」の誘い、いつでも歓迎です"
+          ]
         },
         {
           "id": "engineer",
@@ -137,7 +143,12 @@
             "microsoft",
             "kyoso-system"
           ],
-          "desc": "つくったもの・技術のはなし"
+          "desc": "つくったもの・技術のはなし",
+          "points": [
+            "800名イベントの受付システムなど、運営ツールを自作しています",
+            "AIハッカソンでの開発・準優勝／企業賞の実績",
+            "プロトタイプ開発や技術の壁打ちができます"
+          ]
         },
         {
           "id": "hr",
@@ -150,7 +161,12 @@
             "exawizards",
             "kansai-hackathon"
           ],
-          "desc": "学生との接点づくりのはなし"
+          "desc": "学生との接点づくりのはなし",
+          "points": [
+            "関西の学生団体160超・企業45社以上とのネットワーク",
+            "学生イベントでの接点づくりの設計ができます",
+            "LinkedIn Student Club 関西 MVP「集客賞」受賞"
+          ]
         },
         {
           "id": "exec",
@@ -163,7 +179,12 @@
             "exawizards",
             "kyoso-labo"
           ],
-          "desc": "事業と共創のはなし"
+          "desc": "事業と共創のはなし",
+          "points": [
+            "学生の活動実績を記録・検証する「StuVation」を開発中",
+            "約800名の学生イベント「共創EXPO」の運営実績",
+            "学生との共創プロジェクトのご相談を承ります"
+          ]
         }
       ]
     },
@@ -376,6 +397,34 @@
               "date": "2026.10",
               "title": "関西設計管理研究会で登壇",
               "sub": "ダイキン工業の会場で、学生のキャリアについて講演"
+            },
+            {
+              "date": "2026.10",
+              "title": "学部祭「BDSF 2026」に、みらいクラフトで出展",
+              "sub": "団体として初めての出展。自作アプリの体験会などで、1日に300人以上が来場"
+            },
+            {
+              "date": "2026.10",
+              "title": "AWS Student Builder Group の Core Team Member に認定",
+              "sub": "学生がクラウドとAIを hands-on で学ぶコミュニティづくりに参加",
+              "badge": "認定"
+            },
+            {
+              "date": "2026.10",
+              "title": "G-1 STARTUP GRAND PRIX の書類選考を通過",
+              "sub": "StuVationで応募。11月22日の東京予選に登壇予定",
+              "badge": "書類選考通過"
+            },
+            {
+              "date": "2026.10",
+              "title": "FA1TH PROJECT の二次審査ピッチに登壇",
+              "sub": "StuVationの事業計画をプレゼン",
+              "hot": true
+            },
+            {
+              "date": "2026.10",
+              "title": "自作アプリ「投稿、つくったろか。」を公開",
+              "sub": "LinkedInの投稿づくりを助けるアプリ。イベント会場では45人がその場で投稿"
             }
           ]
         }
@@ -484,7 +533,9 @@
       "title": "はじめまして、山下 翼です",
       "question": "あなたは、どちらですか？",
       "note": "選ぶと、あなたに合った順番でご紹介します",
-      "skip": "あとで決める"
+      "skip": "あとで決める",
+      "openLabel": "あなた向けに表示を変える",
+      "currentLabel": "{label}向け表示中・切り替える"
     },
     "fortune": {
       "title": "今日の翼占い",
@@ -562,7 +613,8 @@
       "copied": "Link copied!",
       "cardHint": "Tap the card to flip it over and see the QR code",
       "exchange": "Exchange mode",
-      "exchangeHint": "Let them scan this code"
+      "exchangeHint": "Let them scan this code",
+      "pick": "Top pick for you"
     },
     "hero": {
       "eyebrow": "Nice to meet you!",
@@ -587,7 +639,12 @@
             "lsc-mvp",
             "kyoso-expo"
           ],
-          "desc": "Events, hackathons and communities"
+          "desc": "Events, hackathons and communities",
+          "points": [
+            "I host the Kansai AI Hackathon — join as a participant or crew",
+            "First to share Kyoso Labo student event news",
+            "Always up for building something together"
+          ]
         },
         {
           "id": "engineer",
@@ -599,7 +656,12 @@
             "microsoft",
             "kyoso-system"
           ],
-          "desc": "Things I build and the tech behind them"
+          "desc": "Things I build and the tech behind them",
+          "points": [
+            "I build my own ops tools — e.g. the check-in system for an 800-person event",
+            "Hackathon results: 2nd place and a corporate award",
+            "Happy to prototype and talk tech"
+          ]
         },
         {
           "id": "hr",
@@ -612,7 +674,12 @@
             "exawizards",
             "kansai-hackathon"
           ],
-          "desc": "Designing how you meet students"
+          "desc": "Designing how you meet students",
+          "points": [
+            "A network of 160+ student groups and 45+ companies in Kansai",
+            "I design how companies meet students at events",
+            "LinkedIn Student Club Kansai MVP (audience award)"
+          ]
         },
         {
           "id": "exec",
@@ -625,7 +692,12 @@
             "exawizards",
             "kyoso-labo"
           ],
-          "desc": "The venture, and building together"
+          "desc": "The venture, and building together",
+          "points": [
+            "Building StuVation — recording and verifying student achievements",
+            "Ran Kyoso EXPO, a student event of about 800 people",
+            "Open to co-creation projects with students"
+          ]
         }
       ]
     },
@@ -824,6 +896,34 @@
               "date": "2026.10",
               "title": "Spoke at the Kansai Design Management Study Group",
               "sub": "A talk on student careers, hosted at Daikin Industries"
+            },
+            {
+              "date": "2026.10",
+              "title": "Exhibited at the faculty festival \"BDSF 2026\" with Mirai Craft",
+              "sub": "The group's first booth — over 300 visitors in a day for our app demos"
+            },
+            {
+              "date": "2026.10",
+              "title": "Certified as an AWS Student Builder Group Core Team Member",
+              "sub": "Helping build a hands-on cloud & AI community for students",
+              "badge": "Certified"
+            },
+            {
+              "date": "2026.10",
+              "title": "Passed the document screening for the G-1 Startup Grand Prix",
+              "sub": "Applied with StuVation — pitching at the Tokyo qualifier on Nov 22",
+              "badge": "Screening passed"
+            },
+            {
+              "date": "2026.10",
+              "title": "Pitched at the FA1TH PROJECT second screening",
+              "sub": "Presented the StuVation business plan",
+              "hot": true
+            },
+            {
+              "date": "2026.10",
+              "title": "Released my app \"Toukou, Tsukuttaroka.\"",
+              "sub": "An app that helps anyone write LinkedIn posts — 45 people posted from the venue at an event"
             }
           ]
         }
@@ -932,7 +1032,9 @@
       "title": "Hi, I'm Tsubasa Yamashita",
       "question": "Which best describes you?",
       "note": "Pick one — I'll order the page for you",
-      "skip": "Decide later"
+      "skip": "Decide later",
+      "openLabel": "Personalize this page",
+      "currentLabel": "Showing the {label} view · switch"
     },
     "fortune": {
       "title": "Today's wing fortune",
@@ -998,6 +1100,22 @@
           "name": "Kansai University, Faculty of Business Data Science",
           "role": "First cohort (2nd year)",
           "desc": "A new faculty opened in 2025, blending business and data science"
+        }
+      },
+      {
+        "id": "ra",
+        "logo": null,
+        "mono": "RA",
+        "since": "2025.9",
+        "ja": {
+          "name": "関西大学 国際部",
+          "role": "レジデント・アシスタント（留学生支援）",
+          "desc": "国際寮「グローバルハウス」で留学生と一緒に暮らし、日々の生活をサポート"
+        },
+        "en": {
+          "name": "Kansai University — International Division",
+          "role": "Resident Assistant",
+          "desc": "Living at the Global House dormitory with international students, supporting their daily life"
         }
       },
       {

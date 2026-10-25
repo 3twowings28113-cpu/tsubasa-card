@@ -595,3 +595,47 @@ html[data-sky="night"] body { background: linear-gradient(180deg, #B9CFEF 0, #DC
 
 /* ---------- org description ---------- */
 .org__desc { font-size: 12.5px; color: var(--ink-2); line-height: 1.6; word-break: auto-phrase; }
+
+/* ---------- de-template design pass ---------- */
+:root {
+  --f-serif: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  --shadow: 0 8px 24px rgba(10, 102, 194, .09);
+  --shadow-lg: 0 18px 44px rgba(10, 102, 194, .14);
+}
+.h2, .gate__q, .serendipity__title, .fortune__rank { font-family: var(--f-serif); font-weight: 700; letter-spacing: .02em; }
+.venture__name { font-family: var(--f-serif); }
+.hand { color: var(--blue); }
+.gate__title { font-family: var(--f-serif); font-weight: 700; color: var(--ink); font-size: 21px; }
+.chipbtn { display: inline-flex; align-items: center; gap: 7px; }
+.chipbtn svg { flex: none; }
+
+/* ---------- hero for-you line + switch pill ---------- */
+.hero__foryou {
+  max-width: 520px; margin: 14px auto 0; padding: 0 6px;
+  font-size: 14px; line-height: 1.8; color: var(--ink-2); font-weight: 500;
+}
+.hero__forbtn {
+  display: inline-block; margin-top: 10px; padding: 6px 14px;
+  background: transparent; border: 1px solid var(--line); border-radius: 999px;
+  font: inherit; font-size: 12px; font-weight: 700; color: var(--blue); cursor: pointer;
+}
+.hero__forbtn:active { transform: scale(.97); }
+
+/* ---------- audience points + top-pick ---------- */
+.audience__points { list-style: none; margin: 14px auto 4px; max-width: 560px; display: grid; gap: 8px; text-align: left; }
+.audience__points li {
+  position: relative; padding: 10px 14px 10px 34px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  font-size: 13.5px; line-height: 1.65; box-shadow: var(--shadow-s);
+}
+.audience__points li::before {
+  content: ""; position: absolute; left: 13px; top: 50%; width: 9px; height: 9px;
+  transform: translateY(-50%) rotate(45deg); background: var(--accent); border-radius: 2px;
+}
+.hl { position: relative; }
+.hl--pick { border: 1.5px solid var(--accent) !important; }
+.hl__pick {
+  position: absolute; top: 10px; left: 10px; z-index: 2;
+  background: var(--accent); color: #fff; font-size: 11px; font-weight: 700;
+  padding: 4px 10px; border-radius: 999px; box-shadow: var(--shadow-s);
+}

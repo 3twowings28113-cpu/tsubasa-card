@@ -1,13 +1,13 @@
 import { loadContent, initialLang, setLang, getLang, t, onLang } from './i18n.js';
-import { api, visitorId, via } from './api.js?v=20251026a';
-import { whenContacts, initDock } from './contact.js?v=20251026a';
-import { initSections } from './sections.js?v=20251026a';
-import { initMotion } from './motion.js?v=20251026a';
-import { initWingWall } from './wingwall.js?v=20251026a';
-import { initAsk } from './ask.js?v=20251026a';
-import { runIntro } from './intro.js?v=20251026a';
-import { initFun } from './fun.js?v=20251026a';
-import { gateIfNeeded, prepareAudience } from './gate.js?v=20251026a';
+import { api, visitorId, via } from './api.js?v=20251026b';
+import { whenContacts, initDock } from './contact.js?v=20251026b';
+import { initSections } from './sections.js?v=20251026b';
+import { initMotion } from './motion.js?v=20251026b';
+import { initWingWall } from './wingwall.js?v=20251026b';
+import { initAsk } from './ask.js?v=20251026b';
+import { runIntro } from './intro.js?v=20251026b';
+import { initFun } from './fun.js?v=20251026b';
+import { gateIfNeeded, prepareAudience, initGateUi } from './gate.js?v=20251026b';
 
 async function guestNumber() {
   const r = await api('/api/visit', { method: 'POST', body: { visitorId: visitorId(), via: via(), lang: getLang() } });
@@ -58,6 +58,7 @@ async function boot() {
   setLang(initialLang(), { persist: false });
   document.querySelectorAll('[data-lang-toggle]').forEach((b) => b.addEventListener('click', () => setLang(getLang() === 'ja' ? 'en' : 'ja')));
   prepareAudience();
+  initGateUi();
   const introDone = Promise.resolve(runIntro({ contactsReady })).catch(() => {});
   // contacts are rendered by the onLang listener in contact.js; wait for the first render
   await whenContacts();
@@ -65,7 +66,8 @@ async function boot() {
   initDock();
   initWingWall();
   features().then(() => { if (window.__apiOk) guestNumber(); });
-  introDone.then(() => { initMotion(); gateIfNeeded().catch(() => {}); });
+  introDone.then(() => gateIfNeeded().catch(() => {}));
+  introDone.then(() => initMotion());
 }
 
 boot();

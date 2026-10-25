@@ -8,11 +8,12 @@ function readAudience() {
   try { return localStorage.getItem('tc_for'); } catch (e) { return null; }
 }
 
-function highlightCard(h) {
+function highlightCard(h, pick) {
   const media = h.photo
     ? el('img', { class: 'hl__img', src: h.photo, alt: '', loading: 'lazy', decoding: 'async' })
     : el('div', { class: 'hl__img--none' }, el('img', { src: 'assets/brand/wing-mark.svg', alt: '' }));
-  return el('article', { class: 'hl', 'data-id': h.id, 'data-flip-id': h.id }, media,
+  return el('article', { class: `hl${pick ? ' hl--pick' : ''}`, 'data-id': h.id, 'data-flip-id': h.id }, media,
+    pick ? el('span', { class: 'hl__pick', text: t('ui.pick') }) : null,
     el('div', { class: 'hl__body' }, el('h3', { text: h.title }), el('p', { text: h.sub })));
 }
 
@@ -23,11 +24,19 @@ function renderHighlights(animate) {
   const byId = Object.fromEntries(data.highlights.map((h) => [h.id, h]));
   const ids = opt.order.filter((id) => byId[id]);
   document.querySelector('[data-audience-message]').textContent = audience ? opt.message : '';
+  const pointsHost = document.querySelector('[data-audience-points]');
+  if (pointsHost) pointsHost.replaceChildren(...(audience && opt.points ? opt.points.map((p) => el('li', { text: p })) : []));
   const Flip = window.Flip;
   const canFlip = animate && Flip && window.gsap && !reducedMotion();
   const state = canFlip ? Flip.getState(host.querySelectorAll('.hl')) : null;
   const existing = animate ? new Map([...host.querySelectorAll('.hl')].map((n) => [n.dataset.id, n])) : new Map();
-  host.replaceChildren(...ids.map((id) => existing.get(id) || highlightCard(byId[id])));
+  host.replaceChildren(...ids.map((id, i) => {
+    const node = existing.get(id) || highlightCard(byId[id], !!audience && i === 0);
+    node.classList.toggle('hl--pick', !!audience && i === 0);
+    if (audience && i === 0 && !node.querySelector('.hl__pick')) node.append(el('span', { class: 'hl__pick', text: t('ui.pick') }));
+    if (!audience || i !== 0) node.querySelector('.hl__pick')?.remove();
+    return node;
+  }));
   host.scrollTo({ left: 0 });
   if (state) {
     Flip.from(state, {
@@ -190,6 +199,7 @@ export function savedAudience() { return readAudience(); }
 export function chooseAudience(id) {
   audience = id;
   try { localStorage.setItem('tc_for', id); } catch (e) { /* ignore */ }
+  window.dispatchEvent(new CustomEvent('tc:audience', { detail: id }));
   document.querySelectorAll('[data-audience-chips] .chip').forEach((c) => c.setAttribute('aria-checked', String(c.dataset.for === id)));
   renderHighlights(true);
 }
