@@ -2,7 +2,7 @@
 // hero card. The choice reorders the page and retunes the highlights; it is
 // remembered, and the chips further down can change it any time.
 import { L, el } from './i18n.js';
-import { savedAudience, chooseAudience } from './sections.js?v=20251026b';
+import { savedAudience, chooseAudience } from './sections.js?v=20251026c';
 
 /* Move sections around so the most relevant story comes first. */
 export function applyLayout(id) {

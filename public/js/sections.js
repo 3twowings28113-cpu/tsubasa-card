@@ -182,15 +182,21 @@ function renderOrgs() {
   }));
 }
 
-/* ---------- now ---------- */
-function renderNow() {
-  document.querySelector('[data-now]').replaceChildren(...L().now.items.map((n) => el('li', { class: 'now__item' },
-    el('span', { class: 'now__tag', text: n.tag }), el('h3', { class: 'now__title', text: n.title }), el('p', { class: 'now__body', text: n.body }))));
+/* ---------- works (things actually built) ---------- */
+function renderWorks() {
+  const host = document.querySelector('[data-works]');
+  if (!host) return;
+  host.replaceChildren(...(L().works?.items || []).map((w) => el('article', { class: 'work' },
+    el('span', { class: 'work__mono', 'aria-hidden': 'true', text: w.mono || (w.name || '?').slice(0, 1) }),
+    el('div', { class: 'work__body' },
+      el('h3', { class: 'work__name', text: w.name }),
+      el('p', { class: 'work__desc', text: w.desc }),
+      el('div', { class: 'work__links' }, ...(w.links || []).map((l) => el('a', { class: 'work__btn', href: l.url, target: '_blank', rel: 'noopener' }, l.label, el('span', { 'aria-hidden': 'true', text: ' ↗' }))))))));
 }
 
 export function initSections() {
   audience = readAudience();
-  const renderAll = () => { renderOrgs(); renderAudience(); renderPhilosophy(); renderStory(); renderNow(); renderCardRequest(); renderVenture(); };
+  const renderAll = () => { renderOrgs(); renderAudience(); renderPhilosophy(); renderStory(); renderWorks(); renderCardRequest(); renderVenture(); };
   onLang(renderAll);
 }
 
