@@ -83,50 +83,36 @@ function initShare() {
   });
 }
 
-/* ---------- ordermade popup ---------- */
-function popupHidden() {
-  try { return Date.now() < Number(localStorage.getItem(POPUP_HIDE_KEY) || 0); } catch (e) { return false; }
-}
-function hidePopupFor(days) {
-  try { localStorage.setItem(POPUP_HIDE_KEY, String(Date.now() + days * 864e5)); } catch (e) { /* ignore */ }
-}
-
+/* ---------- ordermade popup: center modal when the story comes into view ---------- */
 function initPopup() {
   const popup = document.querySelector('[data-popup]');
-  if (!popup || popupHidden()) return;
-  const cta = popup.querySelector('[data-popup-cta]');
-  const sync = () => {
-    const p = getContent()?.[getLang()]?.popup;
-    if (p && cta) cta.href = p.url;
-  };
-  sync(); onLang(sync);
-
+  if (!popup) return;
+  const hideUntil = Number(localStorage.getItem('tc_popup_hide_until') || 0);
+  if (Date.now() < hideUntil) return;
+  const card = popup.querySelector('.popup__card');
   let shown = false;
   const show = () => {
-    if (shown || popupHidden()) return;
-    shown = true;
+    if (shown) return; shown = true;
     popup.hidden = false;
-    if (window.gsap && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      window.gsap.fromTo(popup, { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: 'back.out(1.6)' });
-    }
-    cleanup();
+    document.body.style.overflow = 'hidden';
+    if (window.gsap && !matchMedia('(prefers-reduced-motion: reduce)').matches) window.gsap.fromTo(card, { scale: 0.92, opacity: 0, y: 14 }, { scale: 1, opacity: 1, y: 0, duration: 0.45, ease: 'back.out(1.6)' });
   };
-  const onScroll = () => {
-    const max = document.documentElement.scrollHeight - innerHeight;
-    if (max > 300 && scrollY / max > 0.45) show();
-  };
-  const timer = setTimeout(show, 30000);
-  const cleanup = () => { clearTimeout(timer); window.removeEventListener('scroll', onScroll); };
-  window.addEventListener('scroll', onScroll, { passive: true });
-
   const dismiss = (days) => {
-    hidePopupFor(days);
-    if (window.gsap) window.gsap.to(popup, { y: 90, opacity: 0, duration: 0.3, ease: 'power2.in', onComplete: () => { popup.hidden = true; } });
+    localStorage.setItem('tc_popup_hide_until', String(Date.now() + days * 864e5));
+    document.body.style.overflow = '';
+    if (window.gsap && !matchMedia('(prefers-reduced-motion: reduce)').matches) window.gsap.to(card, { scale: 0.94, opacity: 0, duration: 0.25, onComplete: () => { popup.hidden = true; } });
     else popup.hidden = true;
   };
   popup.querySelector('[data-popup-close]')?.addEventListener('click', () => dismiss(7));
-  popup.querySelector('[data-popup-dismiss]')?.addEventListener('click', () => dismiss(7));
-  cta?.addEventListener('click', () => hidePopupFor(30));
+  popup.addEventListener('click', (e) => { if (e.target === popup) dismiss(7); });
+  popup.querySelector('[data-popup-cta]')?.addEventListener('click', () => dismiss(30));
+  const story = document.querySelector('.story');
+  if (story && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); show(); } }, { threshold: 0.08 });
+    io.observe(story);
+  } else {
+    window.addEventListener('scroll', function onS() { if (scrollY > innerHeight * 1.5) { window.removeEventListener('scroll', onS); show(); } }, { passive: true });
+  }
 }
 
 /* ---------- sky changes with the time of day ---------- */

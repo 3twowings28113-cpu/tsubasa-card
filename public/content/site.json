@@ -171,7 +171,7 @@
         {
           "id": "exec",
           "label": "社会人・経営者",
-          "message": "学生の挑戦が記録され、評価される仕組み「StuVation」を進めています。学生との接点づくりや共創の話、ぜひしましょう。",
+          "message": "関西最大級の学生イベント「共創EXPO」の運営をしています。学生との接点づくりや共創の話、ぜひしましょう。",
           "order": [
             "kyoso-expo",
             "microsoft",
@@ -181,8 +181,8 @@
           ],
           "desc": "事業と共創のはなし",
           "points": [
-            "学生の活動実績を記録・検証する「StuVation」を開発中",
-            "約800名の学生イベント「共創EXPO」の運営実績",
+            "約800名が集まる学生イベント「共創EXPO」を企画から当日運営まで統括",
+            "学生団体160超・企業45社以上とのネットワーク",
             "学生との共創プロジェクトのご相談を承ります"
           ]
         }
@@ -396,18 +396,23 @@
             {
               "date": "2026.10",
               "title": "関西設計管理研究会で登壇",
-              "sub": "ダイキン工業の会場で、学生のキャリアについて講演"
+              "sub": "ダイキン工業の会場で、学生のキャリアについて講演",
+              "photo": "assets/photos/story-daikin2026.webp",
+              "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7518072254925201408"
             },
             {
               "date": "2026.10",
               "title": "学部祭「BDSF 2026」に、みらいクラフトで出展",
-              "sub": "団体として初めての出展。自作アプリの体験会などで、1日に300人以上が来場"
+              "sub": "団体として初めての出展。自作アプリの体験会などで、1日に300人以上が来場",
+              "photo": "assets/photos/story-bdsf2026.webp",
+              "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7512208849156657152"
             },
             {
               "date": "2026.10",
               "title": "AWS Student Builder Group の Core Team Member に認定",
               "sub": "学生がクラウドとAIを hands-on で学ぶコミュニティづくりに参加",
-              "badge": "認定"
+              "badge": "認定",
+              "link": "https://www.linkedin.com/feed/update/urn:li:share:7512937229539962880"
             },
             {
               "date": "2026.10",
@@ -424,7 +429,9 @@
             {
               "date": "2026.10",
               "title": "自作アプリ「投稿、つくったろか。」を公開",
-              "sub": "LinkedInの投稿づくりを助けるアプリ。イベント会場では45人がその場で投稿"
+              "sub": "LinkedInの投稿づくりを助けるアプリ。イベント会場では45人がその場で投稿",
+              "photo": "assets/photos/story-tsukuttaroka.webp",
+              "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7519114324808916992"
             }
           ]
         }
@@ -485,20 +492,6 @@
       "cta": "作成を相談する",
       "note": "学生・個人・団体、どなたでもお気軽にどうぞ",
       "url": "mailto:3twowings28113@gmail.com?subject=%E9%9B%BB%E5%AD%90%E5%90%8D%E5%88%BA%E3%81%AE%E4%BD%9C%E6%88%90%E4%BE%9D%E9%A0%BC"
-    },
-    "venture": {
-      "eyebrow": "Now building",
-      "title": "いま進めている事業",
-      "name": "StuVation",
-      "tagline": "学生の挑戦に、ものさしを。",
-      "body": "学生団体やイベント、名刺交換での出会いが、本人が一行も書かなくても記録として積み上がる仕組みです。自分で動いてきた学生が、ちゃんと評価される採用市場をつくります。",
-      "facts": [
-        "共創EXPO（約800人）の現場で稼働",
-        "学生・学生団体・企業が同じ電子名刺の上に",
-        "学生の利用は無料"
-      ],
-      "siteCta": "StuVationのサイトを見る",
-      "siteNote": "学生の活動実績を記録し、第三者が検証できるプラットフォーム"
     },
     "popup": {
       "eyebrow": "Made to order",
@@ -568,7 +561,6 @@
       "items": [
         {
           "id": "kaigi-notes",
-          "mono": "K",
           "name": "Kaigi Notes",
           "desc": "会議の字幕・チャットを記録して、AI要約や相談ができるブラウザ拡張機能。Meet / Zoom / Teams 対応",
           "links": [
@@ -580,11 +572,11 @@
               "label": "Edge版を入れる",
               "url": "https://microsoftedge.microsoft.com/addons/detail/hlidpdcmbbalkfmpodmbfdolplfmognk"
             }
-          ]
+          ],
+          "icon": "assets/works/kaigi-notes.png"
         },
         {
           "id": "koe-type",
-          "mono": "声",
           "name": "koe-type",
           "desc": "声で文字入力できる Windows アプリ。音声入力とクリップボード操作をひとつにしました",
           "links": [
@@ -592,11 +584,11 @@
               "label": "ダウンロード（Windows）",
               "url": "https://github.com/3twowings28113-cpu/koe-type/releases"
             }
-          ]
+          ],
+          "icon": "assets/works/koe-type.png"
         },
         {
           "id": "tsukuttaroka",
-          "mono": "投",
           "name": "投稿、つくったろか。",
           "desc": "LinkedIn の投稿文づくりを助ける Web アプリ。使うほど、自分の文章らしくなります",
           "links": [
@@ -604,7 +596,8 @@
               "label": "アプリを開く",
               "url": "https://tsukuttaroka.3twowings28113.workers.dev"
             }
-          ]
+          ],
+          "icon": "assets/works/tsukuttaroka.svg"
         }
       ]
     }
@@ -709,7 +702,7 @@
         {
           "id": "exec",
           "label": "Working professional",
-          "message": "I'm building StuVation, a platform that records and verifies what students actually do. Let's talk about meeting students and building together.",
+          "message": "I run Kyoso EXPO, one of Kansai's largest student events. Happy to talk about meeting students and building things together.",
           "order": [
             "kyoso-expo",
             "microsoft",
@@ -719,8 +712,8 @@
           ],
           "desc": "The venture, and building together",
           "points": [
-            "Building StuVation — recording and verifying student achievements",
-            "Ran Kyoso EXPO, a student event of about 800 people",
+            "Run Kyoso EXPO end to end — about 800 students at the venue",
+            "A network of 160+ student groups and 45+ companies",
             "Open to co-creation projects with students"
           ]
         }
@@ -920,18 +913,23 @@
             {
               "date": "2026.10",
               "title": "Spoke at the Kansai Design Management Study Group",
-              "sub": "A talk on student careers, hosted at Daikin Industries"
+              "sub": "A talk on student careers, hosted at Daikin Industries",
+              "photo": "assets/photos/story-daikin2026.webp",
+              "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7518072254925201408"
             },
             {
               "date": "2026.10",
               "title": "Exhibited at the faculty festival \"BDSF 2026\" with Mirai Craft",
-              "sub": "The group's first booth — over 300 visitors in a day for our app demos"
+              "sub": "The group's first booth — over 300 visitors in a day for our app demos",
+              "photo": "assets/photos/story-bdsf2026.webp",
+              "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7512208849156657152"
             },
             {
               "date": "2026.10",
               "title": "Certified as an AWS Student Builder Group Core Team Member",
               "sub": "Helping build a hands-on cloud & AI community for students",
-              "badge": "Certified"
+              "badge": "Certified",
+              "link": "https://www.linkedin.com/feed/update/urn:li:share:7512937229539962880"
             },
             {
               "date": "2026.10",
@@ -948,7 +946,9 @@
             {
               "date": "2026.10",
               "title": "Released my app \"Toukou, Tsukuttaroka.\"",
-              "sub": "An app that helps anyone write LinkedIn posts — 45 people posted from the venue at an event"
+              "sub": "An app that helps anyone write LinkedIn posts — 45 people posted from the venue at an event",
+              "photo": "assets/photos/story-tsukuttaroka.webp",
+              "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7519114324808916992"
             }
           ]
         }
@@ -1009,20 +1009,6 @@
       "cta": "Ask about a card",
       "note": "Students, individuals and groups are all welcome",
       "url": "mailto:3twowings28113@gmail.com?subject=Digital%20business%20card%20request"
-    },
-    "venture": {
-      "eyebrow": "Now building",
-      "title": "What I'm building",
-      "name": "StuVation",
-      "tagline": "A measuring stick for student challenges.",
-      "body": "Student groups, events and the people you meet through card exchanges build up into a record, without students writing a single line. The goal is a hiring market where students who take initiative are properly recognized.",
-      "facts": [
-        "Running at Kyoso EXPO (about 800 people)",
-        "Students, student groups and companies on one digital card system",
-        "Free for students"
-      ],
-      "siteCta": "Visit the StuVation site",
-      "siteNote": "A platform that records student activities, verifiable by third parties"
     },
     "popup": {
       "eyebrow": "Made to order",
@@ -1092,7 +1078,6 @@
       "items": [
         {
           "id": "kaigi-notes",
-          "mono": "K",
           "name": "Kaigi Notes",
           "desc": "A browser extension that records meeting captions and chat, with AI summaries and chat. Works with Meet, Zoom and Teams",
           "links": [
@@ -1104,11 +1089,11 @@
               "label": "Get it for Edge",
               "url": "https://microsoftedge.microsoft.com/addons/detail/hlidpdcmbbalkfmpodmbfdolplfmognk"
             }
-          ]
+          ],
+          "icon": "assets/works/kaigi-notes.png"
         },
         {
           "id": "koe-type",
-          "mono": "声",
           "name": "koe-type",
           "desc": "A Windows app for typing by voice — voice input and clipboard tools in one",
           "links": [
@@ -1116,11 +1101,11 @@
               "label": "Download (Windows)",
               "url": "https://github.com/3twowings28113-cpu/koe-type/releases"
             }
-          ]
+          ],
+          "icon": "assets/works/koe-type.png"
         },
         {
           "id": "tsukuttaroka",
-          "mono": "投",
           "name": "Toukou, Tsukuttaroka.",
           "desc": "A web app that helps you write LinkedIn posts — the more you use it, the more it sounds like you",
           "links": [
@@ -1128,7 +1113,8 @@
               "label": "Open the app",
               "url": "https://tsukuttaroka.3twowings28113.workers.dev"
             }
-          ]
+          ],
+          "icon": "assets/works/tsukuttaroka.svg"
         }
       ]
     }
@@ -1220,8 +1206,5 @@
         }
       }
     ]
-  },
-  "venture": {
-    "siteUrl": "https://stuvation.kyoso-labo.workers.dev"
   }
 }

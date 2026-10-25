@@ -29,19 +29,10 @@ function setupTiltInputs() {
     }, { passive: true });
   };
   if (typeof DOE.requestPermission === 'function') {
-    // iOS: needs a tap to ask for permission
-    const chip = document.querySelector('[data-tilt-chip]');
-    if (!chip) return;
-    const label = () => { chip.textContent = t('ui.tiltOn'); };
-    label(); onLang(label);
-    chip.hidden = false;
-    chip.addEventListener('click', async () => {
-      try {
-        const res = await DOE.requestPermission();
-        if (res === 'granted') listen();
-      } catch (e) { /* user declined */ }
-      chip.hidden = true;
-    });
+    // iOS only allows asking after a user gesture — use the first tap anywhere, no button
+    document.addEventListener('pointerdown', async () => {
+      try { if ((await DOE.requestPermission()) === 'granted') listen(); } catch (e) { /* declined */ }
+    }, { once: true });
   } else {
     listen();
   }
@@ -80,11 +71,11 @@ function startFeathers() {
   };
   resize();
   window.addEventListener('resize', resize);
-  let count = w < 760 ? 9 : 14;
+  let count = w < 760 ? 12 : 18;
   const spawn = (init) => ({
     x: Math.random() * w, y: init ? Math.random() * h : -40,
     z: 0.4 + Math.random() * 0.8, r: Math.random() * 6.28, vr: (Math.random() - 0.5) * 0.01,
-    seed: Math.random() * 100, s: 26 + Math.random() * 30,
+    seed: Math.random() * 100, s: 38 + Math.random() * 38,
   });
   let feathers = Array.from({ length: count }, () => spawn(true));
   let last = 0, slow = 0, running = true;
@@ -99,14 +90,14 @@ function startFeathers() {
     if (dt > 30) { slow++; if (slow > 40 && feathers.length > 4) { feathers.pop(); slow = 0; } } else slow = Math.max(0, slow - 1);
     ctx.clearRect(0, 0, w, h);
     if (img.complete && img.naturalWidth) {
-      const wind = tilt.x * 0.9;
+      const wind = Math.sin(now / 7000) * 0.35 + tilt.x * 0.9;
       for (const f of feathers) {
         f.y += (0.25 + f.z * 0.35) * dt / 16;
         f.x += (Math.sin((now / 1000) + f.seed) * 0.35 + wind * f.z) * dt / 16;
         f.r += f.vr * dt / 16 + wind * 0.002;
         if (f.y > h + 40 || f.x < -60 || f.x > w + 60) Object.assign(f, spawn(false), { x: Math.random() * w });
         ctx.save();
-        ctx.globalAlpha = 0.18 + f.z * 0.22;
+        ctx.globalAlpha = 0.4 + f.z * 0.35;
         ctx.translate(f.x + tilt.x * 12 * f.z, f.y + tilt.y * 8 * f.z);
         ctx.rotate(f.r);
         const s = f.s * f.z;
