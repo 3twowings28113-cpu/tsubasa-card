@@ -106,22 +106,28 @@ export async function runIntro({ contactsReady }) {
   const vw = innerWidth, vh = innerHeight;
   const cx = vw / 2, cy = vh * 0.46;
 
-  /* overlay — v4 "approach": ONE wing starts far away at the back-right,
-     flapping, and flies straight at the viewer. It grows until its feathers
-     fill the whole screen, gives one last big flap, then sweeps past the
-     camera and vanishes toward the back-left — revealing the hero card. */
+  /* overlay — v5 "the pair approaches": BOTH wings, far away at the back-right,
+     banking left and right as they flap straight at the viewer. They grow
+     until the feathers fill the screen, give one last flap, then sweep past
+     the camera to the back-left — revealing the hero card. */
   const fx = el('canvas', { class: 'intro__fx' });
   const glow = el('div', { class: 'intro__glow' });
-  const WING = Math.min(vw * 1.35, 1000);
-  const wingH = WING * (1280 / 1920);
-  const wing = el('div', { class: 'intro__artwing intro__artwing--r' },
-    el('div', { class: 'intro__artwing-in' }, el('img', { src: 'assets/brand/wing-art.webp', alt: '' })));
-  wing.style.width = `${WING}px`;
-  wing.style.left = `${vw * 0.72 - WING / 2}px`;
-  wing.style.top = `${vh * 0.30 - wingH / 2}px`;
+  const mkWing = (side) => {
+    const inner = el('div', { class: 'intro__artwing-in' }, el('img', { src: 'assets/brand/wing-art.webp', alt: '' }));
+    if (side === 'l') inner.style.transform = 'scaleX(-1)';
+    return el('div', { class: `intro__artwing intro__artwing--${side} intro__pairwing` }, inner);
+  };
+  const wingL = mkWing('l'), wingR = mkWing('r');
+  const pairIn = el('div', { class: 'intro__pair-in' }, wingL, wingR);
+  const pair = el('div', { class: 'intro__pair' }, pairIn);
+  const P = Math.min(vw * 1.55, 1050);
+  pair.style.width = `${P}px`;
+  pair.style.height = `${P * 0.35}px`;
+  pair.style.left = `${vw * 0.70 - P / 2}px`;
+  pair.style.top = `${vh * 0.32 - (P * 0.35) / 2}px`;
   const skip = el('p', { class: 'intro__skip', text: t('ui.skip') || 'タップでスキップ' });
   const sky = el('div', { class: 'intro__sky' });
-  const overlay = el('div', { class: 'intro', 'aria-hidden': 'true' }, sky, glow, wing, fx, skip);
+  const overlay = el('div', { class: 'intro', 'aria-hidden': 'true' }, sky, glow, pair, fx, skip);
   document.body.append(overlay);
   unboot();
   document.body.style.overflow = 'hidden';
@@ -129,56 +135,56 @@ export async function runIntro({ contactsReady }) {
   const fxSys = featherImg ? particleSystem(fx, featherImg) : null;
   const hero = document.querySelector('main .hero');
 
-  // distant start: small, back-right, slightly out of focus
-  gsap.set(wing, { transformOrigin: '50% 60%', scale: 0.14, x: vw * 0.16, y: -vh * 0.05, rotation: 6, opacity: 0, filter: 'blur(5px)' });
-  gsap.set(glow, { left: '72%', top: '30%', scale: 0.35, opacity: 0 });
+  // distant start: small pair, back-right, banked, slightly out of focus
+  gsap.set(pair, { transformOrigin: '50% 55%', scale: 0.16, x: vw * 0.10, y: -vh * 0.10, rotation: -6, opacity: 0, filter: 'blur(5px)' });
+  gsap.set(pairIn, { rotation: -5 });
+  gsap.set(wingL, { rotation: -7, transformOrigin: '96% 88%' });
+  gsap.set(wingR, { rotation: 7, transformOrigin: '4% 88%' });
+  gsap.set(glow, { left: '70%', top: '32%', scale: 0.4, opacity: 0 });
   if (hero) gsap.set(hero, { scale: 0.92, y: 20, transformOrigin: '50% 26%' });
-  // hide only the real hero's text (main)
   gsap.set(['main .namecard__name', 'main .namecard__hello', 'main .namecard__kana', 'main .namecard__aff', 'main .hero__statement'], { opacity: 0 });
 
-  const S = full ? 1 : 0.6; // timeline speed factor
+  const S = full ? 1 : 0.55;
   const tl = gsap.timeline({ defaults: { overwrite: 'auto' } });
 
-  // continuous flapping for the whole approach (killed at the exit)
-  const flap = gsap.to(wing, { rotation: -6, duration: 0.34 * S, ease: 'sine.inOut', yoyo: true, repeat: -1 });
-  const bob = gsap.to(wing, { y: '-=12', duration: 0.51 * S, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+  // flapping + banking sway + bob for the whole approach (killed at the exit)
+  const flapL = gsap.to(wingL, { rotation: -27, duration: 0.30 * S, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+  const flapR = gsap.to(wingR, { rotation: 27, duration: 0.30 * S, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+  const bank = gsap.to(pairIn, { rotation: 5, duration: 0.55 * S, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+  const bob = gsap.to(pairIn, { y: 9, duration: 0.45 * S, ease: 'sine.inOut', yoyo: true, repeat: -1 });
 
-  // 1) APPROACH: far back-right -> straight at the viewer, growing fast
-  const approachAt = 0.15 * S;
-  const approachDur = 2.4 * S;
-  tl.to(wing, { opacity: 1, duration: 0.4 * S, ease: 'power1.out' }, approachAt)
-    .to(glow, { opacity: 0.6, duration: 0.8 * S }, approachAt)
-    .to(wing, { scale: 1.05, x: -vw * 0.10, rotation: -3, filter: 'blur(0px)', duration: approachDur, ease: 'power1.in' }, approachAt);
+  // 1) APPROACH: far back-right -> at the viewer, banking the other way
+  const approachAt = 0.12 * S, approachDur = 1.7 * S;
+  tl.to(pair, { opacity: 1, duration: 0.3 * S, ease: 'power1.out' }, approachAt)
+    .to(glow, { opacity: 0.55, duration: 0.7 * S }, approachAt)
+    .to(pair, { scale: 0.98, x: vw * 0.01, y: vh * 0.03, rotation: 9, filter: 'blur(0px)', duration: approachDur, ease: 'power1.in' }, approachAt);
 
-  // 2) CLOSE-UP: one beat where the feathers fill the entire screen
+  // 2) CLOSE-UP: feathers fill the whole screen for one beat
   const macroAt = approachAt + approachDur;
   tl.add(() => fxSys?.burst(full ? 16 : 7, { cx, cy, w: vw * 0.9, h: 200 }), macroAt)
-    .to(wing, { scale: 3.1, x: -vw * 0.30, y: vh * 0.14, duration: 0.65 * S, ease: 'power2.in' }, macroAt)
-    .to(glow, { opacity: 0, scale: 1.6, duration: 0.6 * S }, macroAt);
+    .to(pair, { scale: 2.9, x: -vw * 0.08, y: vh * 0.07, rotation: 2, duration: 0.55 * S, ease: 'power2.in' }, macroAt)
+    .to(glow, { opacity: 0, scale: 1.6, duration: 0.5 * S }, macroAt);
 
-  // 3) THE LAST FLAP, then it sweeps past the camera to the back-left and is
-  //    gone — the sky fades and the hero card emerges toward the viewer
-  const exitAt = macroAt + 0.65 * S + 0.3 * S;
+  // 3) LAST FLAP -> past the camera to the back-left, sky fades, hero emerges
+  const exitAt = macroAt + 0.55 * S + 0.22 * S;
   tl.add(() => {
-      flap.kill(); bob.kill();
+      flapL.kill(); flapR.kill(); bank.kill(); bob.kill();
       fxSys?.burst(full ? 26 : 10, { cx, cy: cy - 40, w: vw * 0.95, h: 200 });
-      // shake the overlay, never <body>: a leftover transform on body would
-      // become the containing block for every position:fixed element (QR modal, popup, dock)
       gsap.fromTo(overlay, { y: 0 }, { y: 3, duration: 0.07, yoyo: true, repeat: 1, clearProps: 'transform' });
-      gsap.fromTo(wing, { rotation: -14 }, { rotation: 8, duration: 0.22 * S, ease: 'power2.out' }); // last big flap
+      gsap.to(wingL, { rotation: -40, duration: 0.16 * S, ease: 'power2.out' });
+      gsap.to(wingR, { rotation: 40, duration: 0.16 * S, ease: 'power2.out' });
     }, exitAt)
-    .to(wing, { x: -vw * 1.45, y: -vh * 0.34, rotation: -22, scale: 2.25, opacity: 0, duration: 0.9 * S, ease: 'power2.in', delay: 0.2 * S }, exitAt)
-    .to(sky, { opacity: 0, duration: 1.0 * S, ease: 'power1.inOut' }, exitAt + 0.3 * S)
+    .to(pair, { x: -vw * 1.35, y: -vh * 0.30, rotation: -16, scale: 2.35, opacity: 0, duration: 0.8 * S, ease: 'power2.in', delay: 0.14 * S }, exitAt)
+    .to(sky, { opacity: 0, duration: 0.95 * S, ease: 'power1.inOut' }, exitAt + 0.25 * S)
     .to(skip, { opacity: 0, duration: 0.25 }, exitAt)
-    .add(() => { overlay.style.pointerEvents = 'none'; document.body.style.overflow = ''; }, exitAt + 0.55 * S);
+    .add(() => { overlay.style.pointerEvents = 'none'; document.body.style.overflow = ''; }, exitAt + 0.5 * S);
   if (hero) {
-    tl.to(hero, { scale: 1, y: 0, duration: 1.4 * S, ease: 'power3.out', clearProps: 'transform' }, exitAt + 0.3 * S);
+    tl.to(hero, { scale: 1, y: 0, duration: 1.3 * S, ease: 'power3.out', clearProps: 'transform' }, exitAt + 0.25 * S);
   }
-  tl.add(() => revealHero(gsap), exitAt + 0.6 * S);
+  tl.add(() => revealHero(gsap), exitAt + 0.55 * S);
 
-  // feathers land on the contact buttons (full version only)
   let landingTargets = [];
-  const landAt = exitAt + 0.85 * S;
+  const landAt = exitAt + 0.8 * S;
   tl.add(() => land(), landAt);
   tl.add(() => finish(false), landAt + (full ? 1.15 : 0.6));
 
@@ -216,7 +222,7 @@ export async function runIntro({ contactsReady }) {
     finished = true;
     setTimeout(resolveDone, skipped ? 0 : 50);
     if (skipped) {
-      tl.kill(); flap.kill(); bob.kill();
+      tl.kill(); flapL.kill(); flapR.kill(); bank.kill(); bob.kill();
       gsap.killTweensOf(landingTargets);
       gsap.set(landingTargets, { clearProps: 'opacity,transform' });
       if (hero) gsap.set(hero, { clearProps: 'transform,opacity' });
