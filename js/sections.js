@@ -163,7 +163,8 @@ function renderOrgs() {
       : el('span', { class: 'org__logo org__logo--mono', 'aria-hidden': 'true', text: o.mono || (t.name || '?').slice(0, 2) });
     const body = el('span', { class: 'org__body' },
       el('span', { class: 'org__name', text: t.name || '' }),
-      el('span', { class: 'org__role', text: [t.role, o.since ? (lang === 'en' ? `since ${o.since}` : `${o.since}〜`) : ''].filter(Boolean).join(lang === 'en' ? ' · ' : '　') }));
+      el('span', { class: 'org__role', text: [t.role, o.since ? (lang === 'en' ? `since ${o.since}` : `${o.since}〜`) : ''].filter(Boolean).join(lang === 'en' ? ' · ' : '　') }),
+      t.desc ? el('span', { class: 'org__desc', text: t.desc }) : null);
     const usable = typeof o.url === 'string' && /^https?:\/\//.test(o.url);
     const inner = usable
       ? el('a', { class: 'org', href: o.url, target: '_blank', rel: 'noopener' }, mark, body, el('span', { class: 'org__go', 'aria-hidden': 'true', text: '↗' }))

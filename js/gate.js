@@ -1,8 +1,8 @@
-// First-visit gate: before the intro plays, ask who is visiting and arrange
-// the page for them (section order + tailored highlights). The choice is
-// remembered; the chips further down the page can change it any time.
+// Audience picker: shown as a sheet the moment the intro hands over to the
+// hero card. The choice reorders the page and retunes the highlights; it is
+// remembered, and the chips further down can change it any time.
 import { L, el } from './i18n.js';
-import { savedAudience, chooseAudience } from './sections.js?v=20251025f';
+import { savedAudience, chooseAudience } from './sections.js?v=20251026a';
 
 /* Move sections around so the most relevant story comes first. */
 export function applyLayout(id) {
@@ -12,21 +12,24 @@ export function applyLayout(id) {
   const contact = q('.contact'), orgs = q('.orgs'), venture = q('.venture'), audience = q('.audience');
   if (!contact || !orgs || !venture || !audience) return;
   if (id === 'exec' || id === 'hr') {
-    // venture (StuVation) right after the contacts
-    main.insertBefore(venture, orgs);
+    main.insertBefore(venture, orgs); // StuVation right after the contacts
   } else if (id === 'engineer') {
-    // highlights first, venture after
-    main.insertBefore(audience, venture);
+    main.insertBefore(audience, venture); // highlights first
   } else if (id === 'student') {
-    // highlights (events & community) right after the contacts
-    main.insertBefore(audience, orgs);
+    main.insertBefore(audience, orgs); // events & community up top
     main.insertBefore(venture, audience.nextSibling);
   }
 }
 
-export function gateIfNeeded() {
+/* At boot: a remembered choice only rearranges the page — no sheet. */
+export function prepareAudience() {
   const saved = savedAudience();
-  if (saved) { applyLayout(saved); return Promise.resolve(); }
+  if (saved) applyLayout(saved);
+  return saved;
+}
+
+export function gateIfNeeded() {
+  if (savedAudience()) return Promise.resolve();
   const gate = document.querySelector('[data-gate]');
   if (!gate) return Promise.resolve();
   return new Promise((resolve) => {
@@ -43,10 +46,10 @@ export function gateIfNeeded() {
         el('span', { class: 'gate__opt-desc', text: o.desc || '' })))));
     gate.hidden = false;
     document.body.style.overflow = 'hidden';
+    const sheet = gate.querySelector('.gate__sheet');
     if (window.gsap && !reduced) {
-      window.gsap.fromTo(gate.querySelector('.gate__inner'), { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', delay: 0.1 });
-      window.gsap.fromTo(host.children, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.09, delay: 0.35, clearProps: 'all' });
-      window.gsap.fromTo(gate.querySelector('.gate__wing'), { opacity: 0, x: 60 }, { opacity: 0.5, x: 0, duration: 1.4, ease: 'power2.out' });
+      window.gsap.fromTo(sheet, { y: '106%' }, { y: '0%', duration: 0.65, ease: 'power3.out', delay: 0.15 });
+      window.gsap.fromTo(host.children, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out', stagger: 0.07, delay: 0.45, clearProps: 'all' });
     }
     let closed = false;
     function done(id) {
@@ -55,7 +58,7 @@ export function gateIfNeeded() {
       if (id) { chooseAudience(id); applyLayout(id); }
       document.body.style.overflow = '';
       if (window.gsap && !reduced) {
-        window.gsap.to(gate, { opacity: 0, duration: 0.45, ease: 'power1.in', onComplete: () => { gate.hidden = true; gate.style.opacity = ''; resolve(); } });
+        window.gsap.to(sheet, { y: '106%', duration: 0.4, ease: 'power2.in', onComplete: () => { gate.hidden = true; resolve(); } });
       } else { gate.hidden = true; resolve(); }
     }
     gate.querySelector('[data-gate-skip]')?.addEventListener('click', () => done(null));

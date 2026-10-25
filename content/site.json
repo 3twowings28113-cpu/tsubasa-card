@@ -991,11 +991,13 @@
         "since": "2025.4",
         "ja": {
           "name": "関西大学 ビジネスデータサイエンス学部",
-          "role": "1期生（2年）"
+          "role": "1期生（2年）",
+          "desc": "2025年に開設した新しい学部。ビジネスとデータサイエンスを横断して学びます"
         },
         "en": {
           "name": "Kansai University, Faculty of Business Data Science",
-          "role": "First cohort (2nd year)"
+          "role": "First cohort (2nd year)",
+          "desc": "A new faculty opened in 2025, blending business and data science"
         }
       },
       {
@@ -1006,11 +1008,13 @@
         "since": "2025.10",
         "ja": {
           "name": "LinkedIn Student Club Japan",
-          "role": "関西チーム 4期生"
+          "role": "関西チーム 4期生",
+          "desc": "LinkedIn公式の学生コミュニティ。キャリアイベントの企画・運営をしています"
         },
         "en": {
           "name": "LinkedIn Student Club Japan",
-          "role": "Kansai team, 4th cohort"
+          "role": "Kansai team, 4th cohort",
+          "desc": "LinkedIn's official student community, running career events"
         }
       },
       {
@@ -1021,11 +1025,13 @@
         "since": "2025.11",
         "ja": {
           "name": "共創Labo",
-          "role": "起業部リーダー／渉外部"
+          "role": "起業部リーダー／渉外部",
+          "desc": "関西の学生団体160超と企業45社以上をつなぐ、共創コミュニティ"
         },
         "en": {
           "name": "Kyoso Labo",
-          "role": "Leader of the startup team / partnerships"
+          "role": "Leader of the startup team / partnerships",
+          "desc": "A Kansai co-creation community linking 160+ student groups and 45+ companies"
         }
       },
       {
@@ -1036,11 +1042,13 @@
         "since": "2026.4",
         "ja": {
           "name": "みらいクラフト",
-          "role": "創設者（BDS学部公認の学生団体）"
+          "role": "創設者（BDS学部公認の学生団体）",
+          "desc": "学生の「つくりたい」を形にする、ものづくりの学生団体"
         },
         "en": {
           "name": "Mirai Craft",
-          "role": "Founder (official student group of the BDS faculty)"
+          "role": "Founder (official student group of the BDS faculty)",
+          "desc": "A student group turning \"I want to make this\" into real things"
         }
       }
     ]
