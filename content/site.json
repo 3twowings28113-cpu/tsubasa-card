@@ -430,27 +430,6 @@
         }
       ]
     },
-    "now": {
-      "eyebrow": "Now",
-      "title": "いま、本気で取り組んでいること",
-      "items": [
-        {
-          "tag": "起業準備中",
-          "title": "StuVation",
-          "body": "学生の頑張りが、正当に評価される仕組みをつくる"
-        },
-        {
-          "tag": "制作受付中",
-          "title": "オーダーメイド電子名刺",
-          "body": "NFCをかざすと開く電子名刺を制作しています。この名刺もそのひとつです"
-        },
-        {
-          "tag": "準備中",
-          "title": "学生目線の取材メディア",
-          "body": "面白い大人と熱い学生を、取材して紹介する"
-        }
-      ]
-    },
     "feathers": {
       "eyebrow": "Wing of Encounters",
       "title": "出会いの羽根",
@@ -580,6 +559,52 @@
           "rank": "小吉",
           "text": "昔のメモを見返すと、次の一手が見えてきます。",
           "lucky": "古いノート"
+        }
+      ]
+    },
+    "works": {
+      "eyebrow": "Built & shipped",
+      "title": "つくったもの",
+      "items": [
+        {
+          "id": "kaigi-notes",
+          "mono": "K",
+          "name": "Kaigi Notes",
+          "desc": "会議の字幕・チャットを記録して、AI要約や相談ができるブラウザ拡張機能。Meet / Zoom / Teams 対応",
+          "links": [
+            {
+              "label": "Chrome版を入れる",
+              "url": "https://chromewebstore.google.com/detail/janbjmphjghfpfiblkmhjnkbcffofjnd"
+            },
+            {
+              "label": "Edge版を入れる",
+              "url": "https://microsoftedge.microsoft.com/addons/detail/hlidpdcmbbalkfmpodmbfdolplfmognk"
+            }
+          ]
+        },
+        {
+          "id": "koe-type",
+          "mono": "声",
+          "name": "koe-type",
+          "desc": "声で文字入力できる Windows アプリ。音声入力とクリップボード操作をひとつにしました",
+          "links": [
+            {
+              "label": "ダウンロード（Windows）",
+              "url": "https://github.com/3twowings28113-cpu/koe-type/releases"
+            }
+          ]
+        },
+        {
+          "id": "tsukuttaroka",
+          "mono": "投",
+          "name": "投稿、つくったろか。",
+          "desc": "LinkedIn の投稿文づくりを助ける Web アプリ。使うほど、自分の文章らしくなります",
+          "links": [
+            {
+              "label": "アプリを開く",
+              "url": "https://tsukuttaroka.3twowings28113.workers.dev"
+            }
+          ]
         }
       ]
     }
@@ -929,27 +954,6 @@
         }
       ]
     },
-    "now": {
-      "eyebrow": "Now",
-      "title": "What I'm all in on right now",
-      "items": [
-        {
-          "tag": "Startup in progress",
-          "title": "StuVation",
-          "body": "Making sure students' hard work gets the recognition it deserves"
-        },
-        {
-          "tag": "Taking orders",
-          "title": "Made-to-order digital cards",
-          "body": "NFC cards that open a personal site like this one — designed and built by me"
-        },
-        {
-          "tag": "Coming soon",
-          "title": "Student-eye interview media",
-          "body": "Interviewing fascinating adults and passionate students"
-        }
-      ]
-    },
     "feathers": {
       "eyebrow": "Wing of Encounters",
       "title": "Leave a feather",
@@ -1079,6 +1083,52 @@
           "rank": "Small luck",
           "text": "Reread an old note and the next move appears.",
           "lucky": "An old notebook"
+        }
+      ]
+    },
+    "works": {
+      "eyebrow": "Built & shipped",
+      "title": "Things I built",
+      "items": [
+        {
+          "id": "kaigi-notes",
+          "mono": "K",
+          "name": "Kaigi Notes",
+          "desc": "A browser extension that records meeting captions and chat, with AI summaries and chat. Works with Meet, Zoom and Teams",
+          "links": [
+            {
+              "label": "Get it for Chrome",
+              "url": "https://chromewebstore.google.com/detail/janbjmphjghfpfiblkmhjnkbcffofjnd"
+            },
+            {
+              "label": "Get it for Edge",
+              "url": "https://microsoftedge.microsoft.com/addons/detail/hlidpdcmbbalkfmpodmbfdolplfmognk"
+            }
+          ]
+        },
+        {
+          "id": "koe-type",
+          "mono": "声",
+          "name": "koe-type",
+          "desc": "A Windows app for typing by voice — voice input and clipboard tools in one",
+          "links": [
+            {
+              "label": "Download (Windows)",
+              "url": "https://github.com/3twowings28113-cpu/koe-type/releases"
+            }
+          ]
+        },
+        {
+          "id": "tsukuttaroka",
+          "mono": "投",
+          "name": "Toukou, Tsukuttaroka.",
+          "desc": "A web app that helps you write LinkedIn posts — the more you use it, the more it sounds like you",
+          "links": [
+            {
+              "label": "Open the app",
+              "url": "https://tsukuttaroka.3twowings28113.workers.dev"
+            }
+          ]
         }
       ]
     }
