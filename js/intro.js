@@ -181,7 +181,7 @@ export async function runIntro({ contactsReady }) {
   if (hero) {
     tl.to(hero, { scale: 1, y: 0, duration: 1.3 * S, ease: 'power3.out', clearProps: 'transform' }, exitAt + 0.25 * S);
   }
-  tl.add(() => revealHero(gsap), exitAt + 0.55 * S);
+  tl.add(() => { revealHero(gsap); window.dispatchEvent(new Event('tc:revealed')); }, exitAt + 0.55 * S);
 
   let landingTargets = [];
   const landAt = exitAt + 0.8 * S;
@@ -229,6 +229,7 @@ export async function runIntro({ contactsReady }) {
       document.querySelectorAll('.landing-feather').forEach((n) => n.remove());
       gsap.set(['.namecard__name', '.namecard__hello', '.namecard__kana', '.namecard__aff', '.hero__statement'], { clearProps: 'opacity,transform' });
       revealHero(gsap);
+      window.dispatchEvent(new Event('tc:revealed'));
     }
     fxSys?.stop();
     overlay.remove();
