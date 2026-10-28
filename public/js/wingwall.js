@@ -1,6 +1,6 @@
 // "Wing of Encounters": every approved feather someone leaves lights up one feather of this wing.
 import { t, getLang, el, onLang, reducedMotion } from './i18n.js';
-import { api, visitorId } from './api.js?v=20251026f';
+import { api, visitorId } from './api.js?v=20251026g';
 
 const PALETTE = ['#0A66C2', '#1F7AE0', '#4FA3FF', '#7FB8F5', '#FF8A3D', '#2E7DD1', '#9CC3EA', '#FFB27A'];
 const NS = 'http://www.w3.org/2000/svg';

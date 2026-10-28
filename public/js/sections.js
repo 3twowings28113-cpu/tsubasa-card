@@ -114,7 +114,10 @@ function renderCardRequest() {
   if (!r) return;
   host.querySelector('[data-cr-points]').replaceChildren(...(r.points || []).map((p) => el('li', { text: p })));
   const cta = host.querySelector('[data-cr-cta]');
-  cta.href = r.url || '#';
+  // land on the ordermade site, routed by the audience picked at the gate
+  const routeCr = (a) => { if (a) a.href = 'https://ordermade-meishi.3twowings28113.workers.dev/try?aud=' + (localStorage.getItem('tc_for') === 'student' ? 'student' : 'general'); };
+  routeCr(cta);
+  if (!renderCardRequest._w) { renderCardRequest._w = 1; window.addEventListener('tc:audience', () => routeCr(document.querySelector('[data-cr-cta]'))); }
   cta.textContent = r.cta || '';
 }
 
