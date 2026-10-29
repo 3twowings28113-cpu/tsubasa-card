@@ -1204,6 +1204,23 @@
           "role": "Founder (official student group of the BDS faculty)",
           "desc": "A student group turning \"I want to make this\" into real things"
         }
+      },
+      {
+        "id": "craft",
+        "url": "https://www.craftstadium.com/",
+        "logo": "assets/orgs/craft-stadium.webp",
+        "mono": "CS",
+        "since": "2026.10",
+        "ja": {
+          "name": "Craft Stadium",
+          "role": "メンバー",
+          "desc": "学生と企業が集うハッカソンのプラットフォーム。ハッカソンや開発イベントの運営に携わっています"
+        },
+        "en": {
+          "name": "Craft Stadium",
+          "role": "Member",
+          "desc": "A hackathon platform bringing students and companies together. I help run hackathons and development events"
+        }
       }
     ]
   }
