@@ -1223,5 +1223,36 @@
         }
       }
     ]
+  },
+  "expoPromo": {
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSdt4zNtEmO-ThgSHi8a3-q74wxdt330cpZIvjHciX-A14kaJQ/viewform",
+    "images": [
+      "assets/expo/expo1.webp",
+      "assets/expo/expo2.webp",
+      "assets/expo/expo3.webp",
+      "assets/expo/expo4.webp"
+    ],
+    "ja": {
+      "badge": "2027.1.17（日）TOKYO",
+      "title": "学生団体共創EXPO in TOKYO",
+      "desc": "関西で約800人が集まった学生団体のお祭りが、ついに東京へ。学生団体50団体・学生300人と企業15社が一堂に会する、年に一度の共創イベントです。",
+      "facts": [
+        "2027年1月17日（日）12:00〜18:45",
+        "Tokyo Innovation Base（有楽町）",
+        "参加無料"
+      ],
+      "cta": "申し込みはこちら"
+    },
+    "en": {
+      "badge": "SUN, JAN 17 2027 · TOKYO",
+      "title": "Kyoso EXPO in TOKYO",
+      "desc": "The student-group festival that drew about 800 people in Kansai is coming to Tokyo: 50 student groups, 300 students and 15 companies, all in one place for one day.",
+      "facts": [
+        "Sun, Jan 17 2027, 12:00–18:45",
+        "Tokyo Innovation Base (Yurakucho)",
+        "Free entry"
+      ],
+      "cta": "Apply here"
+    }
   }
 }
