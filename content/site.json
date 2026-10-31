@@ -1225,12 +1225,12 @@
     ]
   },
   "expoPromo": {
-    "url": "https://docs.google.com/forms/d/e/1FAIpQLSdt4zNtEmO-ThgSHi8a3-q74wxdt330cpZIvjHciX-A14kaJQ/viewform",
+    "url": "https://mirai-style.co.jp/expo/",
     "images": [
+      "assets/expo/expo-poster.webp",
+      "assets/expo/expo-wide.webp",
       "assets/expo/expo1.webp",
-      "assets/expo/expo2.webp",
-      "assets/expo/expo3.webp",
-      "assets/expo/expo4.webp"
+      "assets/expo/expo2.webp"
     ],
     "ja": {
       "badge": "2027.1.17（日）TOKYO",
@@ -1241,7 +1241,7 @@
         "Tokyo Innovation Base（有楽町）",
         "参加無料"
       ],
-      "cta": "申し込みはこちら"
+      "cta": "東京EXPOの詳細・申込はこちら"
     },
     "en": {
       "badge": "SUN, JAN 17 2027 · TOKYO",
@@ -1252,7 +1252,7 @@
         "Tokyo Innovation Base (Yurakucho)",
         "Free entry"
       ],
-      "cta": "Apply here"
+      "cta": "Tokyo EXPO details & entry"
     }
   }
 }
