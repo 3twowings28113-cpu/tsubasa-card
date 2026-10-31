@@ -149,6 +149,54 @@ function wireStory() {
   });
 }
 
+/* ---------- Tokyo Kyoso EXPO promo (big, early, with a sliding photo strip) ---------- */
+function renderExpo() {
+  const host = document.querySelector('[data-expo]');
+  if (!host) return;
+  const data = getContent().expoPromo;
+  if (!data) { host.hidden = true; return; }
+  const lang = getLang();
+  const t = data[lang] || data.ja || {};
+  host.querySelector('[data-expo-badge]').textContent = t.badge || '';
+  host.querySelector('[data-expo-title]').textContent = t.title || '';
+  host.querySelector('[data-expo-desc]').textContent = t.desc || '';
+  host.querySelector('[data-expo-facts]').replaceChildren(...(t.facts || []).map((f) => el('li', { text: f })));
+  const cta = host.querySelector('[data-expo-cta]');
+  cta.href = data.url || '#';
+  cta.textContent = t.cta || '';
+  const track = host.querySelector('[data-expo-track]');
+  const dots = host.querySelector('[data-expo-dots]');
+  track.replaceChildren(...(data.images || []).map((src) => el('img', { class: 'expo-promo__img', src, alt: '', loading: 'lazy', decoding: 'async' })));
+  dots.replaceChildren(...(data.images || []).map((_, i) => el('span', { class: 'expo-promo__dot' + (i === 0 ? ' is-on' : '') })));
+  startExpoSlider(host, (data.images || []).length);
+}
+
+let expoTimer = 0;
+function startExpoSlider(host, count) {
+  if (count < 2) return;
+  const track = host.querySelector('[data-expo-track]');
+  const dots = [...host.querySelectorAll('.expo-promo__dot')];
+  let i = 0, x0 = null;
+  const go = (n) => {
+    i = (n + count) % count;
+    track.style.transform = `translateX(${-i * 100}%)`;
+    dots.forEach((d, k) => d.classList.toggle('is-on', k === i));
+  };
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  clearInterval(expoTimer);
+  if (!reduced) expoTimer = setInterval(() => { if (!document.hidden) go(i + 1); }, 4000);
+  if (!host._expoSwipe) {
+    host._expoSwipe = true;
+    host.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+    host.addEventListener('touchend', (e) => {
+      if (x0 == null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1));
+      x0 = null;
+    }, { passive: true });
+  }
+}
+
 /* ---------- affiliations ---------- */
 function renderOrgs() {
   const host = document.querySelector('[data-orgs]');
@@ -186,7 +234,7 @@ function renderWorks() {
 
 export function initSections() {
   audience = readAudience();
-  const renderAll = () => { renderOrgs(); renderAudience(); renderPhilosophy(); renderStory(); renderWorks(); renderCardRequest();  };
+  const renderAll = () => { renderExpo(); renderOrgs(); renderAudience(); renderPhilosophy(); renderStory(); renderWorks(); renderCardRequest();  };
   onLang(renderAll);
 }
 
