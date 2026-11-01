@@ -722,3 +722,17 @@ html[data-sky="night"] body { background: linear-gradient(180deg, #B9CFEF 0, #DC
 .org__links { display: flex; gap: 8px; flex-wrap: wrap; width: 100%; margin-top: 12px; }
 .org__about { display: inline-flex; align-items: center; padding: 10px 18px; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 700; font-size: .95rem; text-decoration: none; }
 .org__sub { display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 999px; border: 1.5px solid var(--blue); color: var(--blue); font-weight: 700; font-size: .9rem; text-decoration: none; background: #fff; }
+
+/* EXPO promo restyle (2026-11-01): white card + Kyoso Instagram-icon gradient ring.
+   The old navy gradient ended in #0A66C2 — literally LinkedIn blue (user flag). */
+.expo-promo {
+  border: 3px solid transparent;
+  background: linear-gradient(170deg, #ffffff, #fdf8fa) padding-box,
+              linear-gradient(115deg, #3d9bc4 0%, #7a86d8 48%, #eda0a8 100%) border-box;
+  color: var(--ink);
+  box-shadow: 0 20px 44px rgba(122, 134, 216, .22);
+}
+.expo-promo__slider { background: #fff3df; }
+.expo-promo__img--poster { object-fit: contain; }
+.expo-promo__desc { color: #43536b; }
+.expo-promo__facts li::before { color: #d96b93; }
