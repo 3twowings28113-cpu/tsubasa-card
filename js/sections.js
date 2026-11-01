@@ -166,7 +166,7 @@ function renderExpo() {
   cta.textContent = t.cta || '';
   const track = host.querySelector('[data-expo-track]');
   const dots = host.querySelector('[data-expo-dots]');
-  track.replaceChildren(...(data.images || []).map((src) => el('img', { class: 'expo-promo__img', src, alt: '', loading: 'lazy', decoding: 'async' })));
+  track.replaceChildren(...(data.images || []).map((src) => el('img', { class: 'expo-promo__img' + (src.includes('poster') ? ' expo-promo__img--poster' : ''), src, alt: '', loading: 'lazy', decoding: 'async' })));
   dots.replaceChildren(...(data.images || []).map((_, i) => el('span', { class: 'expo-promo__dot' + (i === 0 ? ' is-on' : '') })));
   startExpoSlider(host, (data.images || []).length);
 }
