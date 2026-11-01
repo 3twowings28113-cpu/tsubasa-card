@@ -150,6 +150,17 @@ function wireStory() {
 }
 
 /* ---------- Tokyo Kyoso EXPO promo (big, early, with a sliding photo strip) ---------- */
+/* ---------- hero stats (proof in numbers) ---------- */
+function renderStats() {
+  const host = document.querySelector('[data-stats]');
+  if (!host) return;
+  const lang = getLang();
+  const items = getContent().stats?.items || [];
+  host.replaceChildren(...items.map((s) => el('div', { class: 'hero-stat' },
+    el('p', { class: 'hero-stat__num', text: s.num }),
+    el('p', { class: 'hero-stat__label', text: (s[lang] || s.ja || {}).label || '' }))));
+}
+
 function renderExpo() {
   const host = document.querySelector('[data-expo]');
   if (!host) return;
@@ -240,7 +251,7 @@ function renderWorks() {
 
 export function initSections() {
   audience = readAudience();
-  const renderAll = () => { renderExpo(); renderOrgs(); renderAudience(); renderPhilosophy(); renderStory(); renderWorks(); renderCardRequest();  };
+  const renderAll = () => { renderStats(); renderExpo(); renderOrgs(); renderAudience(); renderPhilosophy(); renderStory(); renderWorks(); renderCardRequest();  };
   onLang(renderAll);
 }
 

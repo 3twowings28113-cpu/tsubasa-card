@@ -1258,5 +1258,36 @@
       ],
       "cta": "Tokyo EXPO details & entry"
     }
+  },
+  "stats": {
+    "items": [
+      {
+        "num": "1,500名",
+        "ja": {
+          "label": "共創EXPO 累計参加者"
+        },
+        "en": {
+          "label": "Kyoso EXPO total visitors"
+        }
+      },
+      {
+        "num": "160超",
+        "ja": {
+          "label": "つながる学生団体"
+        },
+        "en": {
+          "label": "Student groups in the network"
+        }
+      },
+      {
+        "num": "45社以上",
+        "ja": {
+          "label": "つながる企業"
+        },
+        "en": {
+          "label": "Partner companies"
+        }
+      }
+    ]
   }
 }

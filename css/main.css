@@ -736,3 +736,9 @@ html[data-sky="night"] body { background: linear-gradient(180deg, #B9CFEF 0, #DC
 .expo-promo__img--poster { object-fit: contain; }
 .expo-promo__desc { color: #43536b; }
 .expo-promo__facts li::before { color: #d96b93; }
+
+/* hero stats strip (2026-11-01): proof in numbers under the statement */
+.hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 20px; }
+.hero-stat { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 12px 6px 10px; text-align: center; box-shadow: var(--shadow-s); }
+.hero-stat__num { font-family: var(--f-serif); font-weight: 800; font-size: 19px; color: var(--blue); line-height: 1.2; }
+.hero-stat__label { margin-top: 3px; font-size: 10.5px; color: var(--muted); line-height: 1.45; }
