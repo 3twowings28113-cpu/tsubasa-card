@@ -2,7 +2,7 @@
 // hero card. The choice reorders the page and retunes the highlights; it is
 // remembered, and the chips further down can change it any time.
 import { L, el } from './i18n.js';
-import { savedAudience, chooseAudience } from './sections.js?v=20251101a';
+import { savedAudience, chooseAudience } from './sections.js?v=20251101b';
 
 /* Move sections around so the most relevant story comes first. */
 export function applyLayout(id) {
@@ -11,13 +11,10 @@ export function applyLayout(id) {
   const q = (s) => main.querySelector(s);
   const contact = q('.contact'), orgs = q('.orgs'), audience = q('.audience'), works = q('.works');
   if (!contact || !orgs || !audience || !works) return;
-  if (id === 'exec' || id === 'hr') {
-    main.insertBefore(works, orgs); // built products right after the contacts
-  } else if (id === 'engineer') {
+  // works always sits right below the affiliations (user instruction 2026-11-01)
+  main.insertBefore(works, orgs.nextSibling);
+  if (id === 'engineer' || id === 'student') {
     main.insertBefore(audience, orgs); // highlights first
-  } else if (id === 'student') {
-    main.insertBefore(audience, orgs); // events & community up top
-    main.insertBefore(works, audience.nextSibling);
   }
 }
 
