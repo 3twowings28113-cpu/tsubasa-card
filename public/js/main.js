@@ -1,13 +1,13 @@
 import { loadContent, initialLang, setLang, getLang, t, onLang } from './i18n.js';
-import { api, visitorId, via } from './api.js?v=20251101b';
-import { whenContacts, initDock } from './contact.js?v=20251101b';
-import { initSections } from './sections.js?v=20251101b';
-import { initMotion } from './motion.js?v=20251101b';
-import { initWingWall } from './wingwall.js?v=20251101b';
-import { initAsk } from './ask.js?v=20251101b';
-import { runIntro } from './intro.js?v=20251101b';
-import { initFun } from './fun.js?v=20251101b';
-import { gateIfNeeded, prepareAudience, initGateUi } from './gate.js?v=20251101b';
+import { api, visitorId, via } from './api.js?v=20251101c';
+import { whenContacts, initDock } from './contact.js?v=20251101c';
+import { initSections } from './sections.js?v=20251101c';
+import { initMotion } from './motion.js?v=20251101c';
+import { initWingWall } from './wingwall.js?v=20251101c';
+import { initAsk } from './ask.js?v=20251101c';
+import { runIntro } from './intro.js?v=20251101c';
+import { initFun } from './fun.js?v=20251101c';
+import { gateIfNeeded, prepareAudience, initGateUi } from './gate.js?v=20251101c';
 
 async function guestNumber() {
   const r = await api('/api/visit', { method: 'POST', body: { visitorId: visitorId(), via: via(), lang: getLang() } });

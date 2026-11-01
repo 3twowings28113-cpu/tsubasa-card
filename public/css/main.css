@@ -715,8 +715,8 @@ html[data-sky="night"] body { background: linear-gradient(180deg, #B9CFEF 0, #DC
 .works__list .work { flex: 0 0 84%; max-width: 340px; scroll-snap-align: start; margin: 0; }
 @media (min-width: 860px) { .works__list .work { flex-basis: 31%; } }
 /* featured org (Kyoso Labo): bigger card + about button */
-.org--featured { display: flex; flex-direction: column; align-items: stretch; padding: 20px 18px; border: 1.5px solid var(--blue); background: linear-gradient(160deg, #ffffff, #eef4ff); }
-.org--featured .org__logo { width: 72px; height: 72px; border-radius: 18px; font-size: 1.3rem; }
+.org--featured { display: flex; flex-direction: column; align-items: stretch; padding: 20px 18px; border: 2.5px solid transparent; border-radius: 26px; background: linear-gradient(165deg, #ffffff, #fdf7f9) padding-box, linear-gradient(115deg, #3d9bc4 0%, #7a86d8 48%, #eda0a8 100%) border-box; box-shadow: 0 14px 34px rgba(122, 134, 216, .18); }
+.org--featured .org__logo { width: 76px; height: 76px; border-radius: 50%; font-size: 1.3rem; }
 .org--featured .org__name { font-size: 1.3rem; }
 .org--featured .org__desc { font-size: .92rem; }
 .org__links { display: flex; gap: 8px; flex-wrap: wrap; width: 100%; margin-top: 12px; }
