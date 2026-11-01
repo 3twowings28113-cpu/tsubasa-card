@@ -50,38 +50,7 @@ function initFlip() {
   document.querySelector('[data-flip-btn]')?.addEventListener('click', (e) => { e.stopPropagation(); flipCard(card); });
 }
 
-function initQr() {
-  const modal = document.querySelector('[data-qr-modal]');
-  if (!modal) return;
-  const img = modal.querySelector('.qr-modal__img');
-  const open = () => {
-    document.body.style.removeProperty('transform'); // a transformed body breaks fixed positioning
-    modal.hidden = false;
-    modal.style.display = 'flex';
-    if (img && !img.complete) { const s = img.src; img.src = ''; img.src = s; }
-    document.body.style.overflow = 'hidden';
-  };
-  const close = () => { modal.hidden = true; modal.style.display = ''; document.body.style.overflow = ''; };
-  document.querySelector('[data-qr-btn]')?.addEventListener('click', open);
-  modal.querySelector('[data-qr-close]')?.addEventListener('click', close);
-  modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
-  window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) close(); });
-}
 
-function initShare() {
-  document.querySelector('[data-share-btn]')?.addEventListener('click', async () => {
-    const url = getContent()?.site?.url || location.href;
-    const title = document.title;
-    try {
-      if (navigator.share) { await navigator.share({ title, url }); return; }
-      throw new Error('no share');
-    } catch (e) {
-      if (e && e.name === 'AbortError') return;
-      try { await navigator.clipboard.writeText(url); toast(t('ui.copied')); }
-      catch (e2) { toast(url); }
-    }
-  });
-}
 
 /* ---------- ordermade popup: center modal when the story comes into view ---------- */
 function initPopup() {
@@ -132,31 +101,6 @@ function initSkyTime() {
 }
 
 /* ---------- card exchange mode: big name + big QR, stays awake ---------- */
-function initExchange() {
-  const box = document.querySelector('[data-exchange]');
-  if (!box) return;
-  let lock = null;
-  const open = async () => {
-    document.body.style.removeProperty('transform');
-    box.hidden = false;
-    document.body.style.overflow = 'hidden';
-    try { lock = await navigator.wakeLock?.request('screen'); } catch (e) { /* ignore */ }
-    if (window.gsap && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      window.gsap.fromTo(box, { opacity: 0 }, { opacity: 1, duration: 0.3 });
-      window.gsap.fromTo(box.querySelector('.exchange__qr'), { scale: 0.9 }, { scale: 1, duration: 0.45, ease: 'back.out(1.8)' });
-    }
-  };
-  const close = () => {
-    box.hidden = true;
-    document.body.style.overflow = '';
-    try { lock?.release(); } catch (e) { /* ignore */ }
-    lock = null;
-  };
-  document.querySelector('[data-exchange-btn]')?.addEventListener('click', open);
-  box.querySelector('[data-exchange-close]')?.addEventListener('click', close);
-  box.addEventListener('click', (e) => { if (e.target === box) close(); });
-  window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !box.hidden) close(); });
-}
 
 /* ---------- today's wing fortune (same fortune all day) ---------- */
 function initFortune() {
@@ -200,10 +144,10 @@ function initFortune() {
 
 export function initFun() {
   initFlip();
-  initQr();
-  initShare();
+  
+  
   initPopup();
   initSkyTime();
-  initExchange();
+  
   initFortune();
 }
