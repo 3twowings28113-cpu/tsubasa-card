@@ -213,6 +213,12 @@ function renderOrgs() {
       el('span', { class: 'org__role', text: [t.role, o.since ? (lang === 'en' ? `since ${o.since}` : `${o.since}〜`) : ''].filter(Boolean).join(lang === 'en' ? ' · ' : '　') }),
       t.desc ? el('span', { class: 'org__desc', text: t.desc }) : null);
     const usable = typeof o.url === 'string' && /^https?:\/\//.test(o.url);
+    if (o.featured) {
+      const links = el('span', { class: 'org__links' },
+        o.aboutUrl ? el('a', { class: 'org__about', href: o.aboutUrl, target: '_blank', rel: 'noopener', text: (t.about || 'About') + ' ↗' }) : null,
+        usable ? el('a', { class: 'org__sub', href: o.url, target: '_blank', rel: 'noopener', text: 'Instagram ↗' }) : null);
+      return el('li', { class: 'orgs__item--featured' }, el('div', { class: 'org org--featured' }, mark, body, links));
+    }
     const inner = usable
       ? el('a', { class: 'org', href: o.url, target: '_blank', rel: 'noopener' }, mark, body, el('span', { class: 'org__go', 'aria-hidden': 'true', text: '↗' }))
       : el('div', { class: 'org' }, mark, body);

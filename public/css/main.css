@@ -708,3 +708,17 @@ html[data-sky="night"] body { background: linear-gradient(180deg, #B9CFEF 0, #DC
 
 /* promo goes full-bleed inside its card (beats the global section padding) */
 .expo-promo { padding: 0; }
+
+/* works: horizontal swipe row (2026-11-01, keep the section short) */
+.works__list { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 14px; margin: 18px -2px 0; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.works__list::-webkit-scrollbar { display: none; }
+.works__list .work { flex: 0 0 84%; max-width: 340px; scroll-snap-align: start; margin: 0; }
+@media (min-width: 860px) { .works__list .work { flex-basis: 31%; } }
+/* featured org (Kyoso Labo): bigger card + about button */
+.org--featured { display: flex; flex-direction: column; align-items: stretch; padding: 20px 18px; border: 1.5px solid var(--blue); background: linear-gradient(160deg, #ffffff, #eef4ff); }
+.org--featured .org__logo { width: 72px; height: 72px; border-radius: 18px; font-size: 1.3rem; }
+.org--featured .org__name { font-size: 1.3rem; }
+.org--featured .org__desc { font-size: .92rem; }
+.org__links { display: flex; gap: 8px; flex-wrap: wrap; width: 100%; margin-top: 12px; }
+.org__about { display: inline-flex; align-items: center; padding: 10px 18px; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 700; font-size: .95rem; text-decoration: none; }
+.org__sub { display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 999px; border: 1.5px solid var(--blue); color: var(--blue); font-weight: 700; font-size: .9rem; text-decoration: none; background: #fff; }
