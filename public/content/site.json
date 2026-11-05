@@ -578,11 +578,15 @@
         {
           "id": "koe-type",
           "name": "koe-type",
-          "desc": "声で文字入力できる Windows アプリ。音声入力とクリップボード操作をひとつにしました",
+          "desc": "声で文字入力できる Windows / Mac アプリ。喋るだけで、カーソルの場所に文章が入ります",
           "links": [
             {
               "label": "ダウンロード（Windows）",
-              "url": "https://github.com/3twowings28113-cpu/koe-type/releases"
+              "url": "https://3twowings28113-cpu.github.io/tsubasa-card/files/koe-type-windows.zip"
+            },
+            {
+              "label": "ダウンロード（Mac）",
+              "url": "https://3twowings28113-cpu.github.io/tsubasa-card/files/koe-type-mac-lite.zip"
             }
           ],
           "icon": "assets/works/koe-type.png"
@@ -1095,11 +1099,15 @@
         {
           "id": "koe-type",
           "name": "koe-type",
-          "desc": "A Windows app for typing by voice — voice input and clipboard tools in one",
+          "desc": "A Windows / Mac app for typing by voice — just speak, and the text lands at your cursor",
           "links": [
             {
               "label": "Download (Windows)",
-              "url": "https://github.com/3twowings28113-cpu/koe-type/releases"
+              "url": "https://3twowings28113-cpu.github.io/tsubasa-card/files/koe-type-windows.zip"
+            },
+            {
+              "label": "Download (Mac)",
+              "url": "https://3twowings28113-cpu.github.io/tsubasa-card/files/koe-type-mac-lite.zip"
             }
           ],
           "icon": "assets/works/koe-type.png"
