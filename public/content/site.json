@@ -581,12 +581,8 @@
           "desc": "声で文字入力できる Windows / Mac アプリ。喋るだけで、カーソルの場所に文章が入ります",
           "links": [
             {
-              "label": "ダウンロード（Windows）",
-              "url": "https://3twowings28113-cpu.github.io/tsubasa-card/files/koe-type-windows.zip"
-            },
-            {
-              "label": "ダウンロード（Mac）",
-              "url": "https://3twowings28113-cpu.github.io/tsubasa-card/files/koe-type-mac-lite.zip"
+              "label": "ダウンロードはこちら",
+              "url": "https://3twowings28113-cpu.github.io/koe-type-downloads/"
             }
           ],
           "icon": "assets/works/koe-type.png"
@@ -1102,12 +1098,8 @@
           "desc": "A Windows / Mac app for typing by voice — just speak, and the text lands at your cursor",
           "links": [
             {
-              "label": "Download (Windows)",
-              "url": "https://3twowings28113-cpu.github.io/tsubasa-card/files/koe-type-windows.zip"
-            },
-            {
-              "label": "Download (Mac)",
-              "url": "https://3twowings28113-cpu.github.io/tsubasa-card/files/koe-type-mac-lite.zip"
+              "label": "Download koe-type",
+              "url": "https://3twowings28113-cpu.github.io/koe-type-downloads/"
             }
           ],
           "icon": "assets/works/koe-type.png"
