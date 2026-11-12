@@ -35,6 +35,13 @@
       "color": "#0F1419"
     },
     {
+      "id": "note",
+      "label": "note",
+      "url": "https://note.com/tsuba0912",
+      "icon": "assets/icons/note.svg",
+      "color": "#000000"
+    },
+    {
       "id": "facebook",
       "label": "Facebook",
       "url": "https://www.facebook.com/profile.php?id=100092515989524",
@@ -1224,6 +1231,23 @@
           "name": "Craft Stadium",
           "role": "Member",
           "desc": "A hackathon platform bringing students and companies together. I help run hackathons and development events"
+        }
+      },
+      {
+        "id": "muse",
+        "url": "https://muse.ai/",
+        "logo": "assets/orgs/muse.svg",
+        "mono": "Mu",
+        "since": "2026.10",
+        "ja": {
+          "name": "Muse",
+          "role": "AI業務改善サポート",
+          "desc": "AIエージェント「Muse」を活用して、企業・団体の業務改善や自動化、日々の運用サポートをしています"
+        },
+        "en": {
+          "name": "Muse",
+          "role": "AI workflow support",
+          "desc": "Helping companies and teams improve and automate their day-to-day work with the Muse AI agent"
         }
       }
     ]
