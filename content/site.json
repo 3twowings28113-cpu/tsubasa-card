@@ -229,8 +229,8 @@
       {
         "id": "exawizards",
         "title": "エクサウィザーズでインターン",
-        "sub": "AI企業の新規事業部で、事業企画を半年間",
-        "photo": null
+        "sub": "AI企業の新規事業部で、事業企画とアライアンス推進を半年間",
+        "photo": "assets/photos/story-exawizards.webp"
       },
       {
         "id": "ivs",
@@ -319,8 +319,9 @@
             {
               "date": "2026.1",
               "title": "AI企業エクサウィザーズでインターン",
-              "sub": "新規事業部で、事業企画に半年間取り組む",
-              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7414870067806658560"
+              "sub": "新規事業部で事業企画と、BizDevとしてのアライアンス推進に半年間取り組む",
+              "link": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7414870067806658560",
+              "photo": "assets/photos/story-exawizards.webp"
             },
             {
               "date": "2026.1",
@@ -760,8 +761,8 @@
       {
         "id": "exawizards",
         "title": "Intern at ExaWizards",
-        "sub": "Six months of business planning in an AI company's new-business unit",
-        "photo": null
+        "sub": "Six months of business planning and alliance work at an AI company",
+        "photo": "assets/photos/story-exawizards.webp"
       },
       {
         "id": "ivs",
@@ -846,7 +847,8 @@
             {
               "date": "2026.1",
               "title": "Intern at the AI company ExaWizards",
-              "sub": "Six months of business planning in the new-business unit"
+              "sub": "Six months in the new business division, working on business planning and BizDev alliances with partner companies",
+              "photo": "assets/photos/story-exawizards.webp"
             },
             {
               "date": "2026.1",
@@ -1148,22 +1150,6 @@
         },
         "featured": true,
         "aboutUrl": "https://mirai-style.co.jp/"
-      },
-      {
-        "id": "exawizards",
-        "url": "https://exawizards.com/",
-        "logo": "assets/orgs/exawizards.webp",
-        "mono": "Ex",
-        "ja": {
-          "name": "エクサウィザーズ",
-          "role": "インターン（BizDev）",
-          "desc": "AIを用いた社会課題解決に取り組む上場AI企業でインターン。BizDevとして、企業とのアライアンス（事業提携）づくりに関わる業務を担当しました"
-        },
-        "en": {
-          "name": "ExaWizards",
-          "role": "Intern (BizDev)",
-          "desc": "Intern at a listed AI company solving social issues with AI, working in BizDev on building alliances with partner companies"
-        }
       },
       {
         "id": "bds",
