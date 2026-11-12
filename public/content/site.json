@@ -1150,6 +1150,22 @@
         "aboutUrl": "https://mirai-style.co.jp/"
       },
       {
+        "id": "exawizards",
+        "url": "https://exawizards.com/",
+        "logo": "assets/orgs/exawizards.webp",
+        "mono": "Ex",
+        "ja": {
+          "name": "エクサウィザーズ",
+          "role": "インターン（BizDev）",
+          "desc": "AIを用いた社会課題解決に取り組む上場AI企業でインターン。BizDevとして、企業とのアライアンス（事業提携）づくりに関わる業務を担当しました"
+        },
+        "en": {
+          "name": "ExaWizards",
+          "role": "Intern (BizDev)",
+          "desc": "Intern at a listed AI company solving social issues with AI, working in BizDev on building alliances with partner companies"
+        }
+      },
+      {
         "id": "bds",
         "url": "https://www.kansai-u.ac.jp/bds/",
         "logo": "assets/orgs/bds.webp",
