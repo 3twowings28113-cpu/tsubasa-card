@@ -742,3 +742,7 @@ html[data-sky="night"] body { background: linear-gradient(180deg, #B9CFEF 0, #DC
 .hero-stat { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 12px 6px 10px; text-align: center; box-shadow: var(--shadow-s); }
 .hero-stat__num { font-family: var(--f-serif); font-weight: 800; font-size: 19px; color: var(--blue); line-height: 1.2; }
 .hero-stat__label { margin-top: 3px; font-size: 10.5px; color: var(--muted); line-height: 1.45; }
+
+/* stats inside the EXPO card (2026-11-12): tint tiles so they sit on the white card */
+.expo-promo .hero-stats { margin-top: 16px; }
+.expo-promo .hero-stat { background: #f2f7fe; box-shadow: none; }
