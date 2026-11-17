@@ -146,6 +146,14 @@ html[lang="en"] .namecard__name { font-size: 34px; letter-spacing: .01em; }
   color: var(--blue); border-radius: 999px; padding: 4px 12px; font-size: 12px; cursor: pointer;
 }
 
+/* ---------- intro slide ---------- */
+.intro-slide { padding-top: 4px !important; padding-bottom: 12px !important; }
+.intro-slide__frame {
+  margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
+  padding: 8px; box-shadow: var(--shadow-lg);
+}
+.intro-slide__frame img { width: 100%; height: auto; border-radius: 14px; }
+
 /* ---------- contact ---------- */
 .contact { padding-top: 8px !important; padding-bottom: 48px !important; }
 .contact__stack { display: flex; flex-direction: column; gap: 12px; }
