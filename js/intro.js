@@ -28,7 +28,7 @@ function revealHero(gsap, delay = 0) {
   const chars = splitName();
   gsap.set('.namecard__name', { opacity: 1 });
   gsap.fromTo(chars, { y: 22, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out', stagger: 0.045, delay });
-  gsap.fromTo(['.namecard__hello', '.namecard__kana', '.namecard__aff', '.hero__statement'], { opacity: 0, y: 8 },
+  gsap.fromTo(['.namecard__hello', '.namecard__kana', '.namecard__aff', '.hero-acts'], { opacity: 0, y: 8 },
     { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.06, delay: delay + 0.15, clearProps: 'transform' });
 }
 
@@ -142,7 +142,7 @@ export async function runIntro({ contactsReady }) {
   gsap.set(wingR, { rotation: 7, transformOrigin: '4% 88%' });
   gsap.set(glow, { left: '70%', top: '32%', scale: 0.4, opacity: 0 });
   if (hero) gsap.set(hero, { scale: 0.92, y: 20, transformOrigin: '50% 26%' });
-  gsap.set(['main .namecard__name', 'main .namecard__hello', 'main .namecard__kana', 'main .namecard__aff', 'main .hero__statement'], { opacity: 0 });
+  gsap.set(['main .namecard__name', 'main .namecard__hello', 'main .namecard__kana', 'main .namecard__aff', 'main .hero-acts'], { opacity: 0 });
 
   const S = full ? 1 : 0.55;
   const tl = gsap.timeline({ defaults: { overwrite: 'auto' } });
@@ -227,7 +227,7 @@ export async function runIntro({ contactsReady }) {
       gsap.set(landingTargets, { clearProps: 'opacity,transform' });
       if (hero) gsap.set(hero, { clearProps: 'transform,opacity' });
       document.querySelectorAll('.landing-feather').forEach((n) => n.remove());
-      gsap.set(['.namecard__name', '.namecard__hello', '.namecard__kana', '.namecard__aff', '.hero__statement'], { clearProps: 'opacity,transform' });
+      gsap.set(['.namecard__name', '.namecard__hello', '.namecard__kana', '.namecard__aff', '.hero-acts'], { clearProps: 'opacity,transform' });
       revealHero(gsap);
       window.dispatchEvent(new Event('tc:revealed'));
     }
