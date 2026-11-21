@@ -1,13 +1,15 @@
 import { loadContent, initialLang, setLang, getLang, t, onLang } from './i18n.js';
-import { api, visitorId, via } from './api.js?v=20251112e';
-import { whenContacts, initDock } from './contact.js?v=20251112e';
-import { initSections } from './sections.js?v=20251112e';
-import { initMotion } from './motion.js?v=20251112e';
-import { initWingWall } from './wingwall.js?v=20251112e';
-import { initAsk } from './ask.js?v=20251112e';
-import { runIntro } from './intro.js?v=20251112e';
-import { initFun } from './fun.js?v=20251112e';
-import { prepareAudience, initGateUi } from './gate.js?v=20251112e';
+import { api, visitorId, via } from './api.js?v=20251121a';
+import { whenContacts, initDock } from './contact.js?v=20251121a';
+import { initSections } from './sections.js?v=20251121a';
+import { initMotion } from './motion.js?v=20251121a';
+import { initWingWall } from './wingwall.js?v=20251121a';
+import { initAsk } from './ask.js?v=20251121a';
+import { runIntro } from './intro.js?v=20251121a';
+import { initFun } from './fun.js?v=20251121a';
+import { initInstall } from './install.js?v=20251121a';
+import { initRotator } from './rotator.js?v=20251121a';
+import { prepareAudience, initGateUi } from './gate.js?v=20251121a';
 
 async function guestNumber() {
   const r = await api('/api/visit', { method: 'POST', body: { visitorId: visitorId(), via: via(), lang: getLang() } });
@@ -55,6 +57,8 @@ async function boot() {
   initSections();
   initAsk();
   initFun();
+  initInstall();
+  initRotator();
   setLang(initialLang(), { persist: false });
   document.querySelectorAll('[data-lang-toggle]').forEach((b) => b.addEventListener('click', () => setLang(getLang() === 'ja' ? 'en' : 'ja')));
   prepareAudience();

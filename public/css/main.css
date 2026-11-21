@@ -146,14 +146,6 @@ html[lang="en"] .namecard__name { font-size: 34px; letter-spacing: .01em; }
   color: var(--blue); border-radius: 999px; padding: 4px 12px; font-size: 12px; cursor: pointer;
 }
 
-/* ---------- intro slide ---------- */
-.intro-slide { padding-top: 4px !important; padding-bottom: 12px !important; }
-.intro-slide__frame {
-  margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
-  padding: 8px; box-shadow: var(--shadow-lg);
-}
-.intro-slide__frame img { width: 100%; height: auto; border-radius: 14px; }
-
 /* ---------- contact ---------- */
 .contact { padding-top: 8px !important; padding-bottom: 48px !important; }
 .contact__stack { display: flex; flex-direction: column; gap: 12px; }
@@ -754,3 +746,55 @@ html[data-sky="night"] body { background: linear-gradient(180deg, #B9CFEF 0, #DC
 /* stats inside the EXPO card (2026-11-12): tint tiles so they sit on the white card */
 .expo-promo .hero-stats { margin-top: 16px; }
 .expo-promo .hero-stat { background: #f2f7fe; box-shadow: none; }
+
+
+/* ---------- add to home screen ---------- */
+.install-btn {
+  display: inline-flex; align-items: center; gap: 7px; margin: 12px auto 0;
+  padding: 10px 18px; border-radius: 999px; cursor: pointer;
+  background: var(--surface); color: var(--blue);
+  border: 1.5px solid var(--blue); font: inherit; font-size: 13.5px; font-weight: 700;
+  box-shadow: var(--shadow);
+}
+.install-btn[hidden] { display: none !important; }
+.install-btn:active { transform: scale(.97); }
+.hero { text-align: center; }
+.install-sheet {
+  position: fixed; inset: 0; z-index: 300; display: flex; align-items: flex-end; justify-content: center;
+  background: rgba(14, 27, 51, .45); padding: 0;
+}
+.install-sheet[hidden] { display: none !important; }
+.install-sheet__card {
+  position: relative; background: var(--surface); width: 100%; max-width: 480px;
+  border-radius: 22px 22px 0 0; padding: 26px 22px calc(26px + env(safe-area-inset-bottom, 0px));
+  box-shadow: var(--shadow-lg);
+}
+@media (min-width: 760px) { .install-sheet { align-items: center; padding: 24px; } .install-sheet__card { border-radius: 22px; } }
+.install-sheet__close {
+  position: absolute; top: 10px; right: 12px; width: 36px; height: 36px; border: 0; border-radius: 50%;
+  background: transparent; font-size: 22px; color: var(--muted); cursor: pointer;
+}
+.install-sheet__title { font-family: var(--f-head); font-size: 19px; font-weight: 900; color: var(--ink); margin: 0 28px 8px 0; }
+.install-sheet__lead { font-size: 13.5px; color: var(--ink-2); margin: 0 0 14px; line-height: 1.7; }
+.install-sheet__note {
+  font-size: 12.5px; color: var(--ink-2); background: #FFF4E8; border: 1px solid #FFD9AE;
+  border-radius: 12px; padding: 10px 12px; margin: 0 0 14px; line-height: 1.7;
+}
+.install-sheet__steps { margin: 0; padding-left: 22px; display: grid; gap: 10px; }
+.install-sheet__steps li { font-size: 14px; color: var(--ink); line-height: 1.65; }
+.install-sheet__steps li::marker { color: var(--blue); font-weight: 900; }
+
+
+/* ---------- hero activities board (train-destination style rotator) ---------- */
+.hero-acts { margin-top: 20px; }
+.hero-acts__label { font-size: 11px; letter-spacing: .18em; color: var(--muted); font-weight: 700; text-align: center; margin: 0 0 8px; }
+.hero-board {
+  display: flex; align-items: center; gap: 12px; max-width: 430px; min-height: 58px;
+  margin: 0 auto; padding: 12px 16px; border-radius: 14px; text-align: left;
+  background: var(--ink); box-shadow: var(--shadow-lg);
+}
+.hero-board__num {
+  flex: none; width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center;
+  background: var(--accent); color: #fff; font-size: 15px; font-weight: 900;
+}
+.hero-board__text { color: #fff; font-size: 15px; font-weight: 700; letter-spacing: .02em; line-height: 1.45; }

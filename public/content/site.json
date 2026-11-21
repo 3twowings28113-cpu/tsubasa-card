@@ -108,7 +108,21 @@
       "cardHint": "名刺をタップすると裏返って、QRコードが出ます",
       "exchange": "名刺交換モード",
       "exchangeHint": "相手に読み取ってもらってください",
-      "pick": "あなたへのおすすめ"
+      "pick": "あなたへのおすすめ",
+      "install": "ホーム画面に追加",
+      "installTitle": "ホーム画面から、いつでも開けます",
+      "installLead": "追加しておくと、アイコンをタップするだけで この名刺がすぐ開きます",
+      "installStepsIos": [
+        "画面下の「共有」ボタン（四角に上向き矢印）をタップ",
+        "メニューの中の「ホーム画面に追加」をタップ",
+        "右上の「追加」をタップ"
+      ],
+      "installStepsAndroid": [
+        "右上のメニュー（︙）をタップ",
+        "「アプリをインストール」か「ホーム画面に追加」をタップ",
+        "「インストール」をタップ"
+      ],
+      "installNoteInapp": "いまはアプリ内ブラウザで開いています。まずメニューから「ブラウザで開く」を選んでから、下の手順で追加してください"
     },
     "hero": {
       "eyebrow": "Nice to meet you!",
@@ -117,7 +131,15 @@
       "affiliation": "関西大学 ビジネスデータサイエンス学部 1期生（29卒）",
       "statement": "AI × データ × 開発 × BizDev\n学生をつなぐ場づくりまで、\n全部やる学生です",
       "photoAlt": "羽の壁の前でLinkedInのクッションを持つ山下翼",
-      "status": "11月22日、G-1 STARTUP GRAND PRIX 東京予選に登壇します"
+      "status": "11月22日、G-1 STARTUP GRAND PRIX 東京予選に登壇します",
+      "activitiesLabel": "今やっていること",
+      "activities": [
+        "LinkedIn Student Club 関西4期生",
+        "共創Labo の運営メンバー",
+        "Craft Stadium で事業開発",
+        "アプリ・拡張機能を個人開発",
+        "オーダーメイド電子名刺の制作"
+      ]
     },
     "audiences": {
       "title": "あなたに合わせて、ご紹介します",
@@ -640,7 +662,21 @@
       "cardHint": "Tap the card to flip it over and see the QR code",
       "exchange": "Exchange mode",
       "exchangeHint": "Let them scan this code",
-      "pick": "Top pick for you"
+      "pick": "Top pick for you",
+      "install": "Add to Home Screen",
+      "installTitle": "Keep this card one tap away",
+      "installLead": "Add it once, and my card opens right from an icon on your home screen",
+      "installStepsIos": [
+        "Tap the Share button (square with an up arrow) at the bottom",
+        "Tap “Add to Home Screen” in the menu",
+        "Tap “Add” in the top right"
+      ],
+      "installStepsAndroid": [
+        "Tap the menu (⋮) in the top right",
+        "Tap “Install app” or “Add to Home screen”",
+        "Tap “Install”"
+      ],
+      "installNoteInapp": "You're viewing this in an in-app browser. Open it in your browser from the menu first, then follow the steps below."
     },
     "hero": {
       "eyebrow": "Nice to meet you!",
@@ -649,7 +685,15 @@
       "affiliation": "Kansai University, Faculty of Business Data Science — first cohort (class of 2029)",
       "statement": "AI × Data × Dev × BizDev,\nplus bringing students together —\nI do it all.",
       "photoAlt": "Tsubasa Yamashita holding a LinkedIn cushion in front of a wall of wings",
-      "status": "Pitching at the G-1 Startup Grand Prix Tokyo qualifier on Nov 22"
+      "status": "Pitching at the G-1 Startup Grand Prix Tokyo qualifier on Nov 22",
+      "activitiesLabel": "What I'm up to",
+      "activities": [
+        "LinkedIn Student Club Kansai, 4th cohort",
+        "Operations member of Kyoso Labo",
+        "Business development at Craft Stadium",
+        "Building apps & browser extensions solo",
+        "Making custom digital business cards"
+      ]
     },
     "audiences": {
       "title": "Let me introduce myself — for you",
